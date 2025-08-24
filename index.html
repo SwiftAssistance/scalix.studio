@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scalix Studios: Your partner for innovative digital marketing, creative branding, and web design solutions. Let's grow your business together.">
+    <meta name="keywords" content="digital marketing, branding, web design, creative agency, Scalix Studios, SEO, social media, content marketing, business growth">
+    <meta name="author" content="Scalix Studios">
+    <title>Scalix Studios - Digital Marketing & Branding Agency</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS for Scroll Animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom CSS for subtle effects and consistent design -->
+    <style>
+        /* Smooth transitions for a better user experience */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #f1f5f9; /* Light gray */
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #94a3b8; /* Slate gray */
+            border-radius: 4px;
+        }
+
+        /* Chatbot-specific styles for the pop-up */
+        .chatbot-container {
+            width: 320px;
+            height: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .chatbot-container.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .chatbot-header {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+        
+        .chat-messages {
+            height: 250px;
+            overflow-y: auto;
+            background-color: #f3f4f6;
+        }
+        
+        .chat-message-user {
+            background-color: #d1e0fc;
+            align-self: flex-end;
+            border-radius: 15px 15px 0 15px;
+        }
+        
+        .chat-message-bot {
+            background-color: #ffffff;
+            align-self: flex-start;
+            border-radius: 15px 15px 15px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 transition-colors duration-300 font-sans">
+    
+    <!-- Navigation with hover effects -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-blue-600 mb-4 md:mb-0 transform transition-all hover:scale-105">Scalix Studios</a>
+            <div class="space-x-4 flex flex-wrap justify-center items-center">
+                <a href="index.html" class="text-lg font-medium text-blue-600 hover:text-blue-800 transform hover:scale-105 transition" aria-current="page">Home</a>
+                <a href="services.html" class="text-lg font-medium text-gray-900 hover:text-blue-800 transform hover:scale-105 transition">Services</a>
+                <a href="portfolio.html" class="text-lg font-medium text-gray-900 hover:text-blue-800 transform hover:scale-105 transition">Portfolio</a>
+                <a href="contact.html" class="text-lg font-medium text-gray-900 hover:text-blue-800 transform hover:scale-105 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="bg-gradient-to-r from-blue-600 to-purple-600 min-h-screen flex items-center justify-center text-center p-4 relative overflow-hidden rounded-b-3xl shadow-2xl">
+        <div class="container mx-auto max-w-4xl z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white leading-tight" data-aos="fade-up">Ignite Your Brand, Inspire Your Audience</h1>
+            <p class="text-lg md:text-xl mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                At Scalix Studios, we craft compelling digital experiences that drive growth and build lasting connections.
+            </p>
+            <a href="#services" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all" data-aos="fade-up" data-aos-delay="200">
+                Explore Our Services
+            </a>
+        </div>
+    </header>
+
+    <!-- Services Section with hover effects -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Our Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1: Branding -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
+                        <i class="fa-solid fa-lightbulb text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Creative Branding</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        We build brand identities that resonate with your audience and tell your unique story.
+                    </p>
+                </div>
+                <!-- Service Card 2: Marketing -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-purple-100 text-purple-600 p-4 rounded-full mb-4">
+                        <i class="fa-solid fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Digital Marketing</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Data-driven strategies to boost your online presence, drive traffic, and increase conversions.
+                    </p>
+                </div>
+                <!-- Service Card 3: Web Development -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center text-center transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-green-100 text-green-600 p-4 rounded-full mb-4">
+                        <i class="fa-solid fa-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Web Design & Dev</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Creating stunning, responsive, and high-performing websites that captivate your visitors.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="services.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <img src="https://placeimg.com/800/600/business" alt="Scalix Studios Team Collaboration" class="w-full h-auto object-cover rounded-2xl shadow-xl">
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <h2 class="text-4xl font-bold mb-4 text-gray-800">Who We Are</h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    Scalix Studios is a creative digital agency dedicated to helping businesses grow in the digital age. Our team of passionate designers, marketers, and developers works collaboratively to deliver custom solutions that are not only beautiful but also effective. We believe in building strong, long-term partnerships with our clients to achieve their business objectives.
+                </p>
+                <a href="#contact" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all">
+                    Meet the Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase Section with hover effects -->
+    <section id="portfolio-showcase" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Our Recent Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://placeimg.com/800/600/ecommerce" alt="E-commerce Redesign" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">E-commerce Redesign</h3>
+                        <p class="text-gray-700 mt-2">A complete overhaul of an online store's user experience and visual branding.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://placeimg.com/800/600/brand" alt="Brand Identity" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Brand Identity</h3>
+                        <p class="text-gray-700 mt-2">Creating a powerful and memorable brand identity for a new tech startup.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://placeimg.com/800/600/marketing" alt="Digital Marketing Campaign" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold">Digital Marketing</h3>
+                        <p class="text-gray-700 mt-2">A multi-platform digital marketing campaign that drove significant engagement.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="portfolio.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-center text-white rounded-3xl shadow-xl mx-4 my-8 md:mx-16" data-aos="zoom-in">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to Grow Your Business?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                Our team is ready to help you build a stronger brand and drive exceptional results. Contact us today to discuss your goals.
+            </p>
+            <form id="contact-form" class="max-w-lg mx-auto space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900" required>
+                <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900" required>
+                <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900" required></textarea>
+                <button type="submit" class="w-full bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-10 mt-8 rounded-t-3xl shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Scalix Studios</h3>
+            <p class="text-sm max-w-xl mx-auto mb-6">Innovative advertising and marketing solutions for your business. Let's work together to achieve your goals.</p>
+            <div class="mt-4 space-x-6 text-xl">
+                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="text-xs mt-6">&copy; 2025 Scalix Studios. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 transform scale-0" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    
+    <!-- Chatbot Button -->
+    <button id="open-chatbot-btn" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg z-[9999] hover:bg-blue-700 focus:outline-none transition-all duration-300">
+        <i class="fas fa-comment-dots text-2xl"></i>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="fixed bottom-24 right-8 bg-white rounded-lg shadow-xl chatbot-container z-[9999] flex flex-col">
+        <div class="chatbot-header p-4 rounded-t-lg flex justify-between items-center">
+            <h4 class="text-lg font-bold">Scalix Assistant</h4>
+            <button id="close-chatbot-btn" class="text-white hover:text-gray-200 text-xl" aria-label="Close Chatbot">
+                &times;
+            </button>
+        </div>
+        <div id="chat-messages" class="chat-messages p-4 flex flex-col space-y-4 flex-grow">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <form id="chatbot-form" class="p-4 bg-white rounded-b-lg border-t border-gray-200">
+            <div class="flex">
+                <input type="text" id="chatbot-input" placeholder="Type a message..." class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded-r-lg hover:bg-blue-700 transition">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div id="loading-spinner" class="mt-2 text-center hidden">
+                <i class="fas fa-spinner fa-spin text-blue-500"></i>
+            </div>
+        </form>
+    </div>
+
+    <!-- AOS and Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 500,
+            once: true,
+            easing: 'ease-in-out',
+            delay: 0,
+        });
+
+        // Back to Top Button Logic
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('scale-0');
+                backToTopBtn.classList.add('scale-100');
+            } else {
+                backToTopBtn.classList.remove('scale-100');
+                backToTopBtn.classList.add('scale-0');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Chatbot functionality
+        const openChatbotBtn = document.getElementById('open-chatbot-btn');
+        const closeChatbotBtn = document.getElementById('close-chatbot-btn');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const chatbotForm = document.getElementById('chatbot-form');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        let chatHistory = [];
+
+        openChatbotBtn.addEventListener('click', () => {
+            chatbotContainer.classList.add('active');
+        });
+
+        closeChatbotBtn.addEventListener('click', () => {
+            chatbotContainer.classList.remove('active');
+        });
+
+        const appendMessage = (message, sender) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('p-3', 'rounded-xl', 'max-w-[80%]', 'break-words', 'shadow-md', 'mb-2');
+            if (sender === 'user') {
+                messageDiv.classList.add('chat-message-user', 'self-end');
+            } else {
+                messageDiv.classList.add('chat-message-bot', 'self-start');
+            }
+            messageDiv.innerHTML = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+        };
+        
+        // Initial bot message
+        appendMessage('Hello! How can I assist you with Scalix Studios?', 'bot');
+
+        // Function to parse markdown list and create HTML for it
+        const parseMarkdownList = (markdownText) => {
+            const lines = markdownText.split('\n');
+            let html = '';
+            let inList = false;
+
+            lines.forEach(line => {
+                const trimmedLine = line.trim();
+                if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
+                    if (!inList) {
+                        html += '<ul>';
+                        inList = true;
+                    }
+                    html += `<li class="mb-1 ml-4">${trimmedLine.substring(2).trim()}</li>`;
+                } else {
+                    if (inList) {
+                        html += '</ul>';
+                        inList = false;
+                    }
+                    if (trimmedLine.length > 0) {
+                        html += `<p class="mb-2">${trimmedLine}</p>`;
+                    }
+                }
+            });
+            if (inList) {
+                html += '</ul>';
+            }
+            return html;
+        };
+
+        // Form submission handler for the chatbot
+        chatbotForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userPrompt = chatbotInput.value.trim();
+            if (userPrompt === '') return;
+
+            // Append user message to chat window
+            appendMessage(userPrompt, 'user');
+
+            // Add user message to chat history
+            chatHistory.push({ role: "user", parts: [{ text: userPrompt }] });
+
+            // Clear input and show loading spinner
+            chatbotInput.value = '';
+            loadingSpinner.classList.remove('hidden');
+
+            const payload = {
+                contents: chatHistory
+            };
+            const apiKey = "AIzaSyDswQ0RsmLR1Kcfmw0u7dkiCSzA9DfUr30";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            // Exponential backoff retry logic
+            const maxRetries = 5;
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const generatedText = result.candidates[0].content.parts[0].text;
+                        const htmlContent = parseMarkdownList(generatedText);
+                        appendMessage(htmlContent, 'bot');
+                    } else {
+                        appendMessage('Sorry, I couldn\'t generate a response. Please try again.', 'bot');
+                    }
+                    break; // Exit the loop on success
+
+                } catch (error) {
+                    console.error('Error generating content ideas:', error);
+                    appendMessage(`An error occurred: ${error.message}`, 'bot');
+                    break;
+                }
+            }
+
+            // Hide loading spinner
+            loadingSpinner.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

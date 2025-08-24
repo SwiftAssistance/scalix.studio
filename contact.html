@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Scalix Studios to discuss your digital marketing, branding, or web design project. We're ready to help you grow.">
+    <meta name="keywords" content="contact, get in touch, contact form, Scalix Studios, digital marketing, branding, web design">
+    <meta name="author" content="Scalix Studios">
+    <title>Scalix Studios - Contact Us</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS for Scroll Animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- AOS JS for the animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom CSS for consistent design -->
+    <style>
+        /* Smooth transitions for a better user experience */
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #f1f5f9; /* Light gray */
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #94a3b8; /* Slate gray */
+            border-radius: 4px;
+        }
+        
+        /* Glassmorphism Effect for card backgrounds */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Chatbot-specific styles for the pop-up */
+        .chatbot-container {
+            width: 320px;
+            height: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .chatbot-container.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .chatbot-header {
+            background-color: #3b82f6;
+            color: #ffffff;
+        }
+        
+        .chat-messages {
+            height: 250px;
+            overflow-y: auto;
+            background-color: #f3f4f6;
+        }
+        
+        .chat-message-user {
+            background-color: #d1e0fc;
+            align-self: flex-end;
+            border-radius: 15px 15px 0 15px;
+        }
+        
+        .chat-message-bot {
+            background-color: #ffffff;
+            align-self: flex-start;
+            border-radius: 15px 15px 15px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 transition-colors duration-300 font-sans">
+    
+    <!-- Navigation - Updated for the contact page -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl" aria-label="Main navigation">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-blue-600 mb-4 md:mb-0 transform transition-all hover:scale-105">Scalix Studios</a>
+            <div class="space-x-4 flex flex-wrap justify-center items-center">
+                <a href="index.html" class="text-lg font-medium hover:text-blue-600 transition">Home</a>
+                <a href="services.html" class="text-lg font-medium hover:text-blue-600 transition">Services</a>
+                <a href="portfolio.html" class="text-lg font-medium hover:text-blue-600 transition">Portfolio</a>
+                <a href="contact.html" class="text-lg font-medium text-blue-600 hover:text-blue-600 transition" aria-current="page">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Contact Page -->
+    <section id="hero" class="bg-gradient-to-r from-blue-600 to-purple-600 min-h-[50vh] flex items-center justify-center text-center p-4 relative overflow-hidden rounded-b-3xl shadow-2xl">
+        <div class="container mx-auto max-w-4xl z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white leading-tight" data-aos="fade-up">Let's Create Something Great</h1>
+            <p class="text-lg md:text-xl mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Ready to take your brand to the next level? Fill out the form below or get in touch with us directly.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section id="contact-form-info" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Send us a message</h2>
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Jane Doe" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="jane.doe@example.com" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                            <input type="text" id="subject" name="subject" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Project Inquiry" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition-colors" placeholder="Tell us more about your project..." required></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-blue-700 transition-all">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl flex flex-col justify-between" data-aos="fade-left" data-aos-delay="200">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Contact Information</h2>
+                        <ul class="space-y-6 text-gray-700">
+                            <li class="flex items-center space-x-4">
+                                <i class="fa-solid fa-envelope text-blue-600 text-2xl"></i>
+                                <span class="font-semibold">Email:</span>
+                                <a href="mailto:contact@scalixstudios.com" class="hover:text-blue-600 transition-colors">contact@scalixstudios.com</a>
+                            </li>
+                            <li class="flex items-center space-x-4">
+                                <i class="fa-solid fa-phone text-blue-600 text-2xl"></i>
+                                <span class="font-semibold">Phone:</span>
+                                <a href="tel:+1234567890" class="hover:text-blue-600 transition-colors">+1 (234) 567-890</a>
+                            </li>
+                            <li class="flex items-start space-x-4">
+                                <i class="fa-solid fa-location-dot text-blue-600 text-2xl mt-1"></i>
+                                <span>
+                                    <span class="font-semibold block">Address:</span>
+                                    <span class="block">123 Creative Drive, Suite 400</span>
+                                    <span class="block">Design City, DC 54321</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">Follow Us</h3>
+                        <div class="flex space-x-6 text-gray-600">
+                            <a href="#" class="text-3xl hover:text-blue-600 transition-transform hover:scale-110" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-3xl hover:text-blue-600 transition-transform hover:scale-110" aria-label="Twitter">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-3xl hover:text-blue-600 transition-transform hover:scale-110" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="text-3xl hover:text-blue-600 transition-transform hover:scale-110" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section from Index page, modified slightly for Contact -->
+    <section id="cta" class="bg-white py-16">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-4xl font-extrabold mb-4 text-gray-800" data-aos="fade-up">Ready to Start Your Project?</h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Contact us today to schedule a free consultation and discover how we can help your business thrive online.
+            </p>
+            <a href="#contact-form-info" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-700 transition-all" data-aos="zoom-in" data-aos-delay="200">
+                Get Your Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer - Consistent styling -->
+    <footer class="bg-gray-800 text-white py-12 rounded-t-xl">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Footer About -->
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="text-3xl font-extrabold text-blue-400 mb-2 block">Scalix Studios</a>
+                <p class="text-sm text-gray-400 mt-2 max-w-xs">Your partner for innovative digital marketing, creative branding, and web design solutions. Let's grow your business together.</p>
+            </div>
+            
+            <!-- Footer Links -->
+            <div class="flex flex-col md:flex-row md:justify-around space-y-6 md:space-y-0">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-blue-300">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-blue-300">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="services.html#seo" class="hover:text-white transition-colors">SEO & Content</a></li>
+                        <li><a href="services.html#social-media" class="hover:text-white transition-colors">Social Media Marketing</a></li>
+                        <li><a href="services.html#branding" class="hover:text-white transition-colors">Branding & Identity</a></li>
+                        <li><a href="services.html#web-design" class="hover:text-white transition-colors">Web Design</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info in Footer -->
+            <div class="flex flex-col justify-start">
+                <h3 class="text-lg font-bold mb-4 text-blue-300">Get in Touch</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-blue-400"></i>
+                        <span>contact@scalixstudios.com</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-blue-400"></i>
+                        <span>+1 (234) 567-890</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-blue-400"></i>
+                        <span>Design City, DC</span>
+                    </li>
+                </ul>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-700 text-center">
+            <p class="text-sm text-gray-500">&copy; 2024 Scalix Studios. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 transform scale-0" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    
+    <!-- Floating Chatbot Toggle Button -->
+    <button id="open-chatbot-btn" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg z-[9999] hover:bg-blue-700 focus:outline-none transition-all duration-300">
+        <i class="fas fa-comment-dots text-2xl"></i>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="fixed bottom-24 right-8 bg-white rounded-lg shadow-xl chatbot-container z-[9999] flex flex-col">
+        <div class="chatbot-header p-4 rounded-t-lg flex justify-between items-center">
+            <h4 class="text-lg font-bold">Scalix Assistant</h4>
+            <button id="close-chatbot-btn" class="text-white hover:text-gray-200 text-xl" aria-label="Close Chatbot">
+                &times;
+            </button>
+        </div>
+        <div id="chat-messages" class="chat-messages p-4 flex flex-col space-y-4 flex-grow">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <form id="chatbot-form" class="p-4 bg-white rounded-b-lg border-t border-gray-200">
+            <div class="flex">
+                <input type="text" id="chatbot-input" placeholder="Type a message..." class="flex-grow p-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded-r-lg hover:bg-blue-700 transition">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div id="loading-spinner" class="mt-2 text-center hidden">
+                <i class="fas fa-spinner fa-spin text-blue-500"></i>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            disable: 'mobile'
+        });
+
+        // GSAP ScrollTrigger for parallax effect on the hero section
+        gsap.to(".hero-bg", {
+            y: "30%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#hero",
+                scrub: true
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Back to Top Button Logic
+            const backToTopBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.remove('scale-0');
+                    backToTopBtn.classList.add('scale-100');
+                } else {
+                    backToTopBtn.classList.remove('scale-100');
+                    backToTopBtn.classList.add('scale-0');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Chatbot functionality
+            const openChatbotBtn = document.getElementById('open-chatbot-btn');
+            const closeChatbotBtn = document.getElementById('close-chatbot-btn');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const chatbotForm = document.getElementById('chatbot-form');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatbotInput = document.getElementById('chatbot-input');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            let chatHistory = [];
+
+            openChatbotBtn.addEventListener('click', () => {
+                chatbotContainer.classList.add('active');
+            });
+
+            closeChatbotBtn.addEventListener('click', () => {
+                chatbotContainer.classList.remove('active');
+            });
+
+            const appendMessage = (message, sender) => {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('p-3', 'rounded-xl', 'max-w-[80%]', 'break-words', 'shadow-md', 'mb-2');
+                if (sender === 'user') {
+                    messageDiv.classList.add('chat-message-user', 'self-end');
+                } else {
+                    messageDiv.classList.add('chat-message-bot', 'self-start');
+                }
+                messageDiv.innerHTML = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+            };
+            
+            // Initial bot message
+            appendMessage('Hello! How can I assist you with Scalix Studios?', 'bot');
+
+            // Function to parse markdown list and create HTML for it
+            const parseMarkdownList = (markdownText) => {
+                const lines = markdownText.split('\n');
+                let html = '';
+                let inList = false;
+
+                lines.forEach(line => {
+                    const trimmedLine = line.trim();
+                    if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
+                        if (!inList) {
+                            html += '<ul>';
+                            inList = true;
+                        }
+                        html += `<li class="mb-1 ml-4">${trimmedLine.substring(2).trim()}</li>`;
+                    } else {
+                        if (inList) {
+                            html += '</ul>';
+                            inList = false;
+                        }
+                        if (trimmedLine.length > 0) {
+                            html += `<p class="mb-2">${trimmedLine}</p>`;
+                        }
+                    }
+                });
+                if (inList) {
+                    html += '</ul>';
+                }
+                return html;
+            };
+
+            // Form submission handler for the chatbot
+            chatbotForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const userPrompt = chatbotInput.value.trim();
+                if (userPrompt === '') return;
+
+                // Append user message to chat window
+                appendMessage(userPrompt, 'user');
+
+                // Add user message to chat history
+                chatHistory.push({ role: "user", parts: [{ text: userPrompt }] });
+
+                // Clear input and show loading spinner
+                chatbotInput.value = '';
+                loadingSpinner.classList.remove('hidden');
+
+                const payload = {
+                    contents: chatHistory
+                };
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                // Exponential backoff retry logic
+                const maxRetries = 5;
+                let delay = 1000;
+                for (let i = 0; i < maxRetries; i++) {
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!response.ok) {
+                            if (response.status === 429) { // Too Many Requests
+                                await new Promise(res => setTimeout(res, delay));
+                                delay *= 2; // Exponential backoff
+                                continue;
+                            }
+                            throw new Error(`API call failed with status: ${response.status}`);
+                        }
+
+                        const result = await response.json();
+                        
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const generatedText = result.candidates[0].content.parts[0].text;
+                            appendMessage(generatedText, 'bot');
+                            chatHistory.push({ role: "model", parts: [{ text: generatedText }] });
+                        } else {
+                            appendMessage('Sorry, I couldn\'t generate a response. Please try again.', 'bot');
+                        }
+                        break; // Exit the loop on success
+
+                    } catch (error) {
+                        console.error('Error generating content ideas:', error);
+                        appendMessage(`An error occurred: ${error.message}`, 'bot');
+                        break;
+                    }
+                }
+
+                // Hide loading spinner
+                loadingSpinner.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
