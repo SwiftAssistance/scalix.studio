@@ -17,8 +17,10 @@
     <!-- GSAP for advanced animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- AOS JS for the animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- Custom CSS for subtle effects and consistent design -->
+    <!-- Custom CSS for subtle effects -->
     <style>
         /* Smooth transitions for a better user experience */
         body {
@@ -37,7 +39,7 @@
             background-color: #94a3b8; /* Slate gray */
             border-radius: 4px;
         }
-
+        
         /* Glassmorphism Effect for card backgrounds */
         .glass {
             background: rgba(255, 255, 255, 0.1);
@@ -88,312 +90,156 @@
 </head>
 <body class="bg-gray-100 text-gray-900 transition-colors duration-300 font-sans">
     
-    <!-- Navigation - Identical to the services page but with "Portfolio" link active -->
+    <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50 rounded-b-xl" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
             <a href="index.html" class="text-3xl font-extrabold text-blue-600 mb-4 md:mb-0 transform transition-all hover:scale-105">Scalix Studios</a>
             <div class="space-x-4 flex flex-wrap justify-center items-center">
-                <a href="index.html" class="text-lg font-medium text-gray-900 hover:text-blue-800 transform hover:scale-105 transition">Home</a>
-                <a href="services.html" class="text-lg font-medium text-gray-900 hover:text-blue-800 transform hover:scale-105 transition">Services</a>
-                <a href="portfolio.html" class="text-lg font-medium text-blue-600 hover:text-blue-800 transform hover:scale-105 transition" aria-current="page">Portfolio</a>
-                <a href="contact.html" class="text-lg font-medium text-gray-900 hover:text-blue-800 transform hover:scale-105 transition">Contact</a>
+                <a href="index.html" class="text-lg font-medium hover:text-blue-600 transition">Home</a>
+                <a href="services.html" class="text-lg font-medium hover:text-blue-600 transition">Services</a>
+                <a href="portfolio.html" class="text-lg font-medium text-blue-600 hover:text-blue-600 transition" aria-current="page">Portfolio</a>
+                <a href="contact.html" class="text-lg font-medium hover:text-blue-600 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section for Portfolio Page - Consistent styling -->
+    <!-- Hero Section for Portfolio Page -->
     <section id="hero" class="bg-gradient-to-r from-blue-600 to-purple-600 min-h-[50vh] flex items-center justify-center text-center p-4 relative overflow-hidden rounded-b-3xl shadow-2xl">
         <div class="container mx-auto max-w-4xl z-10 px-4">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-white leading-tight" data-aos="fade-up">Our Portfolio</h1>
             <p class="text-lg md:text-xl mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                A showcase of our creative work and successful projects that have helped our clients grow their brands.
+                A showcase of our passion for innovative design and digital strategy. Each project is a story of growth and collaboration.
             </p>
         </div>
     </section>
     
-    <!-- Featured Projects Section -->
-    <section id="featured-projects" class="py-16">
+    <!-- Case Study Section -->
+    <section id="wisetax-case-study" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Featured Case Studies</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Featured Case Study: Wisetax Accountants</h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                <!-- Featured Project 1 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300" data-aos="fade-right" data-aos-delay="100">
-                    <img src="https://placeimg.com/1200/800/tech" alt="Tech Company Rebrand" class="w-full h-auto object-cover">
+            <!-- Main Case Study Content -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden p-8 lg:p-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="md:flex md:space-x-12 items-center mb-10">
+                    <div class="md:w-1/3 flex-shrink-0 mb-6 md:mb-0">
+                        <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Wisetax+Logo" alt="Wisetax Accountants Logo" class="w-full rounded-xl shadow-md">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-3xl font-bold text-blue-600 mb-2">The Client: Wisetax Accountants</h3>
+                        <p class="text-gray-700 text-lg">Wisetax is a modern accounting firm specializing in services for small businesses and freelancers. Their goal was to expand their digital reach and generate qualified leads from their target market.</p>
+                    </div>
                 </div>
-                <div data-aos="fade-left" data-aos-delay="200">
-                    <h3 class="text-3xl font-bold mb-4">Complete Brand Overhaul for InnovateTech</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        We worked with InnovateTech, a burgeoning AI startup, to redefine their brand identity from the ground up. The project involved a new logo, a comprehensive visual style guide, and a compelling brand narrative. The result was a cohesive and modern brand that positioned them as a leader in their field, leading to a 40% increase in investor interest.
-                    </p>
-                    <button class="case-study-btn inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-blue-700 transition-all"
-                        data-title="InnovateTech Rebrand"
-                        data-image="https://placeimg.com/800/600/tech"
-                        data-summary="We redefined the brand identity for AI startup InnovateTech, focusing on a new logo, visual style, and narrative to position them as a market leader."
-                        data-challenge="InnovateTech needed a powerful brand identity that could help them stand out in a competitive and rapidly growing market. Their existing branding was generic and did not communicate their innovative approach to AI."
-                        data-solution="Our solution involved a complete brand overhaul. We developed a modern, scalable logo and a vibrant color palette. We also created a consistent visual language and brand voice to be used across all their marketing materials, from their website to pitch decks."
-                        data-results="The rebrand was highly successful, leading to a 40% increase in investor interest and a significant boost in brand recognition. The new identity resonated with their target audience and helped them secure key partnerships."
-                        aria-label="Read case study for InnovateTech Rebrand">
-                        Read Case Study
-                    </button>
+
+                <!-- The Challenge -->
+                <div class="mb-10">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-bullseye text-red-500 mr-3"></i> The Challenge</h4>
+                    <p class="text-gray-700 mb-4">Wisetax had a limited online presence and was struggling to attract new clients through digital channels. Their primary challenges were:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Low organic visibility on Google for key accounting services.</li>
+                        <li>A lack of a consistent lead generation funnel.</li>
+                    </ul>
+                </div>
+
+                <!-- Our Solution -->
+                <div class="mb-10">
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-lightbulb text-yellow-500 mr-3"></i> Our Solution</h4>
+                    <p class="text-gray-700 mb-4">Scalix Studios developed a comprehensive Google SEO strategy to help Wisetax Accountants find their target audience and grow their business.</p>
+                    
+                    <div class="grid grid-cols-1 gap-8 mt-6">
+                        <!-- SEO Strategy -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
+                            <h5 class="text-xl font-bold text-blue-600 mb-3">Google SEO Strategy</h5>
+                            <p class="text-gray-700 mb-4">We conducted comprehensive keyword research to identify high-intent search terms. Our work included:</p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong>On-Page Optimization:</strong> Rewriting website content and meta descriptions to rank for terms like "freelance accountant" and "small business tax services."</li>
+                                <li><strong>Content Creation:</strong> Developing a blog series focused on tax tips and financial advice for small business owners.</li>
+                                <li><strong>Technical SEO:</strong> Improving site speed and mobile-friendliness to boost search rankings.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Results -->
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fas fa-chart-line text-green-500 mr-3"></i> The Results</h4>
+                    <p class="text-gray-700 mb-4">Within a 3-month period, our SEO strategy led to significant improvements:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 font-bold">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Increased organic website traffic by 45%.</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Established Wisetax as a trusted industry expert with new online content.</li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                <!-- Featured Project 2 -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 order-last md:order-first" data-aos="fade-left" data-aos-delay="100">
-                    <img src="https://placeimg.com/1200/800/fashion" alt="Luxury Fashion E-commerce Website" class="w-full h-auto object-cover">
-                </div>
-                <div data-aos="fade-right" data-aos-delay="200">
-                    <h3 class="text-3xl font-bold mb-4">Luxury E-commerce Platform for Elara</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Elara, a high-end fashion brand, needed a digital storefront that reflected their commitment to elegance and quality. Our team developed a custom e-commerce website with a minimalist design, smooth user journey, and integrated payment systems. The new site saw a 25% increase in average order value within the first quarter.
-                    </p>
-                    <button class="case-study-btn inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-blue-700 transition-all"
-                        data-title="Elara E-commerce Platform"
-                        data-image="https://placeimg.com/800/600/fashion"
-                        data-summary="We built a custom, elegant e-commerce website for luxury fashion brand Elara, focusing on a seamless user experience and a minimalist design that highlights their products."
-                        data-challenge="Elara's existing online store was outdated and failed to convey the premium quality of their brand. The user experience was clunky, which negatively impacted sales and brand perception."
-                        data-solution="Our team designed and developed a new e-commerce platform from the ground up. We focused on a clean, responsive design, high-quality product imagery, and a simplified checkout process. We also integrated advanced analytics to track user behavior and optimize the sales funnel."
-                        data-results="The new platform resulted in a significant improvement in key metrics. The average order value increased by 25%, and the overall conversion rate improved by 18% within the first three months of launch."
-                        aria-label="Read case study for Elara E-commerce Platform">
-                        Read Case Study
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio-grid" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Our Latest Projects</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Portfolio Item 1 (with hover) -->
-                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://placeimg.com/800/600/architecture" alt="E-commerce Website Redesign" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">E-commerce Redesign</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            A complete overhaul of an online store's user experience and visual branding to boost conversions and sales.
-                        </p>
-                        <button class="case-study-btn inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                        data-title="E-commerce Redesign"
-                        data-image="https://placeimg.com/800/600/architecture"
-                        data-summary="We led a complete e-commerce platform redesign for a retail client, modernizing their site to improve user experience and drive sales growth."
-                        data-challenge="The client's e-commerce platform was outdated, slow, and non-responsive. This led to high bounce rates and cart abandonment, hurting their revenue potential."
-                        data-solution="Our team implemented a fresh, modern design and migrated the site to a more scalable e-commerce platform. We optimized the site for mobile devices and streamlined the checkout process."
-                        data-results="The new site's performance metrics improved across the board. The conversion rate increased by 20%, and sales grew by 35% in the first six months."
-                        aria-label="View case study for E-commerce Redesign">
-                        View Case Study
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 2 (with hover) -->
-                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://placeimg.com/800/600/logo" alt="Corporate Brand Identity" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Brand Identity for Tech Startup</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Creating a powerful and memorable brand identity, including logo, color palette, and messaging for a new tech company.
-                        </p>
-                        <button class="case-study-btn inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                        data-title="Tech Startup Brand Identity"
-                        data-image="https://placeimg.com/800/600/logo"
-                        data-summary="We crafted a comprehensive brand identity for a new tech startup, including a new logo, color scheme, and brand voice to establish their presence in the market."
-                        data-challenge="The new startup needed a strong, professional brand identity to attract early-stage investors and build credibility with their target audience."
-                        data-solution="We conducted a series of workshops to understand the company's core values and vision. We then developed a modern logo, a versatile color palette, and a comprehensive style guide that covered everything from typography to social media graphics."
-                        data-results="The new brand identity was well-received by both investors and customers. It helped the company secure its first round of funding and quickly build a loyal customer base."
-                        aria-label="View case study for Tech Startup Brand Identity">
-                        View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 (with hover) -->
-                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://placeimg.com/800/600/social" alt="Social Media Marketing Campaign" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Viral Social Media Campaign</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Developing a multi-platform social media strategy and content that resulted in a 300% increase in engagement.
-                        </p>
-                        <button class="case-study-btn inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                        data-title="Viral Social Media Campaign"
-                        data-image="https://placeimg.com/800/600/social"
-                        data-summary="Our team designed and executed a multi-platform social media campaign that generated significant buzz and a 300% increase in user engagement for a consumer product brand."
-                        data-challenge="The client wanted to increase their brand's visibility and user engagement on social media platforms without a large ad budget. They needed a campaign that could go viral organically."
-                        data-solution="We developed a creative content strategy centered around user-generated content and a fun, interactive challenge. We created engaging short-form videos and shareable graphics and leveraged popular hashtags to maximize reach."
-                        data-results="The campaign was a massive success, leading to a 300% increase in engagement and a 500% increase in follower count on platforms like Instagram and TikTok. The campaign's content was widely shared and featured by influencers."
-                        aria-label="View case study for Viral Social Media Campaign">
-                        View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4 (with hover) -->
-                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://placeimg.com/800/600/website" alt="Lead Generation Website" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Lead Generation Website</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Building a conversion-focused website with integrated forms and analytics to capture high-quality leads.
-                        </p>
-                        <button class="case-study-btn inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                        data-title="Lead Generation Website"
-                        data-image="https://placeimg.com/800/600/website"
-                        data-summary="We designed and developed a high-converting lead generation website for a B2B service company, focusing on a clear user journey and integrated forms."
-                        data-challenge="The client's previous website had poor user navigation and lacked clear calls-to-action, resulting in very few qualified leads from their online traffic."
-                        data-solution="Our solution was to create a focused, single-purpose website designed for lead capture. We implemented strategic call-to-action buttons, simplified navigation, and created a secure, integrated contact form system that feeds directly into their CRM."
-                        data-results="The new website significantly improved lead quality and quantity. The conversion rate from visitor to lead increased by 45%, providing a much better ROI on their marketing spend."
-                        aria-label="View case study for Lead Generation Website">
-                        View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 5 (with hover) -->
-                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://placeimg.com/800/600/seo" alt="SEO Strategy & Content Marketing" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">SEO & Content Marketing</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Executing a long-term SEO strategy and content plan to drive organic traffic and establish authority in the industry.
-                        </p>
-                        <button class="case-study-btn inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                        data-title="SEO & Content Marketing"
-                        data-image="https://placeimg.com/800/600/seo"
-                        data-summary="We implemented a robust, long-term SEO strategy and content plan that significantly increased organic search traffic and established the client as a thought leader in their industry."
-                        data-challenge="The client had a well-designed website but struggled to gain visibility in search engine results. They needed a strategy to attract more organic traffic and compete with larger companies."
-                        data-solution="We performed a comprehensive SEO audit and developed a content calendar based on high-value keywords. We produced a series of expert articles, blog posts, and guides to target their audience and improve their search ranking."
-                        data-results="Within eight months, the client's website achieved top rankings for several key search terms. Organic traffic increased by over 150%, and they saw a direct correlation to new business inquiries."
-                        aria-label="View case study for SEO & Content Marketing">
-                        View Case Study
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 6 (with hover) -->
-                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://placeimg.com/800/600/email" alt="Email Marketing Campaign" class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-110">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Automated Email Campaign</h3>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Designing and implementing a series of automated email campaigns to nurture leads and build customer loyalty.
-                        </p>
-                        <button class="case-study-btn inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors"
-                        data-title="Automated Email Campaign"
-                        data-image="https://placeimg.com/800/600/email"
-                        data-summary="We created a sophisticated automated email marketing campaign that nurtures new leads and builds customer loyalty for a subscription-based service."
-                        data-challenge="The client had a growing list of email subscribers but lacked a strategy to engage them effectively, leading to a high churn rate and low conversion from free trial to paid user."
-                        data-solution="We developed a multi-step email drip campaign that was triggered by user actions. The emails were personalized, providing valuable content and incentives at each stage of the customer journey."
-                        data-results="The automated campaign led to a 20% increase in the free-to-paid conversion rate and a 15% reduction in customer churn, proving the effectiveness of the strategy."
-                        aria-label="View case study for Automated Email Campaign">
-                        View Case Study
-                        </button>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </section>
 
-    <!-- Client Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-blue-600 text-white rounded-3xl mx-4 my-8 md:mx-16" data-aos="fade-up">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-12">What Our Clients Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="p-6 rounded-2xl shadow-xl bg-blue-700/50">
-                    <p class="text-lg italic mb-4">"Scalix Studios completely transformed our online presence. Their team is professional, creative, and delivers on their promises. We saw a massive increase in web traffic."</p>
-                    <p class="font-bold">- Jane Doe, CEO of Fashion Co.</p>
+    <!-- Footer - Consistent styling -->
+    <footer class="bg-gray-800 text-white py-12 rounded-t-xl">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Footer About -->
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="text-3xl font-extrabold text-blue-400 mb-2 block">Scalix Studios</a>
+                <p class="text-sm text-gray-400 mt-2 max-w-xs">Your partner for innovative digital marketing, creative branding, and web design solutions. Let's grow your business together.</p>
+            </div>
+            
+            <!-- Footer Links -->
+            <div class="flex flex-col md:flex-row md:justify-around space-y-6 md:space-y-0">
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-blue-300">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="p-6 rounded-2xl shadow-xl bg-blue-700/50">
-                    <p class="text-lg italic mb-4">"The branding work they did for our startup was simply outstanding. They captured our vision perfectly and gave us an identity that we're truly proud of."</p>
-                    <p class="font-bold">- John Smith, Founder of Tech Innovations</p>
+                <div>
+                    <h3 class="text-lg font-bold mb-4 text-blue-300">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#seo" class="hover:text-white transition-colors">SEO & Content</a></li>
+                        <li><a href="#social-media" class="hover:text-white transition-colors">Social Media Marketing</a></li>
+                        <li><a href="#branding" class="hover:text-white transition-colors">Branding & Identity</a></li>
+                        <li><a href="#web-design" class="hover:text-white transition-colors">Web Design</a></li>
+                    </ul>
                 </div>
-                <!-- Testimonial 3 -->
-                <div class="p-6 rounded-2xl shadow-xl bg-blue-700/50">
-                    <p class="text-lg italic mb-4">"From social media to SEO, Scalix Studios has been an invaluable partner. They provide clear, data-driven insights that have helped us achieve incredible growth."</p>
-                    <p class="font-bold">- Alex Chen, Marketing Director</p>
+            </div>
+
+            <!-- Contact Info in Footer -->
+            <div class="flex flex-col justify-start">
+                <h3 class="text-lg font-bold mb-4 text-blue-300">Get in Touch</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-blue-400"></i>
+                        <span>contact@scalixstudios.com</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-blue-400"></i>
+                        <span>+1 (234) 567-890</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-blue-400"></i>
+                        <span>Design City, DC</span>
+                    </li>
+                </ul>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Call to Action Section - Consistent styling -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-center text-white rounded-3xl shadow-xl mx-4 my-8 md:mx-16" data-aos="zoom-in">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to Grow Your Business?</h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">
-                Our team is ready to help you build a stronger brand and drive exceptional results. Contact us today to discuss your goals.
-            </p>
-            <a href="index.html#contact" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">
-                Let's Get Started
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer - Identical to other pages -->
-    <footer class="bg-gray-900 text-gray-300 py-10 mt-8 rounded-t-3xl shadow-inner">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-2xl font-bold mb-4">Scalix Studios</h3>
-            <p class="text-sm max-w-xl mx-auto mb-6">Innovative advertising and marketing solutions for your business. Let's work together to achieve your goals.</p>
-            <div class="mt-4 space-x-6 text-xl">
-                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#" target="_blank" class="hover:text-blue-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <p class="text-xs mt-6">&copy; 2025 Scalix Studios. All rights reserved.</p>
+        <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-700 text-center">
+            <p class="text-sm text-gray-500">&copy; 2024 Scalix Studios. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Back to top button - Identical to other pages -->
+    
+    <!-- Back to top button -->
     <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 transform scale-0" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
-
-    <!-- Case Study Modal -->
-    <section id="case-study-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[9999] hidden">
-        <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <div class="relative">
-                <!-- Close Button -->
-                <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-3xl font-bold" aria-label="Close case study modal">
-                    &times;
-                </button>
-                
-                <!-- Modal Content -->
-                <img id="modal-image" src="" alt="Case Study Image" class="w-full h-64 md:h-96 object-cover rounded-t-xl mb-4">
-                <div class="p-6 md:p-8">
-                    <h2 id="modal-title" class="text-3xl md:text-4xl font-bold mb-2 text-gray-800"></h2>
-                    <p id="modal-summary" class="text-gray-600 text-lg mb-6"></p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Challenge</h3>
-                            <p id="modal-challenge" class="text-gray-700 leading-relaxed"></p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Solution</h3>
-                            <p id="modal-solution" class="text-gray-700 leading-relaxed"></p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-blue-600 mb-2">Results</h3>
-                            <p id="modal-results" class="text-gray-700 leading-relaxed"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Chatbot Button -->
+    
+    <!-- Floating Chatbot Toggle Button -->
     <button id="open-chatbot-btn" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg z-[9999] hover:bg-blue-700 focus:outline-none transition-all duration-300">
         <i class="fas fa-comment-dots text-2xl"></i>
     </button>
@@ -421,229 +267,145 @@
             </div>
         </form>
     </div>
-    
-    <!-- AOS and Custom JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     <script>
         // Initialize AOS animations
         AOS.init({
-            duration: 500,
+            duration: 800,
             once: true,
-            easing: 'ease-in-out',
-            delay: 0,
+            disable: 'mobile'
         });
 
-        // Back to Top Button Logic
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('scale-0');
-                backToTopBtn.classList.add('scale-100');
-            } else {
-                backToTopBtn.classList.remove('scale-100');
-                backToTopBtn.classList.add('scale-0');
+        // GSAP ScrollTrigger for parallax effect on the hero section
+        gsap.to(".hero-bg", {
+            y: "30%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#hero",
+                scrub: true
             }
         });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Case Study Modal Logic
-        const modal = document.getElementById('case-study-modal');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const caseStudyButtons = document.querySelectorAll('.case-study-btn');
-        const modalTitle = document.getElementById('modal-title');
-        const modalImage = document.getElementById('modal-image');
-        const modalSummary = document.getElementById('modal-summary');
-        const modalChallenge = document.getElementById('modal-challenge');
-        const modalSolution = document.getElementById('modal-solution');
-        const modalResults = document.getElementById('modal-results');
-
-        // Function to show the modal with dynamic content
-        function showCaseStudyModal(data) {
-            modalTitle.textContent = data.title;
-            modalImage.src = data.image;
-            modalSummary.textContent = data.summary;
-            modalChallenge.textContent = data.challenge;
-            modalSolution.textContent = data.solution;
-            modalResults.textContent = data.results;
-            
-            modal.classList.remove('hidden');
-            modal.querySelector('div').classList.remove('scale-95');
-            modal.querySelector('div').classList.add('scale-100');
-            document.body.style.overflow = 'hidden'; // Prevents scrolling behind the modal
-        }
-
-        // Function to hide the modal
-        function hideCaseStudyModal() {
-            modal.querySelector('div').classList.remove('scale-100');
-            modal.querySelector('div').classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300); // Wait for the transition to finish
-        }
-
-        // Add event listeners to all case study buttons
-        caseStudyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const data = {
-                    title: button.dataset.title,
-                    image: button.dataset.image,
-                    summary: button.dataset.summary,
-                    challenge: button.dataset.challenge,
-                    solution: button.dataset.solution,
-                    results: button.dataset.results,
-                };
-                showCaseStudyModal(data);
-            });
-        });
-
-        // Add event listeners for closing the modal
-        closeModalBtn.addEventListener('click', hideCaseStudyModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                hideCaseStudyModal();
-            }
-        });
-
-        // Disable scrolling with arrow keys when modal is open
-        document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('hidden')) {
-                if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageUp' || e.key === 'PageDown' || e.key === 'End' || e.key === 'Home') {
-                    e.preventDefault();
-                }
-            }
-        });
-
-        // Chatbot functionality
-        const openChatbotBtn = document.getElementById('open-chatbot-btn');
-        const closeChatbotBtn = document.getElementById('close-chatbot-btn');
-        const chatbotContainer = document.getElementById('chatbot-container');
-        const chatbotForm = document.getElementById('chatbot-form');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatbotInput = document.getElementById('chatbot-input');
-        const loadingSpinner = document.getElementById('loading-spinner');
-        let chatHistory = [];
-
-        openChatbotBtn.addEventListener('click', () => {
-            chatbotContainer.classList.add('active');
-        });
-
-        closeChatbotBtn.addEventListener('click', () => {
-            chatbotContainer.classList.remove('active');
-        });
-
-        const appendMessage = (message, sender) => {
-            const messageDiv = document.createElement('div');
-            messageDiv.classList.add('p-3', 'rounded-xl', 'max-w-[80%]', 'break-words', 'shadow-md', 'mb-2');
-            if (sender === 'user') {
-                messageDiv.classList.add('chat-message-user', 'self-end');
-            } else {
-                messageDiv.classList.add('chat-message-bot', 'self-start');
-            }
-            messageDiv.innerHTML = message;
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
-        };
         
-        // Initial bot message
-        appendMessage('Hello! How can I assist you with Scalix Studios?', 'bot');
-
-        // Function to parse markdown list and create HTML for it
-        const parseMarkdownList = (markdownText) => {
-            const lines = markdownText.split('\n');
-            let html = '';
-            let inList = false;
-
-            lines.forEach(line => {
-                const trimmedLine = line.trim();
-                if (trimmedLine.startsWith('* ') || trimmedLine.startsWith('- ')) {
-                    if (!inList) {
-                        html += '<ul>';
-                        inList = true;
-                    }
-                    html += `<li class="mb-1 ml-4">${trimmedLine.substring(2).trim()}</li>`;
+        document.addEventListener('DOMContentLoaded', () => {
+            // Back to Top Button Logic
+            const backToTopBtn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.remove('scale-0');
+                    backToTopBtn.classList.add('scale-100');
                 } else {
-                    if (inList) {
-                        html += '</ul>';
-                        inList = false;
-                    }
-                    if (trimmedLine.length > 0) {
-                        html += `<p class="mb-2">${trimmedLine}</p>`;
-                    }
+                    backToTopBtn.classList.remove('scale-100');
+                    backToTopBtn.classList.add('scale-0');
                 }
             });
-            if (inList) {
-                html += '</ul>';
-            }
-            return html;
-        };
 
-        // Form submission handler for the chatbot
-        chatbotForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
 
-            const userPrompt = chatbotInput.value.trim();
-            if (userPrompt === '') return;
+            // Chatbot functionality
+            const openChatbotBtn = document.getElementById('open-chatbot-btn');
+            const closeChatbotBtn = document.getElementById('close-chatbot-btn');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const chatbotForm = document.getElementById('chatbot-form');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatbotInput = document.getElementById('chatbot-input');
+            const loadingSpinnerChatbot = document.getElementById('loading-spinner');
+            let chatHistory = [];
 
-            // Append user message to chat window
-            appendMessage(userPrompt, 'user');
+            openChatbotBtn.addEventListener('click', () => {
+                chatbotContainer.classList.add('active');
+            });
 
-            // Add user message to chat history
-            chatHistory.push({ role: "user", parts: [{ text: userPrompt }] });
+            closeChatbotBtn.addEventListener('click', () => {
+                chatbotContainer.classList.remove('active');
+            });
 
-            // Clear input and show loading spinner
-            chatbotInput.value = '';
-            loadingSpinner.classList.remove('hidden');
-
-            const payload = {
-                contents: chatHistory
-            };
-            const apiKey = "AIzaSyDswQ0RsmLR1Kcfmw0u7dkiCSzA9DfUr30";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-            // Exponential backoff retry logic
-            const maxRetries = 5;
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API call failed with status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        const generatedText = result.candidates[0].content.parts[0].text;
-                        // Use a custom parser for a better look without external libraries
-                        const htmlContent = parseMarkdownList(generatedText);
-                        appendMessage(htmlContent, 'bot');
-                    } else {
-                        appendMessage('Sorry, I couldn\'t generate a response. Please try again.', 'bot');
-                    }
-                    break; // Exit the loop on success
-
-                } catch (error) {
-                    console.error('Error generating content ideas:', error);
-                    appendMessage(`An error occurred: ${error.message}`, 'bot');
-                    break;
+            const appendMessage = (message, sender) => {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('p-3', 'rounded-xl', 'max-w-[80%]', 'break-words', 'shadow-md', 'mb-2');
+                if (sender === 'user') {
+                    messageDiv.classList.add('chat-message-user', 'self-end');
+                } else {
+                    messageDiv.classList.add('chat-message-bot', 'self-start');
                 }
-            }
+                messageDiv.innerHTML = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+            };
+            
+            // Initial bot message
+            appendMessage('Hello! How can I assist you with Scalix Studios?', 'bot');
 
-            // Hide loading spinner
-            loadingSpinner.classList.add('hidden');
+            // Form submission handler for the chatbot
+            chatbotForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const userPrompt = chatbotInput.value.trim();
+                if (userPrompt === '') return;
+
+                // Append user message to chat window
+                appendMessage(userPrompt, 'user');
+
+                // Add user message to chat history
+                chatHistory.push({ role: "user", parts: [{ text: userPrompt }] });
+
+                // Clear input and show loading spinner
+                chatbotInput.value = '';
+                loadingSpinnerChatbot.classList.remove('hidden');
+
+                const payload = {
+                    contents: chatHistory
+                };
+                const apiKey = "AIzaSyDswQ0RsmLR1Kcfmw0u7dkiCSzA9DfUr30";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                // Exponential backoff retry logic
+                const maxRetries = 5;
+                let delay = 1000;
+                for (let i = 0; i < maxRetries; i++) {
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!response.ok) {
+                            if (response.status === 429) { // Too Many Requests
+                                await new Promise(res => setTimeout(res, delay));
+                                delay *= 2; // Exponential backoff
+                                continue;
+                            }
+                            throw new Error(`API call failed with status: ${response.status}`);
+                        }
+
+                        const result = await response.json();
+                        
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const generatedText = result.candidates[0].content.parts[0].text;
+                            appendMessage(generatedText, 'bot');
+                            chatHistory.push({ role: "model", parts: [{ text: generatedText }] });
+                        } else {
+                            appendMessage('Sorry, I couldn\'t generate a response. Please try again.', 'bot');
+                        }
+                        break; // Exit the loop on success
+
+                    } catch (error) {
+                        console.error('Error generating content ideas:', error);
+                        appendMessage(`An error occurred: ${error.message}`, 'bot');
+                        break;
+                    }
+                }
+
+                // Hide loading spinner
+                loadingSpinnerChatbot.classList.add('hidden');
+            });
         });
     </script>
 </body>
