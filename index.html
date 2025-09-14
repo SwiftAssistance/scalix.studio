@@ -19,8 +19,7 @@
     ================================================================== -->
     <meta property="og:title" content="Scalix Studios | Results-Driven Digital Agency in Berkshire">
     <meta property="og:description" content="Partner with Scalix Studios to elevate your brand. Expert SEO, web development, and creative branding services for businesses in Berkshire and the Thames Valley.">
-    <!-- MODIFIED: Image path updated to your logo -->
-    <meta property="og:image" content="scalix_logo.jpg">
+    <meta property="og:image" content="/scalix_logo.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.scalixstudios.com">
@@ -30,15 +29,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Scalix Studios | Results-Driven Digital Agency in Berkshire">
     <meta name="twitter:description" content="Expert SEO, web development, and creative branding services for businesses in Berkshire and the Thames Valley.">
-    <!-- MODIFIED: Image path updated to your logo -->
-    <meta name="twitter:image" content="scalix_logo.jpg">
+    <meta name="twitter:image" content="/scalix_logo.jpg">
 
     <!-- =================================================================
     FAVICONS & DEVICE COMPATIBILITY
     ================================================================== -->
-    <!-- MODIFIED: Icon paths updated to your logo -->
-    <link rel="icon" type="image/jpeg" href="scalix_logo.jpg">
-    <link rel="apple-touch-icon" href="scalix_logo.jpg">
+    <!-- MODIFIED: Added sizes and cache-busting query string -->
+    <link rel="icon" type="image/jpeg" sizes="any" href="/scalix_logo.jpg?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/scalix_logo.jpg?v=2">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#4c1d95">
 
@@ -50,7 +48,7 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Scalix Studios",
-      "image": "scalix_logo.jpg",
+      "image": "/scalix_logo.jpg",
       "@id": "https://www.scalixstudios.com",
       "url": "https://www.scalixstudios.com",
       "telephone": "+447568171184",
@@ -133,7 +131,6 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- The rest of your body content remains unchanged... -->
     <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-100 transition-opacity duration-500">
         <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20"></div>
     </div>
@@ -155,10 +152,10 @@
                 <span class="text-xs font-semibold text-gray-500 tracking-widest uppercase">Studios</span>
             </a>
             <div class="space-x-6 flex items-center">
-                <a href="#hero" class="text-lg font-medium text-blue-600 transition-colors" aria-current="page">Home</a>
-                <a href="#services" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-                <a href="#testimonials" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Work</a>
-                <a href="#contact" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                <a href="index.html" class="text-lg font-medium text-blue-600 transition-colors" aria-current="page">Home</a>
+                <a href="services.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                <a href="portfolio.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Work</a>
+                <a href="contact.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
@@ -277,10 +274,10 @@
                 <div>
                     <h4 class="font-bold text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="testimonials.html" class="text-gray-400 hover:text-white transition-colors">Work</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#hero" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Work</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -751,6 +748,4 @@
     </script>
 </body>
 </html>
-
-
 
