@@ -8,8 +8,8 @@
     PRIMARY SEO & METADATA
     ================================================================== -->
     <title>Scalix Studios | Web Design & SEO in Berkshire, Windsor & Thames Valley</title>
-    <meta name="description" content="Scalix Studios: Your local web design and SEO agency in Berkshire. We help businesses in Windsor, Slough, and the Thames Valley get more clients with expert digital marketing.">
-    <meta name="keywords" content="digital agency berkshire, seo services windsor, web design slough, social media marketing thames valley, creative agency maidenhead, scalix studios, local marketing berkshire, small business seo windsor">
+    <meta name="description" content="Scalix Studios: #1 Web Design & SEO Agency in Berkshire. We help local businesses in Windsor, Slough & the Thames Valley get more clients with results-driven digital marketing.">
+    <meta name="keywords" content="digital agency berkshire, seo services windsor, web design slough, social media marketing thames valley, creative agency maidenhead, scalix studios, local marketing berkshire, small business seo windsor, online visibility">
     <meta name="author" content="Scalix Studios">
     <link rel="canonical" href="https://www.scalixstudios.co.uk/">
     <meta name="robots" content="index, follow">
@@ -85,7 +85,7 @@
        "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "ratingCount": "3"
+        "reviewCount": "3"
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -151,6 +151,7 @@
             transition: all 0.3s ease-in-out;
             width: 280px; 
             height: 280px;
+            flex-shrink: 0; /* Prevents shrinking */
         }
         .service-card-new:hover {
             transform: translateY(-8px) scale(1.05);
@@ -273,8 +274,36 @@
             </div>
         </section>
 
+        <!-- Why Local Section -->
+        <section id="why-local" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <span class="text-indigo-600 font-semibold">Local Expertise</span>
+                    <h2 class="text-4xl md:text-5xl font-bold">Why Choose a Local Berkshire Agency?</h2>
+                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4">We understand the Windsor, Slough, and Thames Valley market better than anyone.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="animate-on-scroll">
+                        <i class="fas fa-map-marked-alt text-4xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Local Market Knowledge</h3>
+                        <p class="text-slate-600">We know what your customers in Berkshire are searching for, giving you a competitive edge in local search results.</p>
+                    </div>
+                    <div class="animate-on-scroll" style="transition-delay: 100ms;">
+                        <i class="fas fa-handshake text-4xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Face-to-Face Collaboration</h3>
+                        <p class="text-slate-600">As a Windsor-based agency, we're always available for a coffee and a chat to discuss your project in person.</p>
+                    </div>
+                    <div class="animate-on-scroll" style="transition-delay: 200ms;">
+                        <i class="fas fa-users text-4xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Supporting the Community</h3>
+                        <p class="text-slate-600">By working with us, you're investing in a local Berkshire business that's committed to seeing our community thrive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Case Studies Section -->
-        <section id="work" class="py-20 bg-slate-50">
+        <section id="work" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 animate-on-scroll">
                     <span class="text-indigo-600 font-semibold">Our Success Stories</span>
@@ -283,41 +312,53 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Case Study 1 -->
-                    <div class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll">
-                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop" alt="Accountant working on a laptop with a calculator and financial documents" class="w-full h-48 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6">
-                            <span class="text-sm font-semibold text-indigo-600">SEO & Web Design</span>
-                            <h3 class="text-2xl font-bold my-2">Accountancy Firm, Slough</h3>
-                            <p class="text-slate-600 mb-4">Developed a professional, SEO-optimized website that achieved first-page rankings for key local search terms, driving a steady stream of new client consultations.</p>
-                            <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                    <article class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll flex flex-col">
+                        <img src="case-study-accountancy.webp" alt="Professionals in a Slough meeting discussing financial charts and SEO results" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div>
+                                <span class="text-sm font-semibold text-indigo-600">SEO & Web Design</span>
+                                <h3 class="text-2xl font-bold my-2">Accountancy Firm, Slough</h3>
+                                <p class="text-slate-600 mb-4">Developed a professional, SEO-optimized website that achieved first-page rankings for key local search terms, driving a steady stream of new client consultations.</p>
+                            </div>
+                            <div class="mt-auto pt-4">
+                                <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                     <!-- Case Study 2 -->
-                    <div class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll" style="transition-delay: 100ms;">
-                        <img src="https://images.unsplash.com/photo-1595514522863-b765e921d882?q=80&w=1964&auto=format&fit=crop" alt="Craftsman carefully working on a piece of bespoke wooden furniture in a workshop" class="w-full h-48 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6">
-                             <span class="text-sm font-semibold text-indigo-600">Branding & Web Development</span>
-                            <h3 class="text-2xl font-bold my-2">Bespoke Furniture, Windsor</h3>
-                            <p class="text-slate-600 mb-4">Created a sophisticated brand identity and a visually stunning portfolio website to showcase high-end custom furniture, attracting a premium clientele.</p>
-                            <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                    <article class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll flex flex-col" style="transition-delay: 100ms;">
+                        <img src="case-study-furniture.webp" alt="A stylish modern living room in Windsor showcasing high-end bespoke furniture" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div>
+                                 <span class="text-sm font-semibold text-indigo-600">Branding & Web Development</span>
+                                <h3 class="text-2xl font-bold my-2">Bespoke Furniture, Windsor</h3>
+                                <p class="text-slate-600 mb-4">Created a sophisticated brand identity and a visually stunning portfolio website to showcase high-end custom furniture, attracting a premium clientele.</p>
+                            </div>
+                            <div class="mt-auto pt-4">
+                                <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                     <!-- Case Study 3 -->
-                    <div class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll" style="transition-delay: 200ms;">
-                         <img src="https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=80&w=1974&auto=format&fit=crop" alt="Newly installed modern wooden fence in a garden" class="w-full h-48 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6">
-                            <span class="text-sm font-semibold text-indigo-600">Google Ads Campaign</span>
-                            <h3 class="text-2xl font-bold my-2">Fencing Co, Portsmouth</h3>
-                            <p class="text-slate-600 mb-4">Launched a targeted Google Search campaign with a £500 ad spend, generating a significant increase in qualified leads and phone inquiries within the first month.</p>
-                            <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                    <article class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll flex flex-col" style="transition-delay: 200ms;">
+                         <img src="case-study-fencing.webp" alt="A modern horizontal slat fence providing privacy for a garden in Portsmouth" class="w-full h-48 object-cover" loading="lazy" decoding="async">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div>
+                                <span class="text-sm font-semibold text-indigo-600">Google Ads Campaign</span>
+                                <h3 class="text-2xl font-bold my-2">Fencing Co, Portsmouth</h3>
+                                <p class="text-slate-600 mb-4">Launched a targeted Google Search campaign with a £500 ad spend, generating a significant increase in qualified leads and phone inquiries within the first month.</p>
+                            </div>
+                            <div class="mt-auto pt-4">
+                                <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
          <!-- Pricing Section -->
-        <section id="pricing" class="py-20 bg-white">
+        <section id="pricing" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 animate-on-scroll">
                     <span class="text-indigo-600 font-semibold">Our Pricing</span>
@@ -326,11 +367,11 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                     <!-- Starter Plan -->
-                    <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center animate-on-scroll">
+                    <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center animate-on-scroll flex flex-col">
                         <h3 class="text-2xl font-bold mb-2">Starter</h3>
                         <p class="text-slate-500 mb-6">Get your business online</p>
                         <p class="text-5xl font-extrabold mb-6">£299</p>
-                        <ul class="space-y-4 text-slate-600 mb-8 text-left">
+                        <ul class="space-y-4 text-slate-600 mb-8 text-left flex-grow">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>4-6 Page Website</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Full SEO Optimisation</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Mobile Responsive</li>
@@ -339,12 +380,12 @@
                         <a href="contact.html" class="bg-slate-200 text-slate-800 font-bold py-3 px-6 rounded-full hover:bg-slate-300 transition-colors w-full block mt-auto">Get Started</a>
                     </div>
                     <!-- Growth Plan -->
-                     <div class="pricing-card border-indigo-600 bg-white rounded-lg p-8 text-center relative animate-on-scroll" style="transition-delay: 100ms;">
+                     <div class="pricing-card border-indigo-600 bg-white rounded-lg p-8 text-center relative animate-on-scroll flex flex-col" style="transition-delay: 100ms;">
                         <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</div>
                         <h3 class="text-2xl font-bold mb-2">Growth</h3>
                         <p class="text-slate-500 mb-6">For businesses ready to scale</p>
                         <p class="text-5xl font-extrabold mb-6">£499</p>
-                        <ul class="space-y-4 text-slate-600 mb-8 text-left">
+                        <ul class="space-y-4 text-slate-600 mb-8 text-left flex-grow">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Unlimited Page Website</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Full SEO Optimisation</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Web3 Contact APIs</li>
@@ -356,11 +397,11 @@
                         <a href="contact.html" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors w-full block mt-auto">Choose Plan</a>
                     </div>
                     <!-- Enterprise Plan -->
-                     <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center animate-on-scroll" style="transition-delay: 200ms;">
+                     <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center animate-on-scroll flex flex-col" style="transition-delay: 200ms;">
                         <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
                         <p class="text-slate-500 mb-6">For established businesses</p>
                         <p class="text-5xl font-extrabold mb-6">Let's Talk</p>
-                        <ul class="space-y-4 text-slate-600 mb-8 text-left">
+                        <ul class="space-y-4 text-slate-600 mb-8 text-left flex-grow">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Unlimited Pages</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Ongoing SEO & Ads</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Dedicated Support</li>
@@ -373,7 +414,7 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 bg-slate-50">
+        <section id="testimonials" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                  <div class="text-center mb-16 animate-on-scroll">
                     <span class="text-indigo-600 font-semibold">Testimonials</span>
@@ -383,17 +424,18 @@
                     <div class="testimonial-slider-container rounded-xl overflow-hidden">
                         <div class="testimonial-slider-track">
                             <!-- Slide 1 -->
-                            <div class="testimonial-slide p-8">
+                            <div class="testimonial-slide p-8" itemscope itemtype="https://schema.org/Review">
                                 <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
                                     <div class="flex-shrink-0 text-center">
                                         <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=EJ" alt="Emil J Avatar" loading="lazy" decoding="async">
                                     </div>
                                     <div class="text-center md:text-left">
                                         <i class="fas fa-quote-left text-4xl text-indigo-100 mb-4"></i>
-                                        <p class="text-lg text-slate-600 mb-4 italic">"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"</p>
-                                        <div>
-                                            <p class="font-bold text-lg text-slate-800">Emil J</p>
-                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2">
+                                        <p class="text-lg text-slate-600 mb-4 italic" itemprop="reviewBody">"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"</p>
+                                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                            <p class="font-bold text-lg text-slate-800" itemprop="name">Emil J</p>
+                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                                <meta itemprop="ratingValue" content="5">
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
@@ -401,17 +443,18 @@
                                 </div>
                             </div>
                              <!-- Slide 2 -->
-                            <div class="testimonial-slide p-8">
+                            <div class="testimonial-slide p-8" itemscope itemtype="https://schema.org/Review">
                                 <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
                                     <div class="flex-shrink-0 text-center">
                                         <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=AA" alt="Ahmed A Avatar" loading="lazy" decoding="async">
                                     </div>
                                     <div class="text-center md:text-left">
                                         <i class="fas fa-quote-left text-4xl text-indigo-100 mb-4"></i>
-                                        <p class="text-lg text-slate-600 mb-4 italic">"Thanks to their expert SEO work, we are now ranking on the first page of Google for 'accountants in Slough'. The increase in new client consultations has been remarkable."</p>
-                                        <div>
-                                            <p class="font-bold text-lg text-slate-800">Ahmed A</p>
-                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2">
+                                        <p class="text-lg text-slate-600 mb-4 italic" itemprop="reviewBody">"Thanks to their expert SEO work, we are now ranking on the first page of Google for 'accountants in Slough'. The increase in new client consultations has been remarkable."</p>
+                                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                            <p class="font-bold text-lg text-slate-800" itemprop="name">Ahmed A</p>
+                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                                <meta itemprop="ratingValue" content="5">
                                                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
@@ -419,17 +462,18 @@
                                 </div>
                             </div>
                              <!-- Slide 3 -->
-                             <div class="testimonial-slide p-8">
+                             <div class="testimonial-slide p-8" itemscope itemtype="https://schema.org/Review">
                                 <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
                                     <div class="flex-shrink-0 text-center">
                                         <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=RS" alt="Richard S Avatar" loading="lazy" decoding="async">
                                     </div>
                                     <div class="text-center md:text-left">
                                         <i class="fas fa-quote-left text-4xl text-indigo-100 mb-4"></i>
-                                        <p class="text-lg text-slate-600 mb-4 italic">"The branding and website Scalix created perfectly captured the quality of our craft. We've attracted a more premium clientele and our average order value has increased."</p>
-                                        <div>
-                                            <p class="font-bold text-lg text-slate-800">Richard S</p>
-                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2">
+                                        <p class="text-lg text-slate-600 mb-4 italic" itemprop="reviewBody">"The branding and website Scalix created perfectly captured the quality of our craft. We've attracted a more premium clientele and our average order value has increased."</p>
+                                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                            <p class="font-bold text-lg text-slate-800" itemprop="name">Richard S</p>
+                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                                                 <meta itemprop="ratingValue" content="5">
                                                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
@@ -446,25 +490,37 @@
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-white">
+        <section id="faq" class="py-20 bg-slate-50" itemscope itemtype="https://schema.org/FAQPage">
             <div class="container mx-auto px-4">
                  <div class="text-center mb-16 animate-on-scroll">
                     <span class="text-indigo-600 font-semibold">FAQ</span>
                     <h2 class="text-4xl md:text-5xl font-bold">Frequently Asked Questions</h2>
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <details class="faq-item bg-white p-6 rounded-lg shadow-sm animate-on-scroll">
-                        <summary class="font-semibold text-lg flex justify-between items-center">How long does a website project take? <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
-                        <p class="mt-4 text-slate-600">A typical website build takes 4-6 weeks from start to finish, depending on the complexity and scope of the project. We'll provide a detailed timeline after our initial discovery call.</p>
-                    </details>
-                    <details class="faq-item bg-white p-6 rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 100ms;">
-                        <summary class="font-semibold text-lg flex justify-between items-center">How much does a new website cost? <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
-                        <p class="mt-4 text-slate-600">Our pricing varies based on your specific needs. Our starter packages begin at £299. Check out our <a href="pricing.html" class="text-indigo-600 underline">pricing section</a> for more details, or contact us for a custom quote.</p>
-                    </details>
-                     <details class="faq-item bg-white p-6 rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 200ms;">
-                        <summary class="font-semibold text-lg flex justify-between items-center">Do you provide ongoing support? <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
-                        <p class="mt-4 text-slate-600">Yes! We offer ongoing website maintenance and SEO packages to ensure your site remains secure, up-to-date, and continues to rank well in search engines.</p>
-                    </details>
+                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <details class="p-6">
+                            <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">How long does a website project take?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
+                                <p itemprop="text">A typical website build takes 4-6 weeks from start to finish, depending on the complexity and scope of the project. We'll provide a detailed timeline after our initial discovery call.</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 100ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <details class="p-6">
+                             <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">How much does a new website cost?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
+                                <p itemprop="text">Our pricing varies based on your specific needs. Our starter packages begin at £299. Check out our <a href="pricing.html" class="text-indigo-600 underline">pricing section</a> for more details, or contact us for a custom quote.</p>
+                             </div>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 200ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                         <details class="p-6">
+                            <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">Do you provide ongoing support?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
+                                <p itemprop="text">Yes! We offer ongoing website maintenance and SEO packages to ensure your site remains secure, up-to-date, and continues to rank well in search engines.</p>
+                            </div>
+                         </details>
+                    </div>
                 </div>
             </div>
         </section>
