@@ -7,9 +7,9 @@
     <!-- =================================================================
     PRIMARY SEO & METADATA
     ================================================================== -->
-    <title>Scalix Studios | Web Design & SEO in Berkshire, Windsor & Thames Valley</title>
-    <meta name="description" content="Scalix Studios: #1 Web Design & SEO Agency in Berkshire. We help local businesses in Windsor, Slough & the Thames Valley get more clients with results-driven digital marketing.">
-    <meta name="keywords" content="digital agency berkshire, seo services windsor, web design slough, social media marketing thames valley, creative agency maidenhead, scalix studios, local marketing berkshire, small business seo windsor, online visibility">
+    <title>Scalix Studios | Premier Digital Agency in Berkshire, UK</title>
+    <meta name="description" content="Scalix Studios: Berkshire's leading digital agency. We craft stunning websites, drive results with expert SEO, and create unforgettable brands. Let's build your success.">
+    <meta name="keywords" content="digital agency berkshire, seo services berkshire, web design reading, social media marketing newbury, creative agency slough, scalix studios, local marketing, small business seo, web development windsor">
     <meta name="author" content="Scalix Studios">
     <link rel="canonical" href="https://www.scalixstudios.co.uk/">
     <meta name="robots" content="index, follow">
@@ -17,8 +17,8 @@
     <!-- =================================================================
     SOCIAL MEDIA & OPEN GRAPH TAGS
     ================================================================== -->
-    <meta property="og:title" content="Scalix Studios | Results-Driven Digital Agency for Berkshire & Thames Valley">
-    <meta property="og:description" content="Partner with Scalix Studios to elevate your brand. Expert SEO, web development, and creative branding for businesses in Windsor, Slough, and across Berkshire.">
+    <meta property="og:title" content="Scalix Studios | Results-Driven Digital Agency in Berkshire">
+    <meta property="og:description" content="Partner with Scalix Studios to elevate your brand. Expert SEO, web development, and creative branding services for businesses in Berkshire and the Thames Valley.">
     <meta property="og:image" content="scalix_logo.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,8 +27,8 @@
     <meta property="og:locale" content="en_GB">
     <meta property="og:site_name" content="Scalix Studios">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Scalix Studios | Results-Driven Digital Agency for Berkshire & Thames Valley">
-    <meta name="twitter:description" content="Expert SEO, web development, and creative branding for businesses in Windsor, Slough, and across Berkshire.">
+    <meta name="twitter:title" content="Scalix Studios | Results-Driven Digital Agency in Berkshire">
+    <meta name="twitter:description" content="Expert SEO, web development, and creative branding services for businesses in Berkshire and the Thames Valley.">
     <meta name="twitter:image" content="scalix_logo.webp">
 
     <!-- =================================================================
@@ -59,7 +59,6 @@
       "url": "https://www.scalixstudios.co.uk",
       "telephone": "+441753257401",
       "priceRange": "££",
-      "description": "Digital marketing agency specializing in web design and SEO for businesses in Berkshire and the Thames Valley.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Barry Avenue",
@@ -73,19 +72,10 @@
         "latitude": 51.4816,
         "longitude": -0.6125
       },
-      "areaServed": [
-        { "@type": "AdministrativeArea", "name": "Berkshire" },
-        { "@type": "Place", "name": "Thames Valley" },
-        { "@type": "City", "name": "Windsor" },
-        { "@type": "City", "name": "Slough" },
-        { "@type": "City", "name": "Maidenhead" },
-        { "@type": "City", "name": "Reading" },
-        { "@type": "City", "name": "Newbury" }
-      ],
        "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "reviewCount": "3"
+        "ratingCount": "3"
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -106,6 +96,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     
     <!-- Custom CSS -->
     <style>
@@ -149,9 +140,8 @@
         
         .service-card-new {
             transition: all 0.3s ease-in-out;
-            width: 280px; 
-            height: 280px;
-            flex-shrink: 0; /* Prevents shrinking */
+            width: 280px; /* Or adjust as needed */
+            height: 280px; /* Same as width for a perfect circle */
         }
         .service-card-new:hover {
             transform: translateY(-8px) scale(1.05);
@@ -167,17 +157,6 @@
         }
         .testimonial-slider-track { display: flex; }
         .testimonial-slide { flex: 0 0 100%; box-sizing: border-box; }
-
-        /* Performance-friendly scroll animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -225,9 +204,9 @@
     <header id="hero" class="min-h-[90vh] flex items-center justify-center text-center p-4 relative overflow-hidden">
         <canvas id="hero-canvas"></canvas>
         <div class="container mx-auto max-w-4xl z-10 px-4">
-            <h1 id="main-headline" class="text-4xl md:text-7xl font-extrabold mb-6 text-white leading-tight">Digital Marketing for Berkshire & The Thames Valley</h1>
-            <p id="sub-headline" class="text-lg md:text-xl mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto">We're a creative agency based in Windsor, crafting websites and marketing strategies to help local businesses succeed online.</p>
-            <a href="contact.html" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">Get Your Free Quote</a>
+            <h1 id="main-headline" class="text-4xl md:text-7xl font-extrabold mb-6 text-white leading-tight">Digital Experiences That Inspire</h1>
+            <p id="sub-headline" class="text-lg md:text-xl mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto">We are Scalix Studios. A creative agency crafting innovative brands, websites, and marketing strategies to help you stand out and succeed.</p>
+            <a href="contact.html" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">Start Your Project</a>
         </div>
     </header>
 
@@ -235,143 +214,103 @@
         <!-- Services Section -->
         <section id="services" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 animate-on-scroll">
+                <div class="text-center mb-16">
                     <span class="text-indigo-600 font-semibold">Our Services</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">What We Can Do For You</h2>
-                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4">From local SEO to lead-generating websites, we get you seen by customers in Berkshire.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">What We Can Do For You</h2>
+                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="100">We offer a complete suite of digital services to elevate your brand.</p>
                 </div>
                 <!-- Service Cards Container -->
                 <div class="flex flex-wrap justify-center gap-8">
                     <!-- Service Card 1 -->
-                    <div class="service-card-new bg-white rounded-full shadow-lg text-center flex flex-col justify-center items-center p-8 animate-on-scroll">
+                    <div class="service-card-new bg-white rounded-full shadow-lg text-center flex flex-col justify-center items-center p-8" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-icon-new bg-indigo-100 text-indigo-600 w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 mx-auto mb-6">
                             <i class="fa-solid fa-magnifying-glass-chart text-4xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-2">Local SEO</h3>
-                        <p class="text-slate-600">Rank higher in Windsor, Slough & Reading searches.</p>
+                        <h3 class="text-2xl font-semibold mb-2">SEO</h3>
+                        <p class="text-slate-600">Climb the rankings and attract organic traffic.</p>
                     </div>
                      <!-- Service Card 2 -->
-                    <div class="service-card-new bg-white rounded-full shadow-lg text-center flex flex-col justify-center items-center p-8 animate-on-scroll" style="transition-delay: 100ms;">
+                    <div class="service-card-new bg-white rounded-full shadow-lg text-center flex flex-col justify-center items-center p-8" data-aos="fade-up" data-aos-delay="200">
                          <div class="service-icon-new bg-indigo-100 text-indigo-600 w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 mx-auto mb-6">
                             <i class="fa-solid fa-laptop-code text-4xl"></i>
                         </div>
                         <h3 class="text-2xl font-semibold mb-2">Web Design</h3>
-                        <p class="text-slate-600">Websites that turn visitors into paying customers.</p>
+                        <p class="text-slate-600">Beautiful, responsive sites built to convert.</p>
                     </div>
                      <!-- Service Card 3 -->
-                    <div class="service-card-new bg-white rounded-full shadow-lg text-center flex flex-col justify-center items-center p-8 animate-on-scroll" style="transition-delay: 200ms;">
+                    <div class="service-card-new bg-white rounded-full shadow-lg text-center flex flex-col justify-center items-center p-8" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-icon-new bg-indigo-100 text-indigo-600 w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 mx-auto mb-6">
-                           <i class="fa-solid fa-bullhorn text-4xl"></i>
+                           <i class="fa-solid fa-lightbulb text-4xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-2">Google Ads</h3>
-                        <p class="text-slate-600">Get immediate leads from your local area.</p>
+                        <h3 class="text-2xl font-semibold mb-2">Branding</h3>
+                        <p class="text-slate-600">Forge a memorable brand identity that captivates.</p>
                     </div>
                 </div>
                 <!-- View All Services Button -->
-                <div class="text-center mt-16 animate-on-scroll">
+                <div class="text-center mt-16" data-aos="fade-up">
                     <a href="services.html" class="inline-block bg-transparent border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-indigo-600 hover:text-white transform hover:scale-105 transition-all">View All Services</a>
                 </div>
             </div>
         </section>
 
-        <!-- Why Local Section -->
-        <section id="why-local" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16 animate-on-scroll">
-                    <span class="text-indigo-600 font-semibold">Local Expertise</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">Why Choose a Local Berkshire Agency?</h2>
-                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4">We understand the Windsor, Slough, and Thames Valley market better than anyone.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="animate-on-scroll">
-                        <i class="fas fa-map-marked-alt text-4xl text-indigo-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold mb-2">Local Market Knowledge</h3>
-                        <p class="text-slate-600">We know what your customers in Berkshire are searching for, giving you a competitive edge in local search results.</p>
-                    </div>
-                    <div class="animate-on-scroll" style="transition-delay: 100ms;">
-                        <i class="fas fa-handshake text-4xl text-indigo-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold mb-2">Face-to-Face Collaboration</h3>
-                        <p class="text-slate-600">As a Windsor-based agency, we're always available for a coffee and a chat to discuss your project in person.</p>
-                    </div>
-                    <div class="animate-on-scroll" style="transition-delay: 200ms;">
-                        <i class="fas fa-users text-4xl text-indigo-500 mb-4"></i>
-                        <h3 class="text-2xl font-bold mb-2">Supporting the Community</h3>
-                        <p class="text-slate-600">By working with us, you're investing in a local Berkshire business that's committed to seeing our community thrive.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Case Studies Section -->
-        <section id="work" class="py-20 bg-white">
+        <section id="work" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 animate-on-scroll">
+                <div class="text-center mb-16">
                     <span class="text-indigo-600 font-semibold">Our Success Stories</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">Proven Results for Local Businesses</h2>
-                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4">We're proud of the impact we've made helping businesses across Berkshire.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">Real Results for Real Businesses</h2>
+                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="100">We're proud of the impact we've made. Here are some of our favourite projects.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Case Study 1 -->
-                    <article class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll flex flex-col">
-                        <img src="case-study-accountancy.webp" alt="Professionals in a Slough meeting discussing financial charts and SEO results" class="w-full h-48 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div>
-                                <span class="text-sm font-semibold text-indigo-600">SEO & Web Design</span>
-                                <h3 class="text-2xl font-bold my-2">Accountancy Firm, Slough</h3>
-                                <p class="text-slate-600 mb-4">Developed a professional, SEO-optimized website that achieved first-page rankings for key local search terms, driving a steady stream of new client consultations.</p>
-                            </div>
-                            <div class="mt-auto pt-4">
-                                <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
-                            </div>
+                    <div class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=80&w=1974&auto=format&fit=crop" alt="Newly installed modern wooden fence in a garden" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold text-indigo-600">Google Ads Campaign</span>
+                            <h3 class="text-2xl font-bold my-2">Fencing Co, Portsmouth</h3>
+                            <p class="text-slate-600 mb-4">Launched a targeted Google Search campaign with a £500 ad spend, generating a significant increase in qualified leads and phone inquiries within the first month.</p>
+                            <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
-                    </article>
+                    </div>
                     <!-- Case Study 2 -->
-                    <article class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll flex flex-col" style="transition-delay: 100ms;">
-                        <img src="case-study-furniture.webp" alt="A stylish modern living room in Windsor showcasing high-end bespoke furniture" class="w-full h-48 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div>
-                                 <span class="text-sm font-semibold text-indigo-600">Branding & Web Development</span>
-                                <h3 class="text-2xl font-bold my-2">Bespoke Furniture, Windsor</h3>
-                                <p class="text-slate-600 mb-4">Created a sophisticated brand identity and a visually stunning portfolio website to showcase high-end custom furniture, attracting a premium clientele.</p>
-                            </div>
-                            <div class="mt-auto pt-4">
-                                <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
-                            </div>
+                    <div class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop" alt="Accountant working on a laptop with a calculator and financial documents" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-semibold text-indigo-600">SEO & Web Design</span>
+                            <h3 class="text-2xl font-bold my-2">Accountancy Firm, Slough</h3>
+                            <p class="text-slate-600 mb-4">Developed a professional, SEO-optimized website that achieved first-page rankings for key local search terms, driving a steady stream of new client consultations.</p>
+                            <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
-                    </article>
+                    </div>
                     <!-- Case Study 3 -->
-                    <article class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll flex flex-col" style="transition-delay: 200ms;">
-                         <img src="case-study-fencing.webp" alt="A modern horizontal slat fence providing privacy for a garden in Portsmouth" class="w-full h-48 object-cover" loading="lazy" decoding="async">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div>
-                                <span class="text-sm font-semibold text-indigo-600">Google Ads Campaign</span>
-                                <h3 class="text-2xl font-bold my-2">Fencing Co, Portsmouth</h3>
-                                <p class="text-slate-600 mb-4">Launched a targeted Google Search campaign with a £500 ad spend, generating a significant increase in qualified leads and phone inquiries within the first month.</p>
-                            </div>
-                            <div class="mt-auto pt-4">
-                                <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
-                            </div>
+                    <div class="case-study-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1595514522863-b765e921d882?q=80&w=1964&auto=format&fit=crop" alt="Craftsman carefully working on a piece of bespoke wooden furniture in a workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                             <span class="text-sm font-semibold text-indigo-600">Branding & Web Development</span>
+                            <h3 class="text-2xl font-bold my-2">Bespoke Furniture, Windsor</h3>
+                            <p class="text-slate-600 mb-4">Created a sophisticated brand identity and a visually stunning portfolio website to showcase high-end custom furniture, attracting a premium clientele.</p>
+                            <a href="casestudies.html" class="font-semibold text-indigo-600 hover:underline">Read Case Study <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
 
          <!-- Pricing Section -->
-        <section id="pricing" class="py-20 bg-slate-50">
+        <section id="pricing" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 animate-on-scroll">
+                <div class="text-center mb-16">
                     <span class="text-indigo-600 font-semibold">Our Pricing</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">Simple Pricing for Local Businesses</h2>
-                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4">No hidden fees. Just powerful packages to get you more clients.</p>
+                    <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">Affordable Plans for Every Business</h2>
+                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="100">Transparent pricing to help you get started.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                     <!-- Starter Plan -->
-                    <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center animate-on-scroll flex flex-col">
+                    <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center" data-aos="fade-up">
                         <h3 class="text-2xl font-bold mb-2">Starter</h3>
-                        <p class="text-slate-500 mb-6">Get your business online</p>
+                        <p class="text-slate-500 mb-6">Perfect for new businesses</p>
                         <p class="text-5xl font-extrabold mb-6">£299</p>
-                        <ul class="space-y-4 text-slate-600 mb-8 text-left flex-grow">
+                        <ul class="space-y-4 text-slate-600 mb-8 text-left">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>4-6 Page Website</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Full SEO Optimisation</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Mobile Responsive</li>
@@ -380,12 +319,12 @@
                         <a href="contact.html" class="bg-slate-200 text-slate-800 font-bold py-3 px-6 rounded-full hover:bg-slate-300 transition-colors w-full block mt-auto">Get Started</a>
                     </div>
                     <!-- Growth Plan -->
-                     <div class="pricing-card border-indigo-600 bg-white rounded-lg p-8 text-center relative animate-on-scroll flex flex-col" style="transition-delay: 100ms;">
+                     <div class="pricing-card border-indigo-600 bg-white rounded-lg p-8 text-center relative" data-aos="fade-up" data-aos-delay="100">
                         <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Most Popular</div>
                         <h3 class="text-2xl font-bold mb-2">Growth</h3>
                         <p class="text-slate-500 mb-6">For businesses ready to scale</p>
                         <p class="text-5xl font-extrabold mb-6">£499</p>
-                        <ul class="space-y-4 text-slate-600 mb-8 text-left flex-grow">
+                        <ul class="space-y-4 text-slate-600 mb-8 text-left">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Unlimited Page Website</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Full SEO Optimisation</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Web3 Contact APIs</li>
@@ -397,11 +336,11 @@
                         <a href="contact.html" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors w-full block mt-auto">Choose Plan</a>
                     </div>
                     <!-- Enterprise Plan -->
-                     <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center animate-on-scroll flex flex-col" style="transition-delay: 200ms;">
+                     <div class="pricing-card border-slate-300 bg-slate-50 rounded-lg p-8 text-center" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-                        <p class="text-slate-500 mb-6">For established businesses</p>
+                        <p class="text-slate-500 mb-6">Custom solutions for big players</p>
                         <p class="text-5xl font-extrabold mb-6">Let's Talk</p>
-                        <ul class="space-y-4 text-slate-600 mb-8 text-left flex-grow">
+                        <ul class="space-y-4 text-slate-600 mb-8 text-left">
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Unlimited Pages</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Ongoing SEO & Ads</li>
                             <li><i class="fas fa-check text-green-500 mr-2"></i>Dedicated Support</li>
@@ -414,28 +353,27 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-20 bg-white">
+        <section id="testimonials" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
-                 <div class="text-center mb-16 animate-on-scroll">
+                 <div class="text-center mb-16">
                     <span class="text-indigo-600 font-semibold">Testimonials</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">What Our Clients Say</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">What Our Clients Say</h2>
                 </div>
-                <div class="max-w-4xl mx-auto relative animate-on-scroll">
+                <div class="max-w-4xl mx-auto relative" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-slider-container rounded-xl overflow-hidden">
                         <div class="testimonial-slider-track">
                             <!-- Slide 1 -->
-                            <div class="testimonial-slide p-8" itemscope itemtype="https://schema.org/Review">
+                            <div class="testimonial-slide p-8">
                                 <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
                                     <div class="flex-shrink-0 text-center">
-                                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=EJ" alt="Emil J Avatar" loading="lazy" decoding="async">
+                                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=EJ" alt="Emil J Avatar">
                                     </div>
                                     <div class="text-center md:text-left">
                                         <i class="fas fa-quote-left text-4xl text-indigo-100 mb-4"></i>
-                                        <p class="text-lg text-slate-600 mb-4 italic" itemprop="reviewBody">"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"</p>
-                                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                            <p class="font-bold text-lg text-slate-800" itemprop="name">Emil J</p>
-                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                                <meta itemprop="ratingValue" content="5">
+                                        <p class="text-lg text-slate-600 mb-4 italic">"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"</p>
+                                        <div>
+                                            <p class="font-bold text-lg text-slate-800">Emil J</p>
+                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2">
                                                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
@@ -443,18 +381,17 @@
                                 </div>
                             </div>
                              <!-- Slide 2 -->
-                            <div class="testimonial-slide p-8" itemscope itemtype="https://schema.org/Review">
+                            <div class="testimonial-slide p-8">
                                 <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
                                     <div class="flex-shrink-0 text-center">
-                                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=AA" alt="Ahmed A Avatar" loading="lazy" decoding="async">
+                                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=AA" alt="Ahmed A Avatar">
                                     </div>
                                     <div class="text-center md:text-left">
                                         <i class="fas fa-quote-left text-4xl text-indigo-100 mb-4"></i>
-                                        <p class="text-lg text-slate-600 mb-4 italic" itemprop="reviewBody">"Thanks to their expert SEO work, we are now ranking on the first page of Google for 'accountants in Slough'. The increase in new client consultations has been remarkable."</p>
-                                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                            <p class="font-bold text-lg text-slate-800" itemprop="name">Ahmed A</p>
-                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                                <meta itemprop="ratingValue" content="5">
+                                        <p class="text-lg text-slate-600 mb-4 italic">"Thanks to their expert SEO work, we are now ranking on the first page of Google for 'accountants in Slough'. The increase in new client consultations has been remarkable."</p>
+                                        <div>
+                                            <p class="font-bold text-lg text-slate-800">Ahmed A</p>
+                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2">
                                                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
@@ -462,18 +399,17 @@
                                 </div>
                             </div>
                              <!-- Slide 3 -->
-                             <div class="testimonial-slide p-8" itemscope itemtype="https://schema.org/Review">
+                             <div class="testimonial-slide p-8">
                                 <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center gap-8">
                                     <div class="flex-shrink-0 text-center">
-                                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=RS" alt="Richard S Avatar" loading="lazy" decoding="async">
+                                        <img class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-indigo-200 shadow-lg" src="https://placehold.co/128x128/eef2ff/7c3aed?text=RS" alt="Richard S Avatar">
                                     </div>
                                     <div class="text-center md:text-left">
                                         <i class="fas fa-quote-left text-4xl text-indigo-100 mb-4"></i>
-                                        <p class="text-lg text-slate-600 mb-4 italic" itemprop="reviewBody">"The branding and website Scalix created perfectly captured the quality of our craft. We've attracted a more premium clientele and our average order value has increased."</p>
-                                        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
-                                            <p class="font-bold text-lg text-slate-800" itemprop="name">Richard S</p>
-                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
-                                                 <meta itemprop="ratingValue" content="5">
+                                        <p class="text-lg text-slate-600 mb-4 italic">"The branding and website Scalix created perfectly captured the quality of our craft. We've attracted a more premium clientele and our average order value has increased."</p>
+                                        <div>
+                                            <p class="font-bold text-lg text-slate-800">Richard S</p>
+                                            <div class="flex items-center justify-center md:justify-start text-yellow-400 mt-2">
                                                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                             </div>
                                         </div>
@@ -482,64 +418,33 @@
                             </div>
                         </div>
                     </div>
-                    <button id="prev-slide" aria-label="Go to previous testimonial" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full shadow-md w-12 h-12 flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors z-10"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button id="next-slide" aria-label="Go to next testimonial" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full shadow-md w-12 h-12 flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors z-10"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button id="prev-slide" aria-label="Previous testimonial" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full shadow-md w-12 h-12 flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors z-10"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="next-slide" aria-label="Next testimonial" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full shadow-md w-12 h-12 flex items-center justify-center text-gray-700 hover:bg-gray-200 transition-colors z-10"><i class="fa-solid fa-chevron-right"></i></button>
                     <div id="slider-dots" class="flex justify-center space-x-2 mt-4"></div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-20 bg-slate-50" itemscope itemtype="https://schema.org/FAQPage">
+        <section id="faq" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                 <div class="text-center mb-16 animate-on-scroll">
+                 <div class="text-center mb-16">
                     <span class="text-indigo-600 font-semibold">FAQ</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">Frequently Asked Questions</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">Frequently Asked Questions</h2>
                 </div>
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <details class="p-6">
-                            <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">How long does a website project take?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
-                            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
-                                <p itemprop="text">A typical website build takes 4-6 weeks from start to finish, depending on the complexity and scope of the project. We'll provide a detailed timeline after our initial discovery call.</p>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 100ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                        <details class="p-6">
-                             <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">How much does a new website cost?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
-                             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
-                                <p itemprop="text">Our pricing varies based on your specific needs. Our starter packages begin at £299. Check out our <a href="pricing.html" class="text-indigo-600 underline">pricing section</a> for more details, or contact us for a custom quote.</p>
-                             </div>
-                        </details>
-                    </div>
-                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 200ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                         <details class="p-6">
-                            <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">Do you provide ongoing support?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
-                            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
-                                <p itemprop="text">Yes! We offer ongoing website maintenance and SEO packages to ensure your site remains secure, up-to-date, and continues to rank well in search engines.</p>
-                            </div>
-                         </details>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Areas We Serve Section -->
-        <section id="areas" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12 animate-on-scroll">
-                     <span class="text-indigo-600 font-semibold">Our Community</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">Proudly Serving Berkshire & The Thames Valley</h2>
-                    <p class="text-lg text-slate-500 max-w-2xl mx-auto mt-4">We're dedicated to helping local businesses thrive online.</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4 animate-on-scroll">
-                    <a href="windsor-seo.html" class="bg-slate-100 text-slate-700 font-medium py-2 px-5 rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors">Windsor</a>
-                    <a href="slough-seo.html" class="bg-slate-100 text-slate-700 font-medium py-2 px-5 rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors">Slough</a>
-                    <a href="maidenhead-seo.html" class="bg-slate-100 text-slate-700 font-medium py-2 px-5 rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors">Maidenhead</a>
-                    <a href="reading-seo.html" class="bg-slate-100 text-slate-700 font-medium py-2 px-5 rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors">Reading</a>
-                    <a href="newbury-seo.html" class="bg-slate-100 text-slate-700 font-medium py-2 px-5 rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors">Newbury</a>
-                    <a href="bracknell-seo.html" class="bg-slate-100 text-slate-700 font-medium py-2 px-5 rounded-full hover:bg-indigo-100 hover:text-indigo-700 transition-colors">Bracknell</a>
+                    <details class="faq-item bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up">
+                        <summary class="font-semibold text-lg flex justify-between items-center">How long does a website project take? <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                        <p class="mt-4 text-slate-600">A typical website build takes 4-6 weeks from start to finish, depending on the complexity and scope of the project. We'll provide a detailed timeline after our initial discovery call.</p>
+                    </details>
+                    <details class="faq-item bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <summary class="font-semibold text-lg flex justify-between items-center">How much does a new website cost? <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                        <p class="mt-4 text-slate-600">Our pricing varies based on your specific needs. Our starter packages begin at £299. Check out our <a href="pricing.html" class="text-indigo-600 underline">pricing section</a> for more details, or contact us for a custom quote.</p>
+                    </details>
+                     <details class="faq-item bg-white p-6 rounded-lg shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <summary class="font-semibold text-lg flex justify-between items-center">Do you provide ongoing support? <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                        <p class="mt-4 text-slate-600">Yes! We offer ongoing website maintenance and SEO packages to ensure your site remains secure, up-to-date, and continues to rank well in search engines.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -547,12 +452,12 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20 bg-slate-50">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-12 animate-on-scroll">
+                <div class="text-center mb-12">
                      <span class="text-indigo-600 font-semibold">Contact Us</span>
-                    <h2 class="text-4xl md:text-5xl font-bold">Let's Build Something Amazing</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold" data-aos="fade-up">Let's Build Something Amazing</h2>
                 </div>
                 <div class="max-w-2xl mx-auto">
-                    <form id="contact-form" class="bg-white p-8 rounded-xl shadow-2xl space-y-6 animate-on-scroll">
+                    <form id="contact-form" class="bg-white p-8 rounded-xl shadow-2xl space-y-6" data-aos="fade-up" data-aos-delay="100">
                          <div id="form-result" class="text-center font-medium"></div>
                         <div><label for="name" class="block text-gray-700 font-semibold mb-2">Name</label><input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" required></div>
                         <div><label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label><input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" required></div>
@@ -572,7 +477,7 @@
                     <a href="index.html" class="inline-block mb-4">
                          <div class="flex flex-col items-center md:items-start"><span class="text-3xl font-extrabold text-white leading-none">Scalix</span><span class="text-xs font-semibold text-gray-400 tracking-widest uppercase">Studios</span></div>
                     </a>
-                    <p class="text-gray-400 text-sm">Your local digital marketing partner in Windsor, helping businesses across Berkshire and the Thames Valley to succeed online.</p>
+                    <p class="text-gray-400 text-sm">A creative agency dedicated to building impactful digital experiences that drive growth and inspire audiences.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-lg mb-4">Quick Links</h4>
@@ -594,8 +499,8 @@
                 <div>
                     <h4 class="font-bold text-lg mb-4">Follow Us</h4>
                     <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://www.instagram.com/scalixstudios/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Visit our Instagram page"><i class="fab fa-instagram text-2xl"></i></a>
-                        <a href="https://www.facebook.com/scalixstudios" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f text-2xl"></i></a>
+                        <a href="https://www.instagram.com/scalixstudios/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="https://www.facebook.com/scalixstudios" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -612,6 +517,7 @@
     SCRIPTS
     ================================================================== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script type="importmap">
         { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
     </script>
@@ -624,6 +530,7 @@
             const WEB3FORMS_ACCESS_KEY = 'bc6fb5fc-82e9-4564-91f9-960547acb045';
 
             // --- INITIALIZATION ---
+            AOS.init({ duration: 800, offset: 120, easing: 'ease-in-out', once: true });
             initPreloader();
             initCookieBanner();
             initBackToTopButton();
@@ -632,7 +539,6 @@
             initContactForm();
             initHeroAnimations();
             init3DHeroBackground();
-            initScrollAnimations();
             
             // --- CORE FUNCTIONS ---
 
@@ -846,7 +752,7 @@
                 renderer.setSize(window.innerWidth, window.innerHeight);
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-                const particleCount = 3000; // Reduced for performance
+                const particleCount = 5000;
                 const positions = new Float32Array(particleCount * 3);
                 for (let i = 0; i < particleCount * 3; i++) {
                     positions[i] = (Math.random() - 0.5) * 10;
@@ -878,23 +784,6 @@
                     camera.updateProjectionMatrix();
                     renderer.setSize(window.innerWidth, window.innerHeight);
                     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-                });
-            }
-
-            function initScrollAnimations() {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1
-                });
-
-                document.querySelectorAll('.animate-on-scroll').forEach(element => {
-                    observer.observe(element);
                 });
             }
         });

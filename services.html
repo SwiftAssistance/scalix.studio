@@ -7,8 +7,8 @@
     <!-- =================================================================
     PRIMARY SEO & METADATA
     ================================================================== -->
-    <title>Our Services | Scalix Studios | Berkshire Digital Agency</title>
-    <meta name="description" content="Explore the comprehensive digital services offered by Scalix Studios in Berkshire. We specialize in SEO, Web Development, Social Media Marketing, and Creative Branding.">
+    <title>Our Services | Scalix Studios | Web Design & SEO in Berkshire</title>
+    <meta name="description" content="Explore our expert web design, SEO, and digital marketing services. We help local businesses in Berkshire, Windsor, and the Thames Valley thrive online.">
     <meta name="keywords" content="digital marketing services, SEO berkshire, web design berkshire, social media marketing, branding services, scalix studios, content marketing, PPC, AI solutions">
     <meta name="author" content="Scalix Studios">
     <link rel="canonical" href="https://www.scalixstudios.co.uk/services.html">
@@ -19,330 +19,377 @@
     ================================================================== -->
     <meta property="og:title" content="Our Services | Scalix Studios">
     <meta property="og:description" content="Explore our results-driven digital marketing services, including SEO, web development, and creative branding in Berkshire.">
-    <!-- MODIFIED: Reverted to original JPG logo -->
-    <meta property="og:image" content="scalix_logo.jpg">
+    <meta property="og:image" content="scalix_logo.webp">
     <meta property="og:url" content="https://www.scalixstudios.co.uk/services.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Our Services | Scalix Studios">
     <meta name="twitter:description" content="Explore our results-driven digital marketing services, including SEO, web development, and creative branding in Berkshire.">
-    <!-- MODIFIED: Reverted to original JPG logo -->
-    <meta name="twitter:image" content="scalix_logo.jpg">
+    <meta name="twitter:image" content="scalix_logo.webp">
 
     <!-- =================================================================
     FAVICONS & DEVICE COMPATIBILITY
     ================================================================== -->
-    <!-- MODIFIED: Reverted to original JPG favicon -->
-    <link rel="icon" href="scalix_logo.jpg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="scalix_logo.jpg">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="scalix_logo.webp" type="image/webp">
+    <link rel="apple-touch-icon" href="scalix_logo.webp">
     <meta name="theme-color" content="#4c1d95">
 
+    <!-- =================================================================
+    PERFORMANCE HINTS
+    ================================================================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- =================================================================
+    STYLESHEETS & FONTS
+    ================================================================== -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script type="importmap">
-        { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
-    </script>
 
     <!-- Custom CSS (Consistent with index.html) -->
     <style>
-        :root {
-            --primary-color: #6b46c1;
-            --secondary-color: #4c1d95;
-            --accent-color: #3b82f6;
+        :root { 
+            --primary-color: #6d28d9; 
+            --secondary-color: #4c1d95; 
+            --accent-color: #3b82f6; 
+            --background-color: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
         }
-        body { font-family: 'Poppins', sans-serif; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--background-color);
+            color: var(--text-dark);
+        }
         h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
-        body::-webkit-scrollbar { width: 10px; }
-        body::-webkit-scrollbar-track { background: #f1f5f9; }
-        body::-webkit-scrollbar-thumb { background-color: var(--primary-color); border-radius: 5px; border: 2px solid #f1f5f9; }
-        .glass {
-            background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        #hero-canvas {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; background: linear-gradient(135deg, var(--secondary-color), #1a202c);
-        }
-         .loader {
-            border-top-color: var(--accent-color);
-            animation: spinner 1.5s linear infinite;
-        }
+        body::-webkit-scrollbar { width: 12px; }
+        body::-webkit-scrollbar-track { background: #e2e8f0; }
+        body::-webkit-scrollbar-thumb { background-color: var(--primary-color); border-radius: 6px; border: 3px solid #e2e8f0; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(230, 230, 230, 0.8); }
+        .loader { border-top-color: var(--accent-color); animation: spinner 1.5s linear infinite; }
         @keyframes spinner { 100% { transform: rotate(360deg); } }
-
-        .chat-window { 
-            transform: scale(0.95) translateY(20px); 
-            opacity: 0; 
-            transition: transform 0.3s ease-out, opacity 0.3s ease-out; 
-            transform-origin: bottom right; 
-            pointer-events: none;
-        }
-        .chat-window.open { 
-            transform: scale(1) translateY(0); 
-            opacity: 1; 
-            pointer-events: auto;
-        }
-        .user-message { background-color: var(--accent-color); color: white; border-bottom-right-radius: 0.25rem; }
-        .bot-message { background-color: #e2e8f0; color: black; border-bottom-left-radius: 0.25rem; }
-
-        /* Custom styles for the services tab */
-        .service-tab {
-            transition: all 0.3s ease;
-        }
-        .service-tab.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 10px 15px -3px rgba(107, 70, 193, 0.4), 0 4px 6px -2px rgba(107, 70, 193, 0.2);
-        }
-        .service-tab.active i {
-            color: white;
-        }
-        .service-tab-content {
-            display: none;
-        }
-        .service-tab-content.active {
-            display: block;
-        }
         
-        /* FAQ Accordion Styles */
-        .faq-question {
-            transition: background-color 0.2s ease-in-out;
+        .hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, var(--secondary-color), #1a202c); }
+
+        .faq-item summary { cursor: pointer; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary .faq-icon { transition: transform 0.3s ease; }
+        .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+
+        /* Performance-friendly scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="antialiased">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-100 transition-opacity duration-500">
+    <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-white transition-opacity duration-500">
         <div class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-20 w-20"></div>
     </div>
 
-    <!-- Navigation (Consistent with index.html) -->
-    <nav class="glass sticky top-0 z-50" aria-label="Main navigation">
+    <!-- Header & Navigation -->
+    <nav class="glass-nav sticky top-0 z-50" aria-label="Main navigation">
         <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
             <a href="index.html" class="flex flex-col items-start transform transition-transform hover:scale-105">
                 <span class="text-3xl font-extrabold text-indigo-700 leading-none">Scalix</span>
                 <span class="text-xs font-semibold text-gray-500 tracking-widest uppercase">Studios</span>
             </a>
-            <div class="space-x-6 flex items-center">
-                <a href="index.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-                <a href="services.html" class="text-lg font-medium text-blue-600 transition-colors" aria-current="page">Services</a>
-                <a href="portfolio.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Work</a>
-                <a href="contact.html" class="text-lg font-medium text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+            </button>
+            <div id="mobile-menu" class="hidden md:flex md:items-center md:space-x-8 w-full md:w-auto">
+                <ul class="flex flex-col mt-4 md:mt-0 md:flex-row md:space-x-8 text-lg font-medium text-center">
+                    <li><a href="index.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Home</a></li>
+                    <li><a href="services.html" class="block py-2 md:py-0 text-blue-600 transition-colors" aria-current="page">Services</a></li>
+                    <li><a href="casestudies.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Case Studies</a></li>
+                    <li><a href="pricing.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Pricing</a></li>
+                    <li><a href="contact.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Contact</a></li>
+                </ul>
             </div>
         </div>
     </nav>
     
-    <!-- Main Content for Services Page -->
     <main>
         <!-- Hero Section for Services -->
-        <header id="hero" class="min-h-[80vh] flex items-center justify-center text-center p-4 relative overflow-hidden">
-            <canvas id="hero-canvas"></canvas>
+        <header id="hero" class="min-h-[70vh] flex items-center justify-center text-center p-4 relative overflow-hidden">
+             <canvas id="hero-canvas" class="hero-canvas"></canvas>
             <div class="container mx-auto max-w-4xl z-10 px-4">
-                <h1 class="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight" data-aos="fade-up">Our Services</h1>
-                <p class="text-lg md:text-xl text-indigo-100/90 leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    A complete suite of digital solutions, tailored to elevate your brand and accelerate your growth.
+                <h1 class="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight">Our Digital Marketing Services</h1>
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                    A complete suite of digital solutions, tailored to elevate your Berkshire business and accelerate its growth.
                 </p>
             </div>
         </header>
 
-        <!-- Detailed Services Section with Tabs -->
-        <section id="detailed-services" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Our Areas of Expertise</h2>
-                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Click on a service to explore how we can help you achieve your business objectives.</p>
+        <!-- Detailed Services Section -->
+        <section id="detailed-services" class="py-20 bg-white">
+            <div class="container mx-auto px-4 space-y-20">
+
+                <!-- SEO Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="services-seo.webp" alt="A magnifying glass over a computer screen showing website code, representing SEO analysis." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Search Engine Optimization (SEO)</h2>
+                        <p class="text-slate-600 mb-6">Improve your online visibility and dominate search rankings with our comprehensive SEO strategies. We go beyond keywords to build a strong, authority-driven digital presence that attracts customers in Berkshire.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>On-Page & Off-Page SEO</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Technical SEO Audits</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Local SEO for Windsor & Slough</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Keyword Research & Strategy</span></li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Service Tabs -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4 mb-12" data-aos="fade-up" data-aos-delay="100" role="tablist" aria-label="Services">
-                    <button id="tab-seo" role="tab" aria-selected="true" aria-controls="panel-seo" class="service-tab active group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-magnifying-glass-chart text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">SEO</span></button>
-                    <button id="tab-web" role="tab" aria-selected="false" aria-controls="panel-web" class="service-tab group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-code text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">Web Development</span></button>
-                    <button id="tab-social" role="tab" aria-selected="false" aria-controls="panel-social" class="service-tab group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-share-nodes text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">Social Media</span></button>
-                    <button id="tab-branding" role="tab" aria-selected="false" aria-controls="panel-branding" class="service-tab group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-lightbulb text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">Branding</span></button>
-                    <button id="tab-content" role="tab" aria-selected="false" aria-controls="panel-content" class="service-tab group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-pen-ruler text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">Content Strategy</span></button>
-                    <button id="tab-ppc" role="tab" aria-selected="false" aria-controls="panel-ppc" class="service-tab group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-bullseye text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">PPC Advertising</span></button>
-                    <button id="tab-ai" role="tab" aria-selected="false" aria-controls="panel-ai" class="service-tab group flex flex-col items-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1"><i class="fas fa-robot text-3xl text-indigo-600 mb-2 transition-colors group-hover:text-indigo-700"></i><span class="font-semibold text-center text-sm">AI & Automation</span></button>
+                <!-- Web Development Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                        <img src="services-web-design.webp" alt="A modern laptop and smartphone displaying a beautifully designed responsive website." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    </div>
+                    <div class="md:order-1">
+                        <h2 class="text-3xl font-bold mb-4">Web Development & Design</h2>
+                        <p class="text-slate-600 mb-6">Your website is your digital storefront. We build beautiful, responsive, and high-performing websites that captivate your audience and grow your business.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Custom Website Design</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>E-commerce Solutions</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Mobile-First Responsive Design</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Content Management Systems (CMS)</span></li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!-- Service Content Panels -->
-                <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl">
-                    <!-- SEO Panel -->
-                    <div id="panel-seo" role="tabpanel" tabindex="0" aria-labelledby="tab-seo" class="service-tab-content active"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                        <picture>
-                            <source srcset="seo-strategy-berkshire.webp" type="image/webp">
-                            <img src="seo-strategy-berkshire.jpg" alt="Abstract visualization of SEO data analytics showing upward growth" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">Search Engine Optimization (SEO)</h3><p class="text-lg text-gray-600 mb-6">Improve your online visibility and dominate search rankings with our comprehensive SEO strategies. We go beyond keywords to build a strong, authority-driven digital presence.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>On-Page Optimization:</strong> Structuring your website and content for search engines.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Off-Page SEO & Link Building:</strong> Earning high-quality backlinks to boost domain authority.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Technical SEO Audits:</strong> Fixing issues that hinder search performance.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Local SEO:</strong> Optimizing your presence for Berkshire and beyond.</div></li></ul></div></div></div>
-                    <!-- Web Development Panel -->
-                    <div id="panel-web" role="tabpanel" tabindex="0" aria-labelledby="tab-web" class="service-tab-content"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                        <picture>
-                             <source srcset="web-development-scalix.webp" type="image/webp">
-                             <img src="web-development-scalix.jpg" alt="Sleek and modern user interface for a web application" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">Web Development & Design</h3><p class="text-lg text-gray-600 mb-6">Your website is your digital storefront. We build beautiful, responsive, and high-performing websites that captivate your audience and grow your business.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Custom Website Design:</strong> Crafting unique, on-brand designs from the ground up.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>E-commerce Solutions:</strong> Building powerful online stores that convert.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Responsive Development:</strong> Ensuring your site functions perfectly on all devices.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>CMS Integration:</strong> Providing easy-to-use content management systems.</div></li></ul></div></div></div>
-                    <!-- Social Media Panel -->
-                    <div id="panel-social" role="tabpanel" tabindex="0" aria-labelledby="tab-social" class="service-tab-content"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                         <picture>
-                             <source srcset="social-media-marketing-agency.webp" type="image/webp">
-                             <img src="social-media-marketing-agency.jpg" alt="Vibrant network of interconnected social media icons and user profiles" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">Social Media Marketing</h3><p class="text-lg text-gray-600 mb-6">Build a thriving online community and engage your target audience with strategic social media campaigns that resonate and convert.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Platform Strategy:</strong> Tailoring content for each social media channel.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Content Creation:</strong> Designing captivating visuals and compelling copy.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Community Management:</strong> Engaging with your followers and building brand loyalty.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Influencer Marketing:</strong> Connecting you with creators to amplify your reach.</div></li></ul></div></div></div>
-                    <!-- Branding Panel -->
-                    <div id="panel-branding" role="tabpanel" tabindex="0" aria-labelledby="tab-branding" class="service-tab-content"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                        <picture>
-                            <source srcset="creative-branding-services.webp" type="image/webp">
-                            <img src="creative-branding-services.jpg" alt="Abstract composition representing creative branding with logos and colors" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">Branding & Creative Services</h3><p class="text-lg text-gray-600 mb-6">Forge a memorable brand identity that connects with your audience and stands out from the competition.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Logo & Visual Identity:</strong> Creating a unique logo and consistent visual elements.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Brand Guidelines:</strong> Developing a comprehensive guide for brand consistency.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Graphic Design:</strong> Designing compelling visuals for all your marketing needs.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Copywriting:</strong> Crafting a powerful and persuasive brand voice.</div></li></ul></div></div></div>
-                    <!-- Content Panel -->
-                    <div id="panel-content" role="tabpanel" tabindex="0" aria-labelledby="tab-content" class="service-tab-content"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                        <picture>
-                            <source srcset="content-strategy-agency.webp" type="image/webp">
-                            <img src="content-strategy-agency.jpg" alt="An abstract image representing content strategy with puzzle pieces forming a coherent picture" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">Content Marketing & Strategy</h3><p class="text-lg text-gray-600 mb-6">Engage and attract your target audience by delivering valuable, relevant, and consistent content that builds trust and drives action.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Content Audits:</strong> Analyzing your existing content to identify gaps and opportunities.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Editorial Calendars:</strong> Planning and scheduling content for maximum impact.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Blog & Article Writing:</strong> Creating SEO-optimized content that establishes you as an industry leader.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Video & Motion Graphics:</strong> Producing engaging video content for social media and websites.</div></li></ul></div></div></div>
-                    <!-- PPC Panel -->
-                    <div id="panel-ppc" role="tabpanel" tabindex="0" aria-labelledby="tab-ppc" class="service-tab-content"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                        <picture>
-                            <source srcset="ppc-advertising-berkshire.webp" type="image/webp">
-                            <img src="ppc-advertising-berkshire.jpg" alt="A stylized graphic showing ad icons targeting specific user demographics" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">PPC & Paid Advertising</h3><p class="text-lg text-gray-600 mb-6">Drive immediate, targeted traffic to your website and generate leads with precision-targeted Pay-Per-Click advertising campaigns.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Google Ads Management:</strong> Creating and optimizing campaigns for maximum ROI.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Social Media Ads:</strong> Running targeted ad campaigns on Facebook, Instagram, and LinkedIn.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Landing Page Optimization:</strong> Designing landing pages that convert ad clicks into customers.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Performance Analytics:</strong> Continuously monitoring and reporting on campaign success.</div></li></ul></div></div></div>
-                    <!-- AI Panel -->
-                    <div id="panel-ai" role="tabpanel" tabindex="0" aria-labelledby="tab-ai" class="service-tab-content"><div class="md:flex md:space-x-12 items-center"><div class="md:w-1/2">
-                        <!-- MODIFIED: Simplified image implementation -->
-                        <picture>
-                             <source srcset="ai-automation-solutions.webp" type="image/webp">
-                             <img src="ai-automation-solutions.jpg" alt="A futuristic image of a brain with circuit patterns, representing AI and automation" class="rounded-xl shadow-lg mb-6 md:mb-0" loading="lazy" width="800" height="600">
-                        </picture>
-                    </div><div class="md:w-1/2"><h3 class="text-3xl font-bold mb-4 text-indigo-700">AI & Automation</h3><p class="text-lg text-gray-600 mb-6">Leverage the power of artificial intelligence to streamline your marketing efforts, enhance customer interactions, and unlock data-driven insights.</p><ul class="space-y-4 text-gray-700"><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Chatbot Integration:</strong> Deploying intelligent AI chatbots to handle customer queries 24/7.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Marketing Automation:</strong> Setting up automated email sequences and workflows.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Predictive Analytics:</strong> Using AI to forecast trends and customer behavior.</div></li><li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-600 mt-1 mr-3"></i><div><strong>Personalized Content Delivery:</strong> Implementing AI tools to show the right content to the right user.</div></li></ul></div></div></div>
+                <!-- Social Media Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="services-social-media.webp" alt="A collection of social media icons floating around a central smartphone." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Social Media Marketing</h2>
+                        <p class="text-slate-600 mb-6">Build a thriving online community and engage your target audience with strategic social media campaigns that resonate and convert.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Social Media Strategy</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Engaging Content Creation</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Community Management</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Paid Social Advertising</span></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Our Approach Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Our Strategic Approach</h2>
-                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">We follow a proven, four-step process to ensure every project we undertake is a resounding success.</p>
+                <!-- Branding Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                        <img src="services-branding.webp" alt="A collection of branded materials like business cards, letterheads, and a coffee mug." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    </div>
+                    <div class="md:order-1">
+                        <h2 class="text-3xl font-bold mb-4">Branding & Creative</h2>
+                        <p class="text-slate-600 mb-6">Forge a memorable brand identity that connects with your audience and stands out from the competition in the Thames Valley market.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Logo & Visual Identity</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Brand Guidelines</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Copywriting & Tone of Voice</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Graphic Design Services</span></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="text-center p-6" data-aos="fade-up"><div class="bg-indigo-100 text-indigo-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-comments text-3xl"></i></div><h3 class="text-xl font-bold mb-2">1. Strategy & Discovery</h3><p class="text-gray-600">We dive deep into your brand, audience, and goals to build a data-driven roadmap for success.</p></div>
-                    <div class="text-center p-6" data-aos="fade-up" data-aos-delay="100"><div class="bg-indigo-100 text-indigo-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-pen-ruler text-3xl"></i></div><h3 class="text-xl font-bold mb-2">2. Creative Design</h3><p class="text-gray-600">Our team designs intuitive, visually stunning interfaces that bring your brand's unique story to life.</p></div>
-                    <div class="text-center p-6" data-aos="fade-up" data-aos-delay="200"><div class="bg-indigo-100 text-indigo-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-laptop-code text-3xl"></i></div><h3 class="text-xl font-bold mb-2">3. Precision Development</h3><p class="text-gray-600">We build your project with clean, efficient code and deploy it seamlessly for a flawless user experience.</p></div>
-                    <div class="text-center p-6" data-aos="fade-up" data-aos-delay="300"><div class="bg-indigo-100 text-indigo-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fa-solid fa-rocket text-3xl"></i></div><h3 class="text-xl font-bold mb-2">4. Launch & Grow</h3><p class="text-gray-600">After launch, we analyze performance, gather insights, and implement strategies for continuous growth.</p></div>
+
+                 <!-- PPC Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="services-ppc.webp" alt="A computer screen showing a Google Ads campaign dashboard with performance graphs." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">PPC Advertising</h2>
+                        <p class="text-slate-600 mb-6">Drive immediate, targeted traffic to your website and generate leads with precision-targeted Pay-Per-Click advertising campaigns on Google and social media.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Google Ads Management</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Social Media Ads</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Landing Page Optimization</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Performance Analytics</span></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Content Strategy Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                         <img src="services-content.webp" alt="A person writing on a notepad surrounded by books and a laptop, planning content." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    </div>
+                    <div class="md:order-1">
+                        <h2 class="text-3xl font-bold mb-4">Content Strategy</h2>
+                        <p class="text-slate-600 mb-6">Engage and attract your target audience by delivering valuable, relevant, and consistent content that builds trust and drives action across all platforms.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Content Audits</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Editorial Calendars</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Blog & Article Writing</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Video & Motion Graphics</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- AI & Automation Service -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="services-ai.webp" alt="A futuristic image of a brain with circuit patterns, representing AI and automation." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">AI & Automation</h2>
+                        <p class="text-slate-600 mb-6">Leverage the power of artificial intelligence to streamline your marketing efforts, enhance customer interactions, and unlock data-driven insights.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Chatbot Integration</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Marketing Automation</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Predictive Analytics</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Personalized Content Delivery</span></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="py-20 bg-gray-50">
+        <section id="faq" class="py-20 bg-slate-50" itemscope itemtype="https://schema.org/FAQPage">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Frequently Asked Questions</h2>
-                    <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Have questions? We've got answers. Here are some of the things we get asked the most.</p>
+                 <div class="text-center mb-16 animate-on-scroll">
+                    <span class="text-indigo-600 font-semibold">FAQ</span>
+                    <h2 class="text-4xl md:text-5xl font-bold">Frequently Asked Questions</h2>
                 </div>
-                <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    <div class="space-y-4" id="faq-accordion">
-                        <div class="bg-white rounded-lg shadow-md"><button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg text-gray-800 hover:bg-gray-50 rounded-lg"><span class="flex-grow">How do we get started on a new project?</span><i class="fa-solid fa-chevron-down transform transition-transform"></i></button><div class="faq-answer px-6 pb-0"><p class="text-gray-600 py-4">It all starts with a conversation! The first step is to schedule a free, no-obligation discovery call with our team. We'll discuss your goals, challenges, and vision to see if we're the right fit. From there, we'll develop a detailed proposal and project roadmap for you.</p></div></div>
-                        <div class="bg-white rounded-lg shadow-md"><button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg text-gray-800 hover:bg-gray-50 rounded-lg"><span class="flex-grow">What are your pricing models?</span><i class="fa-solid fa-chevron-down transform transition-transform"></i></button><div class="faq-answer px-6 pb-0"><p class="text-gray-600 py-4">We offer flexible pricing to suit different needs. For well-defined projects like a new website, we typically work on a fixed-project basis. For ongoing services like SEO and Social Media Marketing, we offer monthly retainer packages. We're always transparent with our pricing, and there are no hidden fees.</p></div></div>
-                        <div class="bg-white rounded-lg shadow-md"><button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg text-gray-800 hover:bg-gray-50 rounded-lg"><span class="flex-grow">How long does a typical project take?</span><i class="fa-solid fa-chevron-down transform transition-transform"></i></button><div class="faq-answer px-6 pb-0"><p class="text-gray-600 py-4">Project timelines can vary depending on the scope and complexity. A standard branding project might take 4-6 weeks, while a custom website build can take anywhere from 8-16 weeks. We will always provide a detailed timeline in our project proposal before any work begins.</p></div></div>
-                        <div class="bg-white rounded-lg shadow-md"><button class="faq-question w-full flex justify-between items-center text-left p-6 font-semibold text-lg text-gray-800 hover:bg-gray-50 rounded-lg"><span class="flex-grow">What kind of results can I expect?</span><i class="fa-solid fa-chevron-down transform transition-transform"></i></button><div class="faq-answer px-6 pb-0"><p class="text-gray-600 py-4">Our focus is on delivering measurable results that align with your business goals. This could mean increased website traffic, higher search engine rankings, more qualified leads, or a stronger brand presence. We establish key performance indicators (KPIs) at the start of every project and provide regular reports to track our progress.</p></div></div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <details class="p-6">
+                            <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">How long does a website project take?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
+                                <p itemprop="text">A typical website build takes 4-6 weeks from start to finish, depending on the complexity and scope of the project. We'll provide a detailed timeline after our initial discovery call.</p>
+                            </div>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 100ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <details class="p-6">
+                             <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">How much does a new website cost?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                             <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
+                                <p itemprop="text">Our pricing varies based on your specific needs. Our starter packages begin at £299. Check out our <a href="pricing.html" class="text-indigo-600 underline">pricing section</a> for more details, or contact us for a custom quote.</p>
+                             </div>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-white rounded-lg shadow-sm animate-on-scroll" style="transition-delay: 200ms;" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                         <details class="p-6">
+                            <summary class="font-semibold text-lg flex justify-between items-center"><span itemprop="name">Do you provide ongoing support?</span> <i class="faq-icon fas fa-plus text-indigo-500"></i></summary>
+                            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="mt-4 text-slate-600">
+                                <p itemprop="text">Yes! We offer ongoing website maintenance and SEO packages to ensure your site remains secure, up-to-date, and continues to rank well in search engines.</p>
+                            </div>
+                         </details>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- Call to Action Section -->
-        <section id="cta" class="py-20 bg-gradient-to-r from-purple-600 to-indigo-700 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl font-bold mb-4" data-aos="fade-up">Ready to Start Your Project?</h2>
-                <p class="text-lg mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Let's discuss how our services can help you achieve your business goals.</p>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <button class="quote-modal-trigger inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">Get a Free Quote</button>
+        <section id="cta" class="py-20 relative overflow-hidden text-white">
+            <canvas id="cta-canvas" class="hero-canvas"></canvas>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h2 class="text-4xl font-bold mb-4 animate-on-scroll">Ready to Grow Your Business?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto animate-on-scroll" style="transition-delay: 100ms;">Let's discuss how our services can help you achieve your goals in the Berkshire market.</p>
+                <div class="animate-on-scroll" style="transition-delay: 200ms;">
+                    <a href="contact.html" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">Get a Free Quote</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Quote Modal -->
-    <div id="quote-modal" class="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center z-[70] hidden p-4">
-        <div id="quote-modal-content" class="bg-white rounded-xl p-8 max-w-xl w-full shadow-lg relative transform scale-95 opacity-0">
-            <button id="quote-modal-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl" aria-label="Close quote form"><i class="fa-solid fa-xmark"></i></button>
-            <h3 class="text-3xl font-bold mb-2 text-indigo-700">Get a Free Quote</h3>
-            <p class="text-gray-600 mb-6">Let's build something amazing together. Fill out the form below to start the conversation.</p>
-            <form id="quote-form">
-                <div id="quote-form-result" class="text-center font-medium mb-4"></div>
-                <div class="space-y-4">
-                    <div><label for="quote-name" class="block text-gray-700 font-semibold mb-1">Full Name</label><input type="text" id="quote-name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" required></div>
-                    <div><label for="quote-email" class="block text-gray-700 font-semibold mb-1">Email Address</label><input type="email" id="quote-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" required></div>
-                    <div><label for="quote-service" class="block text-gray-700 font-semibold mb-1">Service of Interest</label><select id="quote-service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" required><option value="" disabled selected>Select a service...</option><option value="SEO">Search Engine Optimization</option><option value="Web Development">Web Development & Design</option><option value="Social Media">Social Media Marketing</option><option value="Branding">Branding & Creative</option><option value="Content Strategy">Content Strategy</option><option value="PPC Advertising">PPC Advertising</option><option value="AI & Automation">AI & Automation</option></select></div>
-                    <div><label for="quote-message" class="block text-gray-700 font-semibold mb-1">Project Details</label><textarea id="quote-message" name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow" placeholder="Tell us a little about your project..."></textarea></div>
-                </div>
-                <button type="submit" class="mt-6 w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors transform hover:scale-105">Submit Request</button>
-            </form>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white pt-16 pb-32">
+    <footer class="bg-slate-800 text-white pt-16 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
-                <div><a href="index.html" class="inline-block mb-4"><div class="flex flex-col items-center md:items-start"><span class="text-3xl font-extrabold text-white leading-none">Scalix</span><span class="text-xs font-semibold text-gray-400 tracking-widest uppercase">Studios</span></div></a><p class="text-gray-400 text-sm">A creative agency dedicated to building impactful digital experiences that drive growth and inspire audiences.</p></div>
-                <div><h4 class="font-bold text-lg mb-4">Quick Links</h4><ul class="space-y-2"><li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li><li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li><li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Work</a></li><li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li></ul></div>
-                <div><h4 class="font-bold text-lg mb-4">Contact Us</h4><ul class="space-y-2 text-gray-400"><li class="flex items-center justify-center md:justify-start"><i class="fa-solid fa-map-marker-alt mr-2"></i>Barry Avenue, Windsor, SL4 5JA</li><li class="flex items-center justify-center md:justify-start"><i class="fa-solid fa-envelope mr-2"></i><a href="mailto:info@scalixstudios.co.uk" class="hover:text-white transition-colors">info@scalixstudios.co.uk</a></li><li class="flex items-center justify-center md:justify-start"><i class="fa-solid fa-phone mr-2"></i><a href="tel:07568171184" class="hover:text-white transition-colors">07568 171184</a></li></ul></div>
-                <div><h4 class="font-bold text-lg mb-4">Follow Us</h4><div class="flex justify-center md:justify-start space-x-4"><a href="https://www.instagram.com/scalixstudios/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a><a href="https://www.facebook.com/scalixstudios" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a></div></div>
+                <div>
+                    <a href="index.html" class="inline-block mb-4">
+                         <div class="flex flex-col items-center md:items-start"><span class="text-3xl font-extrabold text-white leading-none">Scalix</span><span class="text-xs font-semibold text-gray-400 tracking-widest uppercase">Studios</span></div>
+                    </a>
+                    <p class="text-gray-400 text-sm">Your local digital marketing partner in Windsor, helping businesses across Berkshire and the Thames Valley to succeed online.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="casestudies.html" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center justify-center md:justify-start"><i class="fa-solid fa-map-marker-alt mr-2"></i>Barry Avenue, Windsor, SL4 5JA</li>
+                        <li class="flex items-center justify-center md:justify-start"><i class="fa-solid fa-envelope mr-2"></i><a href="mailto:info@scalixstudios.co.uk" class="hover:text-white transition-colors">info@scalixstudios.co.uk</a></li>
+                        <li class="flex items-center justify-center md:justify-start"><i class="fa-solid fa-phone mr-2"></i><a href="tel:01753257401" class="hover:text-white transition-colors">01753 257401</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="https://www.instagram.com/scalixstudios/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Visit our Instagram page"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="https://www.facebook.com/scalixstudios" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white hover:scale-125 transform transition-all duration-300 p-2" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm"><p>&copy; 2025 Scalix Studios. All Rights Reserved.</p></div>
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Scalix Studios. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Back to Top & Chatbot -->
+    <!-- Back to Top Button -->
     <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 transform scale-0 z-40" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
-    <button id="chatbot-toggle" class="fixed bottom-24 right-6 z-50 bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-blue-500/50" aria-label="Open chatbot"><i class="fa-solid fa-comments text-2xl"></i></button>
-    <div id="chatbot-window" class="chat-window fixed bottom-[10.5rem] right-6 w-80 h-96 flex flex-col bg-white rounded-xl shadow-2xl z-50"></div>
     
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="config.js"></script>
+    <!-- =================================================================
+    SCRIPTS
+    ================================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script type="importmap">
+        { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+    </script>
     <script type="module">
         import * as THREE from 'three';
 
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({ duration: 800, offset: 120, easing: 'ease-in-out', once: true });
+            
+            // --- INITIALIZATION ---
             initPreloader();
             initBackToTopButton();
-            initChatbot();
-            init3DHeroBackground();
-            initQuoteModal(); 
-            initServiceTabs(); 
-            initFaqAccordion();
+            initMobileMenu();
+            initScrollAnimations();
+            init3DHeroBackground('hero-canvas');
+            init3DHeroBackground('cta-canvas');
             
+            // --- CORE FUNCTIONS ---
+
             function initPreloader() {
                 window.addEventListener('load', () => {
                     const preloader = document.getElementById('preloader');
                     gsap.to(preloader, { opacity: 0, duration: 0.5, onComplete: () => preloader.style.display = 'none' });
+                });
+            }
+
+            function initMobileMenu() {
+                const button = document.getElementById('mobile-menu-button');
+                const menu = document.getElementById('mobile-menu');
+                const menuLinks = menu.querySelectorAll('a');
+
+                button.addEventListener('click', () => {
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    button.setAttribute('aria-expanded', !isExpanded);
+                    menu.classList.toggle('hidden');
+                });
+
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth < 768) {
+                           button.setAttribute('aria-expanded', 'false');
+                           menu.classList.add('hidden');
+                        }
+                    });
                 });
             }
 
@@ -351,203 +398,42 @@
                 window.addEventListener('scroll', () => {
                     gsap.to(btn, { scale: window.scrollY > 300 ? 1 : 0, duration: 0.3 });
                 });
-                btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             }
-
-            function initFaqAccordion() {
-                const accordion = document.getElementById('faq-accordion');
-                if (!accordion) return;
-
-                const questions = accordion.querySelectorAll('.faq-question');
-                questions.forEach(question => {
-                    question.addEventListener('click', () => {
-                        const answer = question.nextElementSibling;
-                        const icon = question.querySelector('i');
-                        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
-
-                        accordion.querySelectorAll('.faq-answer').forEach(ans => {
-                            ans.style.maxHeight = '0px';
-                            ans.previousElementSibling.querySelector('i').classList.remove('rotate-180');
-                        });
-
-                        if (!isOpen) {
-                            answer.style.maxHeight = answer.scrollHeight + 'px';
-                            icon.classList.add('rotate-180');
+            
+            function initScrollAnimations() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
                         }
                     });
+                }, {
+                    threshold: 0.1
+                });
+
+                document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                    observer.observe(element);
                 });
             }
 
-            function initServiceTabs() {
-                const tabs = document.querySelectorAll('.service-tab');
-                const panels = document.querySelectorAll('.service-tab-content');
-
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        tabs.forEach(t => t.classList.remove('active'));
-                        panels.forEach(p => p.classList.remove('active'));
-                        tab.classList.add('active');
-                        const panel = document.getElementById(tab.getAttribute('aria-controls'));
-                        panel.classList.add('active');
-                        gsap.from(panel.querySelector('div'), { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' });
-                    });
-                });
-            }
-
-            function initQuoteModal() {
-                 const modal = document.getElementById('quote-modal');
-                const modalContent = document.getElementById('quote-modal-content');
-                const openButtons = document.querySelectorAll('.quote-modal-trigger');
-                const closeButton = document.getElementById('quote-modal-close');
-                const form = document.getElementById('quote-form');
-                const resultDiv = document.getElementById('quote-form-result');
-
-                const openModal = () => {
-                    modal.classList.remove('hidden');
-                    gsap.to(modalContent, { scale: 1, opacity: 1, duration: 0.3, ease: 'power3.out' });
-                    document.body.style.overflow = 'hidden';
-                };
-
-                const closeModal = () => {
-                    gsap.to(modalContent, { scale: 0.95, opacity: 0, duration: 0.3, ease: 'power3.in', onComplete: () => {
-                        modal.classList.add('hidden');
-                        document.body.style.overflow = '';
-                    }});
-                };
-
-                openButtons.forEach(btn => btn.addEventListener('click', openModal));
-                closeButton.addEventListener('click', closeModal);
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) closeModal();
-                });
-
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    if (typeof config === 'undefined' || !config.WEB3FORMS_ACCESS_KEY) {
-                        resultDiv.textContent = "Form is not configured.";
-                        resultDiv.className = 'text-red-500 text-center font-medium mb-4';
-                        return;
-                    }
-                    
-                    resultDiv.textContent = 'Sending...';
-                    resultDiv.className = 'text-gray-700 text-center font-medium mb-4';
-
-                    const formData = new FormData(form);
-                    formData.append("access_key", config.WEB3FORMS_ACCESS_KEY);
-                    const object = Object.fromEntries(formData);
-                    const json = JSON.stringify(object);
-
-                    try {
-                        const response = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                            body: json
-                        });
-                        const result = await response.json();
-                        if (result.success) {
-                            resultDiv.textContent = 'Message sent! We will be in touch soon.';
-                            resultDiv.className = 'text-green-500 text-center font-medium mb-4';
-                            form.reset();
-                            setTimeout(closeModal, 3000);
-                        } else {
-                            throw new Error(result.message || 'Something went wrong.');
-                        }
-                    } catch (error) {
-                        resultDiv.textContent = error.message;
-                        resultDiv.className = 'text-red-500 text-center font-medium mb-4';
-                    }
-                });
-            }
-
-            async function callGeminiAPI(userQuery, systemPrompt) {
-                 if (typeof config === 'undefined' || !config.GEMINI_API_KEY) {
-                    console.error("Gemini API Key is not configured in config.js");
-                    return "Sorry, the AI Assistant is not configured correctly.";
-                }
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${config.GEMINI_API_KEY}`;
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] },
-                };
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    const result = await response.json();
-                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                    if (text) return text;
-                    else throw new Error("No content received from API.");
-                } catch (error) {
-                    console.error('Gemini API call failed:', error);
-                    return `Sorry, I'm having trouble connecting. Please try again later.`;
-                }
-            }
-
-            function initChatbot() {
-                const toggleBtn = document.getElementById('chatbot-toggle');
-                const windowDiv = document.getElementById('chatbot-window');
-                
-                windowDiv.innerHTML = `
-                    <div class="chat-header bg-gray-700 text-white p-3 flex justify-between items-center rounded-t-xl">
-                        <h3 class="font-bold">Scalix Assistant</h3>
-                        <button id="chatbot-close" class="hover:text-gray-300"><i class="fa-solid fa-xmark"></i></button>
-                    </div>
-                    <div id="chat-body" class="flex-grow p-3 overflow-y-auto bg-gray-100 space-y-2">
-                        <div class="message-bubble bot-message">Hello! How can I help you with our services today?</div>
-                    </div>
-                    <form id="chatbot-form" class="flex items-center p-3 border-t border-gray-200">
-                        <input type="text" id="chatbot-input" placeholder="Ask a question..." class="flex-grow px-3 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <button type="submit" class="ml-2 text-blue-500 hover:text-blue-700"><i class="fa-solid fa-paper-plane text-xl"></i></button>
-                    </form>`;
-                
-                const closeBtn = document.getElementById('chatbot-close');
-                const chatBody = document.getElementById('chat-body');
-                const form = document.getElementById('chatbot-form');
-                const input = document.getElementById('chatbot-input');
-
-                const addMessage = (text, sender) => {
-                    const messageDiv = document.createElement('div');
-                    messageDiv.className = `message-bubble ${sender === 'user' ? 'user-message' : 'bot-message'}`;
-                    messageDiv.textContent = text;
-                    chatBody.appendChild(messageDiv);
-                    chatBody.scrollTop = chatBody.scrollHeight;
-                };
-
-                const handleUserMessage = async (message) => {
-                    if (!message) return;
-                    addMessage(message, 'user');
-                    input.value = '';
-                    
-                    const systemPrompt = "You are an AI assistant for Scalix Studios. Answer questions about our services: SEO, Social Media Marketing, Web Development, and Branding.";
-                    const responseText = await callGeminiAPI(message, systemPrompt);
-                    
-                    addMessage(responseText, 'bot');
-                };
-
-                toggleBtn.addEventListener('click', () => windowDiv.classList.toggle('open'));
-                closeBtn.addEventListener('click', () => windowDiv.classList.remove('open'));
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    handleUserMessage(input.value.trim());
-                });
-            }
-
-            function init3DHeroBackground() {
+             function init3DHeroBackground(canvasId) {
                 let scene, camera, renderer, particles;
-                const canvas = document.getElementById('hero-canvas');
+                const canvas = document.getElementById(canvasId);
                 if (!canvas) return;
+
                 scene = new THREE.Scene();
-                camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                camera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
                 camera.position.z = 5;
                 renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-                const particleCount = 5000;
+                const particleCount = 3000;
                 const positions = new Float32Array(particleCount * 3);
                 for (let i = 0; i < particleCount * 3; i++) {
                     positions[i] = (Math.random() - 0.5) * 10;
@@ -575,9 +461,9 @@
                 animate();
 
                 window.addEventListener('resize', () => {
-                    camera.aspect = window.innerWidth / window.innerHeight;
+                    camera.aspect = canvas.offsetWidth / canvas.offsetHeight;
                     camera.updateProjectionMatrix();
-                    renderer.setSize(window.innerWidth, window.innerHeight);
+                    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
                     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
                 });
             }

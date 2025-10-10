@@ -7,24 +7,24 @@
     <!-- =================================================================
     PRIMARY SEO & METADATA
     ================================================================== -->
-    <title>Contact Us | Scalix Studios | Berkshire Digital Agency</title>
-    <meta name="description" content="Get in touch with Scalix Studios, your local web design and SEO agency in Windsor, Berkshire. Let's discuss your project and how we can help your business grow.">
-    <meta name="keywords" content="contact digital agency, berkshire web design contact, seo agency windsor, get a quote, scalix studios contact">
+    <title>Case Studies | Scalix Studios | Proven Results in Berkshire</title>
+    <meta name="description" content="Explore our case studies to see how Scalix Studios delivers real results for businesses in Berkshire with web design, SEO, and Google Ads.">
+    <meta name="keywords" content="web design case studies, seo results berkshire, digital marketing portfolio, scalix studios, windsor web design, slough seo agency">
     <meta name="author" content="Scalix Studios">
-    <link rel="canonical" href="https://www.scalixstudios.co.uk/contact.html">
+    <link rel="canonical" href="https://www.scalixstudios.co.uk/casestudies.html">
     <meta name="robots" content="index, follow">
 
     <!-- =================================================================
     SOCIAL MEDIA & OPEN GRAPH TAGS
     ================================================================== -->
-    <meta property="og:title" content="Contact Us | Scalix Studios">
-    <meta property="og:description" content="Ready to start your project? Contact our friendly team in Windsor for a free, no-obligation quote.">
+    <meta property="og:title" content="Case Studies | Scalix Studios">
+    <meta property="og:description" content="See our proven track record of helping Berkshire businesses succeed online.">
     <meta property="og:image" content="scalix_logo.webp">
-    <meta property="og:url" content="https://www.scalixstudios.co.uk/contact.html">
+    <meta property="og:url" content="https://www.scalixstudios.co.uk/casestudies.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact Us | Scalix Studios">
-    <meta name="twitter:description" content="Ready to start your project? Contact our friendly team in Windsor for a free, no-obligation quote.">
+    <meta name="twitter:title" content="Case Studies | Scalix Studios">
+    <meta name="twitter:description" content="See our proven track record of helping Berkshire businesses succeed online.">
     <meta name="twitter:image" content="scalix_logo.webp">
 
     <!-- =================================================================
@@ -48,7 +48,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS (Consistent with other pages) -->
     <style>
         :root { 
             --primary-color: #6d28d9; 
@@ -64,11 +64,25 @@
             color: var(--text-dark);
         }
         h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        body::-webkit-scrollbar { width: 12px; }
+        body::-webkit-scrollbar-track { background: #e2e8f0; }
+        body::-webkit-scrollbar-thumb { background-color: var(--primary-color); border-radius: 6px; border: 3px solid #e2e8f0; }
         .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(230, 230, 230, 0.8); }
         .loader { border-top-color: var(--accent-color); animation: spinner 1.5s linear infinite; }
         @keyframes spinner { 100% { transform: rotate(360deg); } }
         
         .hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: linear-gradient(135deg, var(--secondary-color), #1a202c); }
+
+        /* Performance-friendly scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -93,84 +107,101 @@
                 <ul class="flex flex-col mt-4 md:mt-0 md:flex-row md:space-x-8 text-lg font-medium text-center">
                     <li><a href="index.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Home</a></li>
                     <li><a href="services.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Services</a></li>
-                    <li><a href="casestudies.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Case Studies</a></li>
+                    <li><a href="casestudies.html" class="block py-2 md:py-0 text-blue-600 transition-colors" aria-current="page">Case Studies</a></li>
                     <li><a href="pricing.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Pricing</a></li>
-                    <li><a href="contact.html" class="block py-2 md:py-0 text-blue-600 transition-colors" aria-current="page">Contact</a></li>
+                    <li><a href="contact.html" class="block py-2 md:py-0 text-gray-700 hover:text-blue-600 transition-colors">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     
     <main>
-        <!-- Hero Section for Contact -->
-        <header id="hero" class="py-20 md:py-32 flex items-center justify-center text-center p-4 relative overflow-hidden">
+        <!-- Hero Section for Case Studies -->
+        <header id="hero" class="min-h-[70vh] flex items-center justify-center text-center p-4 relative overflow-hidden">
              <canvas id="hero-canvas" class="hero-canvas"></canvas>
             <div class="container mx-auto max-w-4xl z-10 px-4">
-                <h1 class="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight">Get In Touch</h1>
+                <h1 class="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight">Our Proven Results</h1>
                 <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                    We're here to answer any questions you may have. Reach out to us and we'll respond as soon as we can.
+                    We're passionate about helping local businesses succeed. Here's a look at some of the results we've achieved for our clients across Berkshire.
                 </p>
             </div>
         </header>
 
-        <!-- Contact Section -->
-        <section id="contact-form-section" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Contact Info & Map -->
+        <!-- Detailed Case Studies Section -->
+        <section id="detailed-casestudies" class="py-20 bg-white">
+            <div class="container mx-auto px-4 space-y-20">
+
+                <!-- Wisetax Case Study -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="case-study-wisetax.webp" alt="A professional website for an accountancy firm displayed on a laptop screen." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
                     <div>
-                        <h2 class="text-3xl font-bold mb-6">Contact Information</h2>
-                        <p class="text-slate-600 mb-8">Based in the heart of Windsor, we're proud to serve businesses throughout Berkshire and the Thames Valley. Feel free to visit, call, or email us.</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-2xl text-indigo-600 mt-1 mr-4"></i>
-                                <div>
-                                    <h3 class="font-bold text-lg">Our Address</h3>
-                                    <p class="text-slate-600">Barry Avenue, Windsor, SL4 5JA</p>
-                                </div>
-                            </div>
-                             <div class="flex items-start">
-                                <i class="fas fa-envelope text-2xl text-indigo-600 mt-1 mr-4"></i>
-                                <div>
-                                    <h3 class="font-bold text-lg">Email Us</h3>
-                                    <a href="mailto:info@scalixstudios.co.uk" class="text-slate-600 hover:text-indigo-600 transition-colors">info@scalixstudios.co.uk</a>
-                                </div>
-                            </div>
-                             <div class="flex items-start">
-                                <i class="fas fa-phone text-2xl text-indigo-600 mt-1 mr-4"></i>
-                                <div>
-                                    <h3 class="font-bold text-lg">Call Us</h3>
-                                    <a href="tel:01753257401" class="text-slate-600 hover:text-indigo-600 transition-colors">01753 257401</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 rounded-lg overflow-hidden shadow-lg">
-                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.29969185108!2d-0.6148386842320146!3d51.48161197963073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48767addc8b98139%3A0x6b742844b207865c!2sBarry%20Ave%2C%20Windsor%20SL4%205JA%2C%20UK!5e0!3m2!1sen!2sus!4v1678886475653!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
+                        <span class="text-indigo-600 font-semibold text-sm">SEO & Web Design</span>
+                        <h2 class="text-3xl font-bold my-2">Wisetax Accountants</h2>
+                        <p class="text-slate-600 mb-6">Wisetax needed a professional online presence to attract local clients in Slough. We built a clean, user-friendly website from the ground up, focusing on clear calls-to-action and expert content. Our targeted local SEO strategy ensured they ranked highly for key search terms, driving a significant increase in qualified leads.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>First-page ranking for "accountants in Slough"</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>40% increase in new client consultations</span></li>
+                        </ul>
                     </div>
+                </div>
 
-                    <!-- Contact Form -->
-                    <div class="bg-slate-50 p-8 rounded-lg shadow-lg">
-                        <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
-                        <form id="contact-form" class="space-y-6">
-                            <div id="form-result" class="text-center font-medium"></div>
-                            <div>
-                                <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow" required>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow" required>
-                            </div>
-                            <div>
-                                <label for="message" class="block text-gray-700 font-semibold mb-2">Your Message</label>
-                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-shadow" required></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition-colors transform hover:scale-105">Send Message</button>
-                        </form>
+                <!-- Hampshire Fencing Case Study -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                        <img src="case-study-hampshire-fencing.webp" alt="Google Ads campaign report for a fencing company showing positive lead generation." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
                     </div>
+                    <div class="md:order-1">
+                        <h2 class="text-3xl font-bold mb-4">Hampshire Fencing</h2>
+                         <span class="text-indigo-600 font-semibold text-sm">Google Ads Campaign</span>
+                        <p class="text-slate-600 mb-6">This client wanted immediate results. We launched a highly-targeted Google Ads campaign with a modest £200 ad spend. Within the first week, the campaign generated 3 high-quality leads, one of which converted into a significant sale, delivering an immediate return on investment.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>3 qualified leads in the first 7 days</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Achieved positive ROI within the first month</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pave & Turf Case Study -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <img src="case-study-pave-and-turf.webp" alt="A collage showing a new logo, website, and social media posts for a landscaping company." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Pave & Turf</h2>
+                        <span class="text-indigo-600 font-semibold text-sm">Full Rebranding</span>
+                        <p class="text-slate-600 mb-6">Pave & Turf needed a complete brand overhaul to reflect the quality of their work. We designed a modern logo, built a stunning new website to showcase their portfolio, and launched their social media presence. This cohesive new brand has elevated their position in the market and attracted larger, more profitable projects.</p>
+                        <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Complete brand identity design</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Established a strong social media presence</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- HM Clinic Case Study -->
+                <div class="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="md:order-2">
+                        <img src="case-study-hm-clinic.webp" alt="A clean and professional website for a healthcare clinic shown on a tablet." class="rounded-lg shadow-xl" loading="lazy" decoding="async">
+                    </div>
+                    <div class="md:order-1">
+                        <h2 class="text-3xl font-bold mb-4">HM Clinic</h2>
+                        <span class="text-indigo-600 font-semibold text-sm">SEO & Google Presence</span>
+                        <p class="text-slate-600 mb-6">HM Clinic required a website that was not only professional but also highly visible to local patients. We developed an SEO-optimised website and fully set up their Google Business Profile. This strategy significantly improved their local search ranking, making it easier for new patients to find and book appointments.</p>
+                         <ul class="space-y-3 text-slate-600">
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>Top 3 ranking on Google Maps for local searches</span></li>
+                           <li class="flex items-start"><i class="fa-solid fa-circle-check text-indigo-500 mt-1 mr-3"></i><span>25% increase in online appointment bookings</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Call to Action Section -->
+        <section id="cta" class="py-20 relative overflow-hidden text-white">
+            <canvas id="cta-canvas" class="hero-canvas"></canvas>
+            <div class="container mx-auto px-4 text-center relative z-10">
+                <h2 class="text-4xl font-bold mb-4 animate-on-scroll">Ready to Be Our Next Success Story?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto animate-on-scroll" style="transition-delay: 100ms;">Let's discuss how our services can help you achieve your goals in the Berkshire market.</p>
+                <div class="animate-on-scroll" style="transition-delay: 200ms;">
+                    <a href="contact.html" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">Get a Free Quote</a>
                 </div>
             </div>
         </section>
@@ -232,15 +263,13 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             
-            // --- CONSTANTS ---
-            const WEB3FORMS_ACCESS_KEY = 'bc6fb5fc-82e9-4564-91f9-960547acb045';
-
             // --- INITIALIZATION ---
             initPreloader();
             initBackToTopButton();
             initMobileMenu();
+            initScrollAnimations();
             init3DHeroBackground('hero-canvas');
-            initContactForm();
+            init3DHeroBackground('cta-canvas');
             
             // --- CORE FUNCTIONS ---
 
@@ -282,49 +311,25 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
-
-            function initContactForm() {
-                const form = document.getElementById('contact-form');
-                const resultDiv = document.getElementById('form-result');
-
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    resultDiv.textContent = 'Sending...';
-                    resultDiv.className = "text-gray-700 text-center font-medium";
-
-                    const formData = new FormData(form);
-                    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-                    const object = Object.fromEntries(formData);
-                    const json = JSON.stringify(object);
-
-                    try {
-                        const response = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                            body: json
-                        });
-
-                        const result = await response.json();
-                        if (result.success) {
-                            resultDiv.textContent = 'Message sent successfully!';
-                            resultDiv.className = 'text-green-500 text-center font-medium';
-                            form.reset();
-                        } else {
-                            throw new Error(result.message || 'Something went wrong.');
+            
+            function initScrollAnimations() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
                         }
-                    } catch (error) {
-                        console.error('Fetch error:', error);
-                        resultDiv.textContent = 'An error occurred. Please try again.';
-                        resultDiv.className = 'text-red-500 text-center font-medium';
-                    }
-                    
-                    setTimeout(() => {
-                        resultDiv.textContent = '';
-                    }, 6000);
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                    observer.observe(element);
                 });
             }
 
-            function init3DHeroBackground(canvasId) {
+             function init3DHeroBackground(canvasId) {
                 let scene, camera, renderer, particles;
                 const canvas = document.getElementById(canvasId);
                 if (!canvas) return;
@@ -374,3 +379,4 @@
     </script>
 </body>
 </html>
+
