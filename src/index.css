@@ -44,3 +44,29 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
 
 .testimonial-slider-track { display: flex; }
 .testimonial-slide { flex: 0 0 100%; box-sizing: border-box; }
+
+/* Gradient text utility */
+.gradient-text { background: linear-gradient(135deg, #6d28d9, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-warm { background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-teal { background: linear-gradient(135deg, #06b6d4, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-green { background: linear-gradient(135deg, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Glow effects */
+.glow-card { transition: all 0.3s ease; }
+.glow-card:hover { box-shadow: 0 0 30px rgba(109,40,217,0.15), 0 20px 40px -10px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.glow-blue:hover { box-shadow: 0 0 30px rgba(59,130,246,0.2), 0 20px 40px -10px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.glow-amber:hover { box-shadow: 0 0 30px rgba(245,158,11,0.2), 0 20px 40px -10px rgba(0,0,0,0.1); transform: translateY(-4px); }
+.glow-teal:hover { box-shadow: 0 0 30px rgba(6,182,212,0.2), 0 20px 40px -10px rgba(0,0,0,0.1); transform: translateY(-4px); }
+
+/* Number counter animation */
+@keyframes countUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.count-up { animation: countUp 0.6s ease-out forwards; }
+
+/* Floating elements */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.float { animation: float 6s ease-in-out infinite; }
+.float-delay { animation: float 6s ease-in-out 2s infinite; }
+
+/* Subtle pulse */
+@keyframes softPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+.soft-pulse { animation: softPulse 3s ease-in-out infinite; }
