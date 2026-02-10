@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useEffect, useState, lazy, Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
@@ -16,15 +16,6 @@ const Portfolio = lazy(() => import('./pages/Portfolio'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 
 function App() {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800)
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (loading) return <Preloader />
-
   return (
     <>
       <ScrollToTop />
