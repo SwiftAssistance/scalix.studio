@@ -35,7 +35,7 @@ export default function SocialMediaMarketing() {
               <div className="bg-white rounded-2xl p-6 border border-purple-100 shadow-sm">
                 <div className="flex items-center gap-3 mb-3"><div className="w-8 h-8 bg-purple-100 rounded-full" /><div><div className="h-3 w-24 bg-slate-200 rounded" /><div className="h-2 w-16 bg-slate-100 rounded mt-1" /></div></div>
                 <div className="bg-gradient-to-br from-purple-200 to-pink-200 rounded-lg h-48 mb-3" />
-                <div className="flex gap-4 text-slate-400 text-sm"><span>&#9825; 247</span><span>&#9993; 18</span><span>&#8631; 12</span></div>
+                <div className="flex gap-4 text-slate-500 text-sm"><span>&#9825; 247</span><span>&#9993; 18</span><span>&#8631; 12</span></div>
               </div>
             </div>
           </div>

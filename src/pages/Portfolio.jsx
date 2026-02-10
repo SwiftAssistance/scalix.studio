@@ -16,7 +16,7 @@ function Modal({ project, onClose }) {
     <div className="fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center z-[70] p-4" onClick={onClose}>
       <div className="bg-white rounded-xl max-w-3xl w-full shadow-lg relative max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
         <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl z-10" onClick={onClose} aria-label="Close"><FaTimes /></button>
-        <img src={project.img} alt={project.alt} className="w-full h-64 object-cover rounded-t-xl" />
+        <img src={project.img} alt={project.alt} width="768" height="256" className="w-full h-64 object-cover rounded-t-xl" />
         <div className="p-8">
           <h3 className="text-3xl font-bold mb-2 text-indigo-700">{project.title}: {project.tag}</h3>
           <p className="text-gray-600 mb-6">{project.desc}</p>
@@ -87,7 +87,7 @@ export default function Portfolio() {
                 <div key={p.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
                   {p.reverse ? (
                     <>
-                      <div className="lg:order-last"><img src={p.img} alt={p.alt} className="rounded-xl shadow-2xl w-full h-auto object-cover" loading="lazy" /></div>
+                      <div className="lg:order-last"><img src={p.img} alt={p.alt} width="600" height="400" className="rounded-xl shadow-2xl w-full h-auto object-cover" loading="lazy" /></div>
                       <div className="text-left">
                         <p className="text-indigo-600 font-semibold mb-2">{p.tag}</p>
                         <h3 className="text-4xl font-bold text-gray-800 mb-4">{p.title}</h3>
@@ -97,7 +97,7 @@ export default function Portfolio() {
                     </>
                   ) : (
                     <>
-                      <div><img src={p.img} alt={p.alt} className="rounded-xl shadow-2xl w-full h-auto object-cover" loading="lazy" /></div>
+                      <div><img src={p.img} alt={p.alt} width="600" height="400" className="rounded-xl shadow-2xl w-full h-auto object-cover" loading="lazy" /></div>
                       <div className="text-left">
                         <p className="text-indigo-600 font-semibold mb-2">{p.tag}</p>
                         <h3 className="text-4xl font-bold text-gray-800 mb-4">{p.title}</h3>

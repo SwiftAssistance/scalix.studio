@@ -100,13 +100,13 @@ const featuredStudy = {
   title: 'Fencing Co, Portsmouth',
   metric: '3 leads in 7 days',
   desc: 'Targeted Google Search campaign with £500 ad spend — generating qualified leads and phone inquiries within the first week of launch.',
-  img: 'https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=80&w=1974&auto=format&fit=crop',
+  img: 'https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=75&w=800&auto=format&fit=crop',
   alt: 'Modern wooden fence in a garden',
 }
 
 const supportingStudies = [
-  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', metric: 'Page 1 on Google', img: 'https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop', alt: 'Accountant working on laptop' },
-  { tag: 'Branding & Web', title: 'Bespoke Furniture, Windsor', metric: 'Premium clientele', img: 'https://images.unsplash.com/photo-1595514522863-b765e921d882?q=80&w=1964&auto=format&fit=crop', alt: 'Craftsman working on bespoke furniture' },
+  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', metric: 'Page 1 on Google', img: 'https://images.unsplash.com/photo-1554224155-1696413565d3?q=75&w=600&auto=format&fit=crop', alt: 'Accountant working on laptop' },
+  { tag: 'Branding & Web', title: 'Bespoke Furniture, Windsor', metric: 'Premium clientele', img: 'https://images.unsplash.com/photo-1595514522863-b765e921d882?q=75&w=600&auto=format&fit=crop', alt: 'Craftsman working on bespoke furniture' },
 ]
 
 const processSteps = [
@@ -160,9 +160,11 @@ function TestimonialSlider() {
       </div>
       <button onClick={resetTimer(prev)} aria-label="Previous testimonial" className="absolute top-1/2 -left-4 md:-left-6 transform -translate-y-1/2 bg-white rounded-full shadow-lg border border-slate-200 w-12 h-12 flex items-center justify-center text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition-colors z-10"><FaChevronLeft /></button>
       <button onClick={resetTimer(next)} aria-label="Next testimonial" className="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-white rounded-full shadow-lg border border-slate-200 w-12 h-12 flex items-center justify-center text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition-colors z-10"><FaChevronRight /></button>
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center gap-3 mt-6" role="tablist" aria-label="Testimonial slides">
         {testimonials.map((_, i) => (
-          <button key={i} onClick={() => { clearInterval(timerRef.current); setCurrent(i); timerRef.current = setInterval(next, 7000) }} className={`h-2 rounded-full transition-all ${i === current ? 'bg-indigo-600 w-8' : 'bg-slate-300 hover:bg-slate-400 w-2'}`} aria-label={`Go to slide ${i+1}`} />
+          <button key={i} onClick={() => { clearInterval(timerRef.current); setCurrent(i); timerRef.current = setInterval(next, 7000) }} className={`relative h-12 w-12 flex items-center justify-center`} aria-label={`Go to testimonial ${i+1}`} role="tab" aria-selected={i === current}>
+            <span className={`block rounded-full transition-all ${i === current ? 'bg-indigo-600 w-8 h-3' : 'bg-slate-400 hover:bg-slate-500 w-3 h-3'}`} />
+          </button>
         ))}
       </div>
     </div>
@@ -193,7 +195,7 @@ export default function Home() {
               {[{ n: '50+', l: 'Projects delivered' }, { n: '5.0', l: 'Google rating' }, { n: '3x', l: 'Average ROAS' }, { n: '£299', l: 'Websites from' }].map((s, i) => (
                 <div key={i} className="animate-on-scroll" style={{ transitionDelay: `${i * 100}ms` }}>
                   <span className="text-2xl md:text-3xl font-extrabold text-white">{s.n}</span>
-                  <span className="block text-slate-400 text-xs mt-0.5">{s.l}</span>
+                  <span className="block text-slate-300 text-xs mt-0.5">{s.l}</span>
                 </div>
               ))}
             </div>
@@ -223,12 +225,12 @@ export default function Home() {
                   >
                     {/* Service image */}
                     <div className={`relative overflow-hidden ${i === 0 ? 'h-48 md:h-56' : 'h-40'}`}>
-                      <img src={s.img} alt={s.imgAlt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                      <img src={s.img} alt={s.imgAlt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                       <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
                       {/* Stat badge */}
                       <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-xl text-center ${i === 0 ? 'bg-white/15 backdrop-blur-sm border border-white/20' : 'bg-slate-900/80 backdrop-blur-sm'}`}>
                         <span className={`block text-lg font-extrabold leading-tight ${i === 0 ? 'text-white' : 'text-white'}`}>{s.stat}</span>
-                        <span className={`block text-[10px] uppercase tracking-wider ${i === 0 ? 'text-slate-300' : 'text-slate-300'}`}>{s.statLabel}</span>
+                        <span className={`block text-xs uppercase tracking-wider ${i === 0 ? 'text-slate-300' : 'text-slate-300'}`}>{s.statLabel}</span>
                       </div>
                       {/* Icon floating over image bottom */}
                       <div className={`absolute bottom-0 left-8 translate-y-1/2 w-14 h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10`}>
@@ -239,12 +241,12 @@ export default function Home() {
                     {/* Content */}
                     <div className="p-8 pt-10 md:px-8">
                       <h3 className={`text-xl font-bold mb-2 ${i === 0 ? 'text-white' : 'group-hover:text-indigo-600 transition-colors'}`}>{s.title}</h3>
-                      <p className={`text-sm leading-relaxed mb-5 ${i === 0 ? 'text-slate-300' : 'text-slate-500'}`}>{s.desc}</p>
+                      <p className={`text-sm leading-relaxed mb-5 ${i === 0 ? 'text-slate-300' : 'text-slate-600'}`}>{s.desc}</p>
                       <ul className="space-y-2 mb-6">
                         {s.features.map((f, j) => (
                           <li key={j} className="flex items-center gap-2.5">
-                            <FaCheck className={`text-xs flex-shrink-0 ${i === 0 ? 'text-indigo-400' : 'text-indigo-600'}`} />
-                            <span className={`text-sm ${i === 0 ? 'text-slate-400' : 'text-slate-600'}`}>{f}</span>
+                            <FaCheck className={`text-xs flex-shrink-0 ${i === 0 ? 'text-indigo-300' : 'text-indigo-600'}`} />
+                            <span className={`text-sm ${i === 0 ? 'text-slate-300' : 'text-slate-600'}`}>{f}</span>
                           </li>
                         ))}
                       </ul>
@@ -301,7 +303,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
                 {/* Featured large card */}
                 <Link to="/case-studies" className="lg:col-span-3 group relative rounded-3xl overflow-hidden animate-on-scroll featured-study-card">
-                  <img src={featuredStudy.img} alt={featuredStudy.alt} className="w-full h-72 lg:h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src={featuredStudy.img} alt={featuredStudy.alt} width="800" height="600" className="w-full h-72 lg:h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
                     <span className="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4">{featuredStudy.tag}</span>
@@ -317,7 +319,7 @@ export default function Home() {
                 <div className="lg:col-span-2 flex flex-col gap-6">
                   {supportingStudies.map((cs, i) => (
                     <Link key={i} to="/case-studies" className="group flex-1 relative rounded-3xl overflow-hidden animate-on-scroll min-h-[200px]" style={{ transitionDelay: `${(i + 1) * 100}ms` }}>
-                      <img src={cs.img} alt={cs.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                      <img src={cs.img} alt={cs.alt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <span className="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">{cs.tag}</span>
@@ -349,7 +351,7 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
               <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Ready to stand out<br />from the competition?</h2>
-              <p className="text-lg text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed">Free consultation — no jargon, no pressure. Let&apos;s talk about what your business actually needs.</p>
+              <p className="text-lg text-slate-300 mb-10 max-w-xl mx-auto leading-relaxed">Free consultation — no jargon, no pressure. Let&apos;s talk about what your business actually needs.</p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-50 transition-all hover:gap-3">Start Your Project <FaArrowRight /></Link>
                 <Link to="/pricing" className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">View Pricing</Link>

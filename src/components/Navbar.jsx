@@ -18,10 +18,10 @@ export default function Navbar() {
     <nav className="glass-nav sticky top-0 z-50" aria-label="Main navigation">
       <div className="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center">
         <Link to="/" className="transform transition-transform hover:scale-105">
-          <img src="/LOGO.png" alt="Scalix Studios - Digital Agency Berkshire" className="h-10 md:h-12 w-auto" />
+          <img src="/LOGO.png" alt="Scalix Studios - Digital Agency Berkshire" width="160" height="40" className="h-10 md:h-12 w-auto" />
         </Link>
         <button
-          className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          className="md:hidden w-12 h-12 flex items-center justify-center rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label="Toggle menu"
@@ -34,7 +34,7 @@ export default function Navbar() {
               <li key={path}>
                 <Link
                   to={path}
-                  className={`block py-2 md:py-0 transition-colors ${
+                  className={`block py-3 md:py-2 transition-colors ${
                     pathname === path ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                   }`}
                   onClick={() => setIsOpen(false)}

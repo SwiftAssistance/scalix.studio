@@ -6,7 +6,7 @@ export default function ServiceHero({ breadcrumb, badge, badgeColor = 'bg-indigo
     <header className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #4c1d95 0%, #1a202c 100%)' }}>
       <div className="absolute inset-0 opacity-15" style={{ background: 'radial-gradient(circle at 30% 50%, #6d28d9 0%, transparent 50%), radial-gradient(circle at 80% 80%, #3b82f6 0%, transparent 40%)' }} />
       <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
-        <nav aria-label="Breadcrumb" className="text-slate-400 text-sm mb-6">
+        <nav aria-label="Breadcrumb" className="text-slate-300 text-sm mb-6">
           <Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">{breadcrumb}</span>
         </nav>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -25,7 +25,7 @@ export default function ServiceHero({ breadcrumb, badge, badgeColor = 'bg-indigo
                 <div className="w-3 h-3 rounded-full bg-green-400/60" />
                 <div className="flex-1 bg-white/5 rounded-md h-5 ml-3" />
               </div>
-              <img src={image} alt={imageAlt} className="rounded-lg w-full object-cover" loading="eager" />
+              <img src={image} alt={imageAlt} width="600" height="400" className="rounded-lg w-full object-cover" loading="eager" />
             </div>
           </div>
         </div>
