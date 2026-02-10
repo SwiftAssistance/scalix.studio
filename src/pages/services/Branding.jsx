@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
+import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const faqs = [
@@ -19,19 +20,9 @@ export default function Branding() {
     <>
       <SEO title="Branding Agency Berkshire | Logo Design Windsor & Slough | Scalix Studios" description="Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines. Based in Windsor." keywords="branding agency berkshire, logo design windsor, brand identity slough, graphic design berkshire, rebranding services" canonical="https://www.scalixstudios.co.uk/services/branding" structuredData={[structuredData, faqStructuredData]} />
 
-      {/* Full-width dramatic typography hero */}
-      <header className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1c1917 0%, #44403c 40%, #78350f 100%)' }}>
-        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at 80% 20%, #f59e0b 0%, transparent 40%), radial-gradient(circle at 20% 80%, #e11d48 0%, transparent 40%)' }} />
-        <div className="container mx-auto px-4 py-28 md:py-44 relative z-10">
-          <nav aria-label="Breadcrumb" className="text-amber-300/60 text-sm mb-8"><Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">Branding</span></nav>
-          <h1 className="text-6xl md:text-9xl font-extrabold text-white leading-none mb-8 max-w-4xl">Your brand<br /><span className="gradient-text-warm">is a feeling.</span></h1>
-          <p className="text-xl text-stone-300 max-w-lg mb-10">We don&apos;t just design logos. We craft the emotional connection between you and your audience.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-amber-500 text-stone-900 px-8 py-4 rounded-full font-bold hover:bg-amber-400 transition-all hover:gap-3">Start Your Brand <FaArrowRight /></Link>
-        </div>
-      </header>
+      <ServiceHero breadcrumb="Branding" badge="Branding & Creative" badgeColor="bg-amber-500/15 border-amber-500/30 text-amber-300" title="Your Brand" highlight="Is a Feeling" highlightClass="gradient-text-warm" description="We don't just design logos. We craft the emotional connection between you and your audience." cta="Start Your Brand" ctaClass="bg-amber-500 hover:bg-amber-400 text-stone-900" image="/creative-branding-services.webp" imageAlt="Creative branding and logo design" />
 
       <main ref={scrollRef}>
-        {/* Large alternating blocks — not a card grid */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-5xl space-y-0">
             {[
@@ -49,7 +40,6 @@ export default function Branding() {
           </div>
         </section>
 
-        {/* Horizontal process — not numbered cards */}
         <section className="py-20 bg-stone-900 text-white overflow-hidden">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-on-scroll">The Process</h2>
@@ -65,7 +55,6 @@ export default function Branding() {
           </div>
         </section>
 
-        {/* FAQ as flat text — no accordion */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl font-bold mb-12 animate-on-scroll">Questions</h2>
@@ -80,7 +69,6 @@ export default function Branding() {
           </div>
         </section>
 
-        {/* Centered text CTA */}
         <section className="py-20 bg-stone-50">
           <div className="container mx-auto px-4 text-center max-w-2xl animate-on-scroll">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready for a brand that<br />stands out?</h2>

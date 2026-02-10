@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaMagnifyingGlass, FaLocationDot, FaGears, FaChartLine, FaFileLines, FaArrowRight } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
+import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const faqs = [
@@ -19,19 +20,9 @@ export default function SEOService() {
     <>
       <SEO title="SEO Services Berkshire | Local SEO Agency Windsor & Slough | Scalix Studios" description="Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. First-page Google rankings and more qualified leads." keywords="seo services berkshire, local seo windsor, seo agency slough, google ranking berkshire" canonical="https://www.scalixstudios.co.uk/services/seo" structuredData={[structuredData, faqStructuredData]} />
 
-      {/* Centered hero — no grid, no mockup */}
-      <header className="relative overflow-hidden bg-slate-950 text-white text-center">
-        <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 50% 80%, #6d28d9 0%, transparent 50%)' }} />
-        <div className="container mx-auto px-4 py-28 md:py-40 relative z-10">
-          <nav aria-label="Breadcrumb" className="text-slate-400 text-sm mb-8"><Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">SEO</span></nav>
-          <h1 className="text-5xl md:text-8xl font-extrabold mb-6 leading-none">Get Found on <span className="gradient-text">Google</span></h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">We help Berkshire businesses climb the rankings and drive real, measurable growth through search.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-indigo-500 transition-all hover:gap-3">Free SEO Audit <FaArrowRight /></Link>
-        </div>
-      </header>
+      <ServiceHero breadcrumb="SEO" badge="SEO Services" title="Get Found on" highlight="Google" description="We help Berkshire businesses climb the rankings and drive real, measurable growth through search." cta="Free SEO Audit" image="/seo-strategy-berkshire.webp" imageAlt="SEO strategy analysis dashboard" />
 
       <main ref={scrollRef}>
-        {/* Before / After split */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-on-scroll">What Happens When SEO Works</h2>
@@ -58,7 +49,6 @@ export default function SEOService() {
           </div>
         </section>
 
-        {/* Zigzag alternating content blocks */}
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-4 max-w-5xl space-y-20">
             {[
@@ -76,7 +66,6 @@ export default function SEOService() {
           </div>
         </section>
 
-        {/* FAQ as 2-column grid */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 animate-on-scroll">Common Questions</h2>
@@ -91,7 +80,6 @@ export default function SEOService() {
           </div>
         </section>
 
-        {/* Full-width CTA banner */}
         <section className="bg-indigo-600 text-white py-16">
           <div className="container mx-auto px-4 text-center animate-on-scroll">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to dominate Google?</h2>
