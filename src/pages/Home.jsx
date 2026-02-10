@@ -139,13 +139,13 @@ export default function Home() {
   return (
     <>
       <SEO structuredData={structuredData} />
-      <ParticleHero className="min-h-[90vh]">
-        <span className="inline-block px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-blue-200 mb-6">Berkshire&apos;s Creative Digital Agency</span>
-        <h1 className="text-4xl md:text-7xl font-extrabold mb-6 text-white leading-tight">Digital Experiences<br />That <span className="gradient-text-teal">Inspire</span></h1>
-        <p className="text-lg md:text-xl mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto">We craft innovative brands, websites, and marketing strategies to help Berkshire businesses stand out and succeed.</p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-50 transition-all hover:gap-3">Start Your Project <FaArrowRight /></Link>
-          <Link to="/case-studies" className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">View Our Work</Link>
+      <ParticleHero className="min-h-[75vh] md:min-h-[90vh]">
+        <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-white/10 border border-white/20 rounded-full text-xs md:text-sm font-medium text-blue-200 mb-4 md:mb-6">Berkshire&apos;s Creative Digital Agency</span>
+        <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold mb-4 md:mb-6 text-white leading-tight">Digital Experiences That <span className="gradient-text-teal">Inspire</span></h1>
+        <p className="text-base md:text-xl mb-6 md:mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto px-2">We craft innovative brands, websites, and marketing strategies to help Berkshire businesses stand out and succeed.</p>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+          <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg hover:bg-indigo-50 transition-all hover:gap-3">Start Your Project <FaArrowRight /></Link>
+          <Link to="/case-studies" className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white/20 transition-all">View Our Work</Link>
         </div>
       </ParticleHero>
 
