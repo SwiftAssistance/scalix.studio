@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaRectangleAd, FaBullseye, FaFileInvoiceDollar, FaChartColumn, FaArrowTrendUp, FaArrowRight } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
+import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const faqs = [
@@ -19,20 +20,9 @@ export default function PPCAdvertising() {
     <>
       <SEO title="PPC Advertising Berkshire | Google Ads Agency Windsor | Scalix Studios" description="Expert PPC and Google Ads management for Berkshire businesses. Immediate leads with targeted pay-per-click. Average 3x ROAS." keywords="ppc advertising berkshire, google ads agency windsor, ppc management slough, pay per click reading, facebook ads berkshire" canonical="https://www.scalixstudios.co.uk/services/ppc-advertising" structuredData={[structuredData, faqStructuredData]} />
 
-      {/* Dashboard-style hero with metrics built in */}
-      <header className="relative overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(circle at 60% 30%, #10b981 0%, transparent 40%)' }} />
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-        <div className="container mx-auto px-4 py-24 md:py-36 relative z-10">
-          <nav aria-label="Breadcrumb" className="text-slate-400 text-sm mb-6"><Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">PPC</span></nav>
-          <h1 className="text-5xl md:text-8xl font-extrabold mb-6 leading-none">Ads That <span className="gradient-text-green">Print Money</span></h1>
-          <p className="text-xl text-slate-300 max-w-2xl mb-10">Targeted Google & social ads with measurable ROI. Pay for results, not promises.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full font-bold hover:bg-emerald-400 transition-all hover:gap-3">Free PPC Audit <FaArrowRight /></Link>
-        </div>
-      </header>
+      <ServiceHero breadcrumb="PPC" badge="Pay-Per-Click Advertising" badgeColor="bg-emerald-500/15 border-emerald-500/30 text-emerald-300" title="Ads That" highlight="Print Money" highlightClass="gradient-text-green" description="Targeted Google & social ads with measurable ROI. Pay for results, not promises." cta="Free PPC Audit" ctaClass="bg-emerald-500 hover:bg-emerald-400 text-white" image="/ppc-advertising-berkshire.webp" imageAlt="PPC advertising campaign dashboard" />
 
       <main ref={scrollRef}>
-        {/* Full-width dashboard metrics strip */}
         <section className="bg-slate-900 border-t border-emerald-500/20 py-12">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
@@ -46,7 +36,6 @@ export default function PPCAdvertising() {
           </div>
         </section>
 
-        {/* Two-column deep-dive features — not a card grid */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-16 animate-on-scroll">What we manage</h2>
@@ -70,7 +59,6 @@ export default function PPCAdvertising() {
           </div>
         </section>
 
-        {/* FAQ as side-by-side columns */}
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl font-bold mb-12 animate-on-scroll">Common questions</h2>
@@ -85,7 +73,6 @@ export default function PPCAdvertising() {
           </div>
         </section>
 
-        {/* Dark CTA strip */}
         <section className="bg-emerald-600 text-white py-16">
           <div className="container mx-auto px-4 text-center animate-on-scroll">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Stop wasting ad spend</h2>

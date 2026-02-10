@@ -1,14 +1,14 @@
-import { FaCircleCheck } from 'react-icons/fa6'
+import { FaCircleCheck, FaArrowRight } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import ParticleHero from '../components/ParticleHero'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const studies = [
-  { tag: 'SEO & Web Design', title: 'Wisetax Accountants', desc: 'Wisetax needed a professional online presence to attract local clients in Slough. We built a clean, user-friendly website from the ground up, focusing on clear calls-to-action and expert content. Our targeted local SEO strategy ensured they ranked highly for key search terms, driving a significant increase in qualified leads.', results: ['First-page ranking for "accountants in Slough"','40% increase in new client consultations'], img: '/wisetax-logo.jpg', alt: 'Wisetax Accountants website on laptop' },
-  { tag: 'Google Ads Campaign', title: 'Hampshire Fencing', desc: 'This client wanted immediate results. We launched a highly-targeted Google Ads campaign with a modest £200 ad spend. Within the first week, the campaign generated 3 high-quality leads, one of which converted into a significant sale, delivering an immediate return on investment.', results: ['3 qualified leads in the first 7 days','Achieved positive ROI within the first month'], img: '/ejm-logo.jpg', alt: 'Google Ads campaign report', reverse: true },
-  { tag: 'Full Rebranding', title: 'Pave & Turf', desc: "Pave & Turf needed a complete brand overhaul to reflect the quality of their work. We designed a modern logo, built a stunning new website to showcase their portfolio, and launched their social media presence. This cohesive new brand has elevated their position in the market and attracted larger, more profitable projects.", results: ['Complete brand identity design','Established a strong social media presence'], img: '/rvs-logo.jpg', alt: 'Pave & Turf rebranding materials' },
-  { tag: 'SEO & Google Presence', title: 'HM Clinic', desc: "HM Clinic required a website that was not only professional but also highly visible to local patients. We developed an SEO-optimised website and fully set up their Google Business Profile. This strategy significantly improved their local search ranking, making it easier for new patients to find and book appointments.", results: ['Top 3 ranking on Google Maps for local searches','25% increase in online appointment bookings'], img: '/scalix_logo.webp', alt: 'HM Clinic website on tablet', reverse: true },
+  { tag: 'SEO & Web Design', title: 'Wisetax Accountants', desc: 'Wisetax needed a professional online presence to attract local clients in Slough. We built a clean, user-friendly website from the ground up, focusing on clear calls-to-action and expert content. Our targeted local SEO strategy ensured they ranked highly for key search terms, driving a significant increase in qualified leads.', results: ['First-page ranking for "accountants in Slough"','40% increase in new client consultations'], img: '/wisetax-logo.jpg', alt: 'Wisetax Accountants website on laptop', metric: 'Page 1 Google', color: 'from-indigo-500 to-blue-600' },
+  { tag: 'Google Ads Campaign', title: 'Hampshire Fencing', desc: 'This client wanted immediate results. We launched a highly-targeted Google Ads campaign with a modest £200 ad spend. Within the first week, the campaign generated 3 high-quality leads, one of which converted into a significant sale, delivering an immediate return on investment.', results: ['3 qualified leads in the first 7 days','Achieved positive ROI within the first month'], img: '/ejm-logo.jpg', alt: 'Google Ads campaign report', metric: '3 leads in 7 days', color: 'from-emerald-500 to-teal-600' },
+  { tag: 'Full Rebranding', title: 'Pave & Turf', desc: "Pave & Turf needed a complete brand overhaul to reflect the quality of their work. We designed a modern logo, built a stunning new website to showcase their portfolio, and launched their social media presence. This cohesive new brand has elevated their position in the market and attracted larger, more profitable projects.", results: ['Complete brand identity design','Established a strong social media presence'], img: '/rvs-logo.jpg', alt: 'Pave & Turf rebranding materials', metric: 'Full rebrand', color: 'from-amber-500 to-orange-600' },
+  { tag: 'SEO & Google Presence', title: 'HM Clinic', desc: "HM Clinic required a website that was not only professional but also highly visible to local patients. We developed an SEO-optimised website and fully set up their Google Business Profile. This strategy significantly improved their local search ranking, making it easier for new patients to find and book appointments.", results: ['Top 3 ranking on Google Maps for local searches','25% increase in online appointment bookings'], img: '/scalix_logo.webp', alt: 'HM Clinic website on tablet', metric: 'Top 3 Maps', color: 'from-violet-500 to-purple-600' },
 ]
 
 export default function CaseStudies() {
@@ -24,40 +24,50 @@ export default function CaseStudies() {
       />
 
       <ParticleHero className="min-h-[70vh]">
-        <h1 className="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight">Our Proven Results</h1>
-        <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">We&apos;re passionate about helping local businesses succeed. Here&apos;s a look at some of the results we&apos;ve achieved for our clients across Berkshire.</p>
+        <span className="inline-block px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-blue-200 mb-6">Client Success Stories</span>
+        <h1 className="text-4xl md:text-7xl font-extrabold mb-4 text-white leading-tight">Our Proven <span className="gradient-text-teal">Results</span></h1>
+        <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">We&apos;re passionate about helping local businesses succeed. Here&apos;s a look at what we&apos;ve achieved for our clients across Berkshire.</p>
       </ParticleHero>
 
       <main ref={scrollRef}>
         <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 space-y-20">
+          <div className="container mx-auto px-4 max-w-6xl space-y-24">
             {studies.map((s, i) => (
-              <div key={i} className="animate-on-scroll grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                {s.reverse ? (
-                  <>
-                    <div className="md:order-2"><img src={s.img} alt={s.alt} className="rounded-lg shadow-xl" loading="lazy" /></div>
-                    <div className="md:order-1">
-                      <span className="text-indigo-600 font-semibold text-sm">{s.tag}</span>
-                      <h2 className="text-3xl font-bold my-2">{s.title}</h2>
-                      <p className="text-slate-600 mb-6">{s.desc}</p>
-                      <ul className="space-y-3 text-slate-600">
-                        {s.results.map((r, j) => <li key={j} className="flex items-start"><FaCircleCheck className="text-indigo-500 mt-1 mr-3 flex-shrink-0" /><span>{r}</span></li>)}
-                      </ul>
+              <div key={i} className={`animate-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
+                <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
+                  {/* Image with browser frame */}
+                  <div className="relative">
+                    <div className="bg-slate-100 rounded-2xl p-3 border border-slate-200 shadow-lg">
+                      <div className="flex items-center gap-2 px-3 py-2 mb-2">
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
+                        <div className="flex-1 bg-slate-200 rounded-md h-4 ml-3" />
+                      </div>
+                      <div className="bg-white rounded-lg p-8 flex items-center justify-center min-h-[280px]">
+                        <img src={s.img} alt={s.alt} className="max-h-48 max-w-full object-contain" loading="lazy" />
+                      </div>
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <img src={s.img} alt={s.alt} className="rounded-lg shadow-xl" loading="lazy" />
-                    <div>
-                      <span className="text-indigo-600 font-semibold text-sm">{s.tag}</span>
-                      <h2 className="text-3xl font-bold my-2">{s.title}</h2>
-                      <p className="text-slate-600 mb-6">{s.desc}</p>
-                      <ul className="space-y-3 text-slate-600">
-                        {s.results.map((r, j) => <li key={j} className="flex items-start"><FaCircleCheck className="text-indigo-500 mt-1 mr-3 flex-shrink-0" /><span>{r}</span></li>)}
-                      </ul>
+                    {/* Floating metric badge */}
+                    <div className={`absolute -bottom-4 ${i % 2 === 1 ? 'left-4' : 'right-4'} bg-gradient-to-r ${s.color} text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg`}>
+                      {s.metric}
                     </div>
-                  </>
-                )}
+                  </div>
+                </div>
+                <div className={i % 2 === 1 ? 'lg:order-1' : ''}>
+                  <span className="inline-block text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full mb-3">{s.tag}</span>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">{s.title}</h2>
+                  <p className="text-slate-600 leading-relaxed mb-6">{s.desc}</p>
+                  <div className="space-y-3">
+                    <p className="text-sm font-bold text-slate-900 uppercase tracking-wide">Key Results</p>
+                    {s.results.map((r, j) => (
+                      <div key={j} className="flex items-start gap-3">
+                        <FaCircleCheck className="text-indigo-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-slate-700">{r}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -67,10 +77,11 @@ export default function CaseStudies() {
         <section className="py-20 relative overflow-hidden text-white">
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #4c1d95, #1a202c)' }} />
           <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-4xl font-bold mb-4 animate-on-scroll">Ready to Be Our Next Success Story?</h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto animate-on-scroll">Let&apos;s discuss how our services can help you achieve your goals in the Berkshire market.</p>
+            <span className="inline-block px-4 py-1.5 bg-white/10 border border-white/20 rounded-full text-sm font-medium text-indigo-200 mb-6">Your Turn</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-on-scroll">Ready to Be Our Next Success Story?</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto text-slate-300 animate-on-scroll">Let&apos;s discuss how our services can help you achieve your goals in the Berkshire market.</p>
             <div className="animate-on-scroll">
-              <Link to="/contact" className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:bg-gray-200 transform hover:scale-105 transition-all">Get a Free Quote</Link>
+              <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-indigo-50 transition-all hover:gap-3">Get a Free Quote <FaArrowRight /></Link>
             </div>
           </div>
         </section>

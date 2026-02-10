@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaInstagram, FaFacebook, FaLinkedin, FaArrowRight } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
+import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const faqs = [
@@ -19,19 +20,9 @@ export default function SocialMediaMarketing() {
     <>
       <SEO title="Social Media Marketing Berkshire | Social Media Agency Windsor | Scalix Studios" description="Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month." keywords="social media marketing berkshire, social media agency windsor, facebook marketing slough" canonical="https://www.scalixstudios.co.uk/services/social-media-marketing" structuredData={[structuredData, faqStructuredData]} />
 
-      {/* Bold centered hero */}
-      <header className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #db2777 50%, #f97316 100%)' }}>
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="container mx-auto px-4 py-28 md:py-40 relative z-10 text-center">
-          <nav aria-label="Breadcrumb" className="text-white/60 text-sm mb-8"><Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">Social Media</span></nav>
-          <h1 className="text-5xl md:text-8xl font-extrabold mb-6 text-white leading-none">Social Media That <span className="text-yellow-300">Actually Works</span></h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">Turn followers into customers with strategic content and paid ads across every platform.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-purple-700 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 hover:text-purple-900 transition-all hover:gap-3">Get Started <FaArrowRight /></Link>
-        </div>
-      </header>
+      <ServiceHero breadcrumb="Social Media" badge="Social Media Marketing" title="Social Media That" highlight="Actually Works" highlightClass="gradient-text-warm" description="Turn followers into customers with strategic content and paid ads across every platform." cta="Get Started" image="/social-media-marketing-agency.webp" imageAlt="Social media marketing campaigns" />
 
       <main ref={scrollRef}>
-        {/* Per-platform sections — each visually distinct */}
         <section className="bg-gradient-to-br from-pink-50 to-purple-50 py-20">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center animate-on-scroll">
@@ -87,14 +78,12 @@ export default function SocialMediaMarketing() {
           </div>
         </section>
 
-        {/* Inline stats */}
         <section className="py-12 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
           <div className="container mx-auto px-4 flex flex-wrap justify-center gap-16 text-center">
             {[{ n: '200%', l: 'Engagement increase' }, { n: '30+', l: 'Posts per month' }, { n: '£199', l: 'Starting price' }].map((s, i) => (<div key={i}><span className="text-4xl font-extrabold">{s.n}</span><span className="block text-purple-100 text-sm mt-1">{s.l}</span></div>))}
           </div>
         </section>
 
-        {/* FAQ as 2-col cards */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 animate-on-scroll">Questions</h2>
@@ -109,7 +98,6 @@ export default function SocialMediaMarketing() {
           </div>
         </section>
 
-        {/* Gradient CTA banner */}
         <section className="py-16" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #db2777 100%)' }}>
           <div className="container mx-auto px-4 text-center text-white animate-on-scroll">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to blow up your socials?</h2>

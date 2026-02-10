@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaRobot, FaWandMagicSparkles, FaBrain, FaEnvelopeOpenText, FaChartPie, FaArrowRight } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
+import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const faqs = [
@@ -19,20 +20,10 @@ export default function AIAutomation() {
     <>
       <SEO title="AI & Automation Berkshire | Chatbots & Marketing Automation | Scalix Studios" description="AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation. Free consultation." keywords="ai automation berkshire, chatbot development windsor, marketing automation slough, ai solutions berkshire, business automation" canonical="https://www.scalixstudios.co.uk/services/ai-automation" structuredData={[structuredData, faqStructuredData]} />
 
-      {/* Futuristic centered hero */}
-      <header className="relative overflow-hidden bg-slate-950 text-white text-center">
-        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 50%, #7c3aed 0%, transparent 30%), radial-gradient(circle at 80% 20%, #06b6d4 0%, transparent 35%)', opacity: 0.2 }} />
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-        <div className="container mx-auto px-4 py-28 md:py-40 relative z-10">
-          <nav aria-label="Breadcrumb" className="text-slate-400 text-sm mb-8"><Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">AI &amp; Automation</span></nav>
-          <h1 className="text-5xl md:text-8xl font-extrabold mb-6 leading-none">The Future Is <span className="gradient-text-teal">Automated</span></h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-10">AI chatbots, smart workflows, and automation that save you hours every week.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-violet-500 text-white px-8 py-4 rounded-full font-bold hover:from-cyan-400 hover:to-violet-400 transition-all hover:gap-3">Free Consultation <FaArrowRight /></Link>
-        </div>
-      </header>
+      <ServiceHero breadcrumb="AI & Automation" badge="AI & Automation" badgeColor="bg-cyan-500/15 border-cyan-500/30 text-cyan-300" title="The Future Is" highlight="Automated" highlightClass="gradient-text-teal" description="AI chatbots, smart workflows, and automation that save you hours every week." cta="Free Consultation" ctaClass="bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 text-white" image="/ai-automation-solutions.webp" imageAlt="AI automation dashboard" />
 
       <main ref={scrollRef}>
-        {/* Before / After comparison — unique to this page */}
+        {/* Before / After comparison */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 animate-on-scroll">Manual vs Automated</h2>
@@ -61,7 +52,7 @@ export default function AIAutomation() {
           </div>
         </section>
 
-        {/* Large single-row features — not a 3-col card grid */}
+        {/* Feature rows */}
         <section className="py-20 bg-slate-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-16 animate-on-scroll">What we build</h2>
@@ -85,7 +76,7 @@ export default function AIAutomation() {
           </div>
         </section>
 
-        {/* FAQ as 2-col */}
+        {/* FAQ */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl font-bold mb-12 animate-on-scroll">Questions</h2>
@@ -100,7 +91,7 @@ export default function AIAutomation() {
           </div>
         </section>
 
-        {/* Gradient CTA */}
+        {/* CTA */}
         <section className="py-16 bg-gradient-to-r from-cyan-600 to-violet-600 text-white">
           <div className="container mx-auto px-4 text-center animate-on-scroll">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to automate &amp; scale?</h2>

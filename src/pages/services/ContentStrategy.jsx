@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { FaClipboardList, FaCalendarCheck, FaBlog, FaPenFancy, FaVideo, FaArrowRight, FaQuoteLeft } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
+import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 const faqs = [
@@ -19,16 +20,7 @@ export default function ContentStrategy() {
     <>
       <SEO title="Content Strategy Berkshire | Copywriting & Blog Writing | Scalix Studios" description="Professional content strategy and copywriting for Berkshire businesses. SEO blog writing, content audits, and editorial planning that drives traffic." keywords="content strategy berkshire, copywriting windsor, blog writing berkshire, content marketing slough, seo copywriting" canonical="https://www.scalixstudios.co.uk/services/content-strategy" structuredData={[structuredData, faqStructuredData]} />
 
-      {/* Magazine-style hero */}
-      <header className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #ea580c 100%)' }}>
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="container mx-auto px-4 py-28 md:py-40 relative z-10">
-          <nav aria-label="Breadcrumb" className="text-orange-200/60 text-sm mb-8"><Link to="/" className="hover:text-white">Home</Link> / <Link to="/services" className="hover:text-white">Services</Link> / <span className="text-white">Content Strategy</span></nav>
-          <h1 className="text-5xl md:text-8xl font-extrabold text-white leading-none mb-6 max-w-3xl">Words That <span className="text-amber-300">Work Harder</span></h1>
-          <p className="text-xl text-orange-100 max-w-xl mb-10">Strategic content that attracts, engages, and converts — powering your SEO and building authority across Berkshire.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-orange-700 px-8 py-4 rounded-full font-bold hover:bg-amber-300 hover:text-orange-900 transition-all hover:gap-3">Free Content Audit <FaArrowRight /></Link>
-        </div>
-      </header>
+      <ServiceHero breadcrumb="Content Strategy" badge="Content Strategy & Copywriting" badgeColor="bg-orange-500/15 border-orange-500/30 text-orange-300" title="Words That" highlight="Work Harder" highlightClass="gradient-text-warm" description="Strategic content that attracts, engages, and converts — powering your SEO and building authority across Berkshire." cta="Free Content Audit" ctaClass="bg-orange-500 hover:bg-orange-400 text-white" image="/content-strategy-agency.webp" imageAlt="Content strategy planning dashboard" />
 
       <main ref={scrollRef}>
         {/* Editorial 2-col with pull quote */}
@@ -50,7 +42,7 @@ export default function ContentStrategy() {
           </div>
         </section>
 
-        {/* Checklist-style features — not cards */}
+        {/* Checklist-style features */}
         <section className="py-20 bg-orange-50">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 animate-on-scroll">What we deliver</h2>
@@ -71,7 +63,7 @@ export default function ContentStrategy() {
           </div>
         </section>
 
-        {/* FAQ as inline blocks */}
+        {/* FAQ */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl font-bold mb-12 animate-on-scroll">Questions</h2>
@@ -86,7 +78,7 @@ export default function ContentStrategy() {
           </div>
         </section>
 
-        {/* Warm CTA banner */}
+        {/* CTA */}
         <section className="py-16" style={{ background: 'linear-gradient(135deg, #c2410c 0%, #ea580c 100%)' }}>
           <div className="container mx-auto px-4 text-center text-white animate-on-scroll">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s create content that converts</h2>
