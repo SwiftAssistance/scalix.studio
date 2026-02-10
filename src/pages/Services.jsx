@@ -14,10 +14,11 @@ const services = [
   { icon: FaRobot, title: 'AI & Automation', desc: 'Streamline your business with AI chatbots, marketing automation, and workflow optimisation. Work smarter, save time, and scale faster.', link: '/services/ai-automation', img: '/ai-automation-solutions.webp', alt: 'AI automation solutions', color: 'from-cyan-500 to-blue-600', tag: 'New' },
 ]
 
-const structuredData = {
+const itemListData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "Digital Marketing Services by Scalix Studios",
+  "description": "Full-service digital marketing agency in Berkshire offering SEO, web design, social media, branding, PPC, content strategy, and AI automation.",
   "itemListElement": services.map((s, i) => ({
     "@type": "ListItem",
     "position": i + 1,
@@ -25,6 +26,17 @@ const structuredData = {
     "url": `https://www.scalixstudios.co.uk${s.link}`
   }))
 }
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }
+  ]
+}
+
+const structuredData = [itemListData, breadcrumbData]
 
 export default function Services() {
   const scrollRef = useScrollAnimation()

@@ -5,15 +5,17 @@ import SEO from '../components/SEO'
 import ParticleHero from '../components/ParticleHero'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
-const structuredData = {
+const localBusinessData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Scalix Studios",
-  "image": "/scalix_logo.webp",
-  "@id": "https://www.scalixstudios.co.uk",
+  "image": "https://www.scalixstudios.co.uk/scalix_logo.webp",
+  "@id": "https://www.scalixstudios.co.uk/#localbusiness",
   "url": "https://www.scalixstudios.co.uk",
   "telephone": "+441753257401",
+  "email": "info@scalixstudios.co.uk",
   "priceRange": "££",
+  "description": "Berkshire's leading digital agency specialising in SEO, web design, social media marketing, branding, PPC advertising, and AI automation for local businesses.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Barry Avenue",
@@ -23,14 +25,36 @@ const structuredData = {
     "addressCountry": "GB"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 51.4816, "longitude": -0.6125 },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "ratingCount": "3" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "bestRating": "5", "worstRating": "1", "ratingCount": "3" },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
     "opens": "09:00", "closes": "17:30"
   },
-  "sameAs": ["https://www.facebook.com/scalixstudios","https://www.instagram.com/scalixstudios/"]
+  "areaServed": [
+    { "@type": "Place", "name": "Windsor" },
+    { "@type": "Place", "name": "Slough" },
+    { "@type": "Place", "name": "Reading" },
+    { "@type": "Place", "name": "Berkshire" },
+    { "@type": "Place", "name": "Thames Valley" }
+  ],
+  "sameAs": ["https://www.facebook.com/scalixstudios","https://www.instagram.com/scalixstudios/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Digital Marketing Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Search Engine Optimisation (SEO)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Design & Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PPC Advertising" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding & Creative Design" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Content Strategy" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI & Automation" } }
+    ]
+  }
 }
+
+const structuredData = [localBusinessData]
 
 const coreServices = [
   {

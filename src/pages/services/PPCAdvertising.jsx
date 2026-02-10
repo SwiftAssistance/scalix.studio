@@ -11,14 +11,15 @@ const faqs = [
   { q: 'Can I set a maximum budget?', a: 'Absolutely. Daily limits and close monitoring ensure we never exceed your agreed budget.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "PPC Advertising Services in Berkshire", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" }, "areaServed": { "@type": "Place", "name": "Berkshire, UK" }, "url": "https://www.scalixstudios.co.uk/services/ppc-advertising" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "PPC Advertising Services in Berkshire", "description": "Expert PPC and Google Ads management for Berkshire businesses. Immediate leads with targeted pay-per-click campaigns.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/ppc-advertising", "serviceType": "PPC Advertising" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "PPC Advertising", "item": "https://www.scalixstudios.co.uk/services/ppc-advertising" }] }
 
 export default function PPCAdvertising() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="PPC Advertising Berkshire | Google Ads Agency Windsor | Scalix Studios" description="Expert PPC and Google Ads management for Berkshire businesses. Immediate leads with targeted pay-per-click. Average 3x ROAS." keywords="ppc advertising berkshire, google ads agency windsor, ppc management slough, pay per click reading, facebook ads berkshire" canonical="https://www.scalixstudios.co.uk/services/ppc-advertising" structuredData={[structuredData, faqStructuredData]} />
+      <SEO title="PPC Advertising Berkshire | Google Ads Agency Windsor | Scalix Studios" description="Expert PPC and Google Ads management for Berkshire businesses. Immediate leads with targeted pay-per-click. Average 3x ROAS." keywords="ppc advertising berkshire, google ads agency windsor, ppc management slough, pay per click reading, facebook ads berkshire" canonical="https://www.scalixstudios.co.uk/services/ppc-advertising" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="PPC" badge="Pay-Per-Click Advertising" badgeColor="bg-emerald-500/15 border-emerald-500/30 text-emerald-300" title="Ads That" highlight="Print Money" highlightClass="gradient-text-green" description="Targeted Google & social ads with measurable ROI. Pay for results, not promises." cta="Free PPC Audit" ctaClass="bg-emerald-500 hover:bg-emerald-400 text-white" image="/ppc-advertising-berkshire.webp" imageAlt="PPC advertising campaign dashboard" />
 

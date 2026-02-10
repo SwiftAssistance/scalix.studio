@@ -11,14 +11,15 @@ const faqs = [
   { q: 'What kind of chatbot can you build?', a: 'Custom chatbots that answer FAQs, capture leads, book appointments, and route complex queries to your team — 24/7.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "AI & Automation Services in Berkshire", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" }, "areaServed": { "@type": "Place", "name": "Berkshire, UK" }, "url": "https://www.scalixstudios.co.uk/services/ai-automation" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "AI & Automation Services in Berkshire", "description": "AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/ai-automation", "serviceType": "AI & Automation" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "AI & Automation", "item": "https://www.scalixstudios.co.uk/services/ai-automation" }] }
 
 export default function AIAutomation() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="AI & Automation Berkshire | Chatbots & Marketing Automation | Scalix Studios" description="AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation. Free consultation." keywords="ai automation berkshire, chatbot development windsor, marketing automation slough, ai solutions berkshire, business automation" canonical="https://www.scalixstudios.co.uk/services/ai-automation" structuredData={[structuredData, faqStructuredData]} />
+      <SEO title="AI & Automation Berkshire | Chatbots & Marketing Automation | Scalix Studios" description="AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation. Free consultation." keywords="ai automation berkshire, chatbot development windsor, marketing automation slough, ai solutions berkshire, business automation" canonical="https://www.scalixstudios.co.uk/services/ai-automation" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="AI & Automation" badge="AI & Automation" badgeColor="bg-cyan-500/15 border-cyan-500/30 text-cyan-300" title="The Future Is" highlight="Automated" highlightClass="gradient-text-teal" description="AI chatbots, smart workflows, and automation that save you hours every week." cta="Free Consultation" ctaClass="bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 text-white" image="/ai-automation-solutions.webp" imageAlt="AI automation dashboard" />
 

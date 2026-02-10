@@ -11,6 +11,32 @@ const studies = [
   { tag: 'SEO & Google Presence', title: 'HM Clinic', desc: "HM Clinic required a website that was not only professional but also highly visible to local patients. We developed an SEO-optimised website and fully set up their Google Business Profile. This strategy significantly improved their local search ranking, making it easier for new patients to find and book appointments.", results: ['Top 3 ranking on Google Maps for local searches','25% increase in online appointment bookings'], img: '/scalix_logo.webp', alt: 'HM Clinic website on tablet', metric: 'Top 3 Maps', color: 'from-violet-500 to-purple-600' },
 ]
 
+const caseStudyStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Case Studies | Scalix Studios",
+  "description": "Explore our case studies to see how Scalix Studios delivers real results for businesses in Berkshire with web design, SEO, and Google Ads.",
+  "url": "https://www.scalixstudios.co.uk/case-studies",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": studies.map((s, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${s.title} – ${s.tag}`,
+      "description": s.desc
+    }))
+  }
+}
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.scalixstudios.co.uk/case-studies" }
+  ]
+}
+
 export default function CaseStudies() {
   const scrollRef = useScrollAnimation()
 
@@ -21,6 +47,7 @@ export default function CaseStudies() {
         description="Explore our case studies to see how Scalix Studios delivers real results for businesses in Berkshire with web design, SEO, and Google Ads."
         keywords="web design case studies, seo results berkshire, digital marketing portfolio, scalix studios, windsor web design, slough seo agency"
         canonical="https://www.scalixstudios.co.uk/case-studies"
+        structuredData={[caseStudyStructuredData, breadcrumbData]}
       />
 
       <ParticleHero className="min-h-[70vh]">

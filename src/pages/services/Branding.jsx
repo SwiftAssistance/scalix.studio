@@ -11,14 +11,15 @@ const faqs = [
   { q: 'Will I own the rights?', a: 'Yes, 100%. Full ownership and copyright of all assets upon completion and final payment.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Branding & Creative Services in Berkshire", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" }, "areaServed": { "@type": "Place", "name": "Berkshire, UK" }, "url": "https://www.scalixstudios.co.uk/services/branding" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Branding & Creative Services in Berkshire", "description": "Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/branding", "serviceType": "Branding & Creative Design" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "Branding", "item": "https://www.scalixstudios.co.uk/services/branding" }] }
 
 export default function Branding() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="Branding Agency Berkshire | Logo Design Windsor & Slough | Scalix Studios" description="Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines. Based in Windsor." keywords="branding agency berkshire, logo design windsor, brand identity slough, graphic design berkshire, rebranding services" canonical="https://www.scalixstudios.co.uk/services/branding" structuredData={[structuredData, faqStructuredData]} />
+      <SEO title="Branding Agency Berkshire | Logo Design Windsor & Slough | Scalix Studios" description="Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines. Based in Windsor." keywords="branding agency berkshire, logo design windsor, brand identity slough, graphic design berkshire, rebranding services" canonical="https://www.scalixstudios.co.uk/services/branding" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="Branding" badge="Branding & Creative" badgeColor="bg-amber-500/15 border-amber-500/30 text-amber-300" title="Your Brand" highlight="Is a Feeling" highlightClass="gradient-text-warm" description="We don't just design logos. We craft the emotional connection between you and your audience." cta="Start Your Brand" ctaClass="bg-amber-500 hover:bg-amber-400 text-stone-900" image="/creative-branding-services.webp" imageAlt="Creative branding and logo design" />
 
