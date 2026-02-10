@@ -40,6 +40,10 @@ const coreServices = [
     link: '/services/web-design',
     color: 'from-violet-500 to-purple-600',
     features: ['Conversion-focused design', 'Mobile-first builds', 'Lightning-fast performance'],
+    img: '/web-development-scalix.webp',
+    imgAlt: 'Web design and development by Scalix Studios',
+    stat: '£299',
+    statLabel: 'Websites from',
   },
   {
     icon: FaMagnifyingGlassChart,
@@ -48,6 +52,10 @@ const coreServices = [
     link: '/services/seo',
     color: 'from-indigo-500 to-blue-600',
     features: ['Technical & on-page SEO', 'Local search dominance', 'Content-led authority building'],
+    img: '/seo-strategy-berkshire.webp',
+    imgAlt: 'SEO strategy and analytics dashboard',
+    stat: 'Page 1',
+    statLabel: 'Google rankings',
   },
   {
     icon: FaBullseye,
@@ -56,6 +64,10 @@ const coreServices = [
     link: '/services/ppc-advertising',
     color: 'from-emerald-500 to-teal-600',
     features: ['Google Ads management', 'Social media campaigns', 'Average 3x return on spend'],
+    img: '/ppc-advertising-berkshire.webp',
+    imgAlt: 'PPC advertising campaign management',
+    stat: '3x',
+    statLabel: 'Average ROAS',
   },
 ]
 
@@ -182,24 +194,39 @@ export default function Home() {
                   <Link
                     key={i}
                     to={s.link}
-                    className={`bento-card group relative overflow-hidden rounded-3xl border border-slate-200 p-8 md:p-10 hover:border-indigo-300 transition-all duration-300 animate-on-scroll ${i === 0 ? 'bento-featured bg-slate-900 text-white' : 'bg-white'}`}
+                    className={`bento-card group relative overflow-hidden rounded-3xl border border-slate-200 hover:border-indigo-300 transition-all duration-300 animate-on-scroll ${i === 0 ? 'bento-featured bg-slate-900 text-white' : 'bg-white'}`}
                     style={{ transitionDelay: `${i * 100}ms` }}
                   >
-                    <div className={`w-14 h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform`}>
-                      <s.icon className="text-2xl" />
+                    {/* Service image */}
+                    <div className={`relative overflow-hidden ${i === 0 ? 'h-48 md:h-56' : 'h-40'}`}>
+                      <img src={s.img} alt={s.imgAlt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                      <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
+                      {/* Stat badge */}
+                      <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-xl text-center ${i === 0 ? 'bg-white/15 backdrop-blur-sm border border-white/20' : 'bg-slate-900/80 backdrop-blur-sm'}`}>
+                        <span className={`block text-lg font-extrabold leading-tight ${i === 0 ? 'text-white' : 'text-white'}`}>{s.stat}</span>
+                        <span className={`block text-[10px] uppercase tracking-wider ${i === 0 ? 'text-slate-300' : 'text-slate-300'}`}>{s.statLabel}</span>
+                      </div>
+                      {/* Icon floating over image bottom */}
+                      <div className={`absolute bottom-0 left-8 translate-y-1/2 w-14 h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10`}>
+                        <s.icon className="text-xl" />
+                      </div>
                     </div>
-                    <h3 className={`text-2xl font-bold mb-3 ${i === 0 ? 'text-white' : 'group-hover:text-indigo-600 transition-colors'}`}>{s.title}</h3>
-                    <p className={`leading-relaxed mb-6 ${i === 0 ? 'text-slate-300' : 'text-slate-500'}`}>{s.desc}</p>
-                    <ul className="space-y-2">
-                      {s.features.map((f, j) => (
-                        <li key={j} className="flex items-center gap-2.5">
-                          <FaCheck className={`text-xs flex-shrink-0 ${i === 0 ? 'text-indigo-400' : 'text-indigo-600'}`} />
-                          <span className={`text-sm ${i === 0 ? 'text-slate-400' : 'text-slate-600'}`}>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className={`mt-8 inline-flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all ${i === 0 ? 'text-indigo-400' : 'text-indigo-600'}`}>
-                      Learn more <FaArrowRight className="text-xs" />
+
+                    {/* Content */}
+                    <div className="p-8 pt-10 md:px-8">
+                      <h3 className={`text-xl font-bold mb-2 ${i === 0 ? 'text-white' : 'group-hover:text-indigo-600 transition-colors'}`}>{s.title}</h3>
+                      <p className={`text-sm leading-relaxed mb-5 ${i === 0 ? 'text-slate-300' : 'text-slate-500'}`}>{s.desc}</p>
+                      <ul className="space-y-2 mb-6">
+                        {s.features.map((f, j) => (
+                          <li key={j} className="flex items-center gap-2.5">
+                            <FaCheck className={`text-xs flex-shrink-0 ${i === 0 ? 'text-indigo-400' : 'text-indigo-600'}`} />
+                            <span className={`text-sm ${i === 0 ? 'text-slate-400' : 'text-slate-600'}`}>{f}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className={`inline-flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all ${i === 0 ? 'text-indigo-400' : 'text-indigo-600'}`}>
+                        Learn more <FaArrowRight className="text-xs" />
+                      </div>
                     </div>
                   </Link>
                 ))}

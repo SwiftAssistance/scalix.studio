@@ -16,10 +16,9 @@ export default function Navbar() {
 
   return (
     <nav className="glass-nav sticky top-0 z-50" aria-label="Main navigation">
-      <div className="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
-        <Link to="/" className="flex flex-col items-start transform transition-transform hover:scale-105">
-          <span className="text-3xl font-extrabold text-indigo-700 leading-none">Scalix</span>
-          <span className="text-xs font-semibold text-gray-500 tracking-widest uppercase">Studios</span>
+      <div className="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center">
+        <Link to="/" className="transform transition-transform hover:scale-105">
+          <img src="/LOGO.png" alt="Scalix Studios" className="h-10 md:h-12 w-auto" />
         </Link>
         <button
           className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
