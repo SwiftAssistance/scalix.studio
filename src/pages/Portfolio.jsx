@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaTimes, FaComments, FaPaperPlane, FaTimes as FaXmark } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import SEO from '../components/SEO'
 import ParticleHero from '../components/ParticleHero'
 

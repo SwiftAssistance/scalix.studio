@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export default function useScrollAnimation(threshold = 0.1) {
+export default function useScrollAnimation(threshold = 0.05) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -16,15 +16,18 @@ export default function useScrollAnimation(threshold = 0.1) {
           }
         })
       },
-      { threshold }
+      { threshold, rootMargin: '0px 0px 50px 0px' }
     )
 
-    const elements = node.querySelectorAll('.animate-on-scroll')
-    elements.forEach((el) => observer.observe(el))
-
-    return () => {
-      elements.forEach((el) => observer.unobserve(el))
+    const observe = () => {
+      const elements = node.querySelectorAll('.animate-on-scroll:not(.is-visible)')
+      elements.forEach((el) => observer.observe(el))
     }
+
+    // Small delay to ensure DOM is settled after lazy load
+    requestAnimationFrame(observe)
+
+    return () => observer.disconnect()
   }, [threshold])
 
   return ref
