@@ -72,7 +72,7 @@ export default function Services() {
                         <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
                         <div className="flex-1 bg-slate-200 rounded-md h-4 ml-3" />
                       </div>
-                      <img src={s.img} alt={s.alt} className="rounded-lg w-full object-cover" loading="lazy" />
+                      <img src={s.img} alt={s.alt} width="600" height="400" className="rounded-lg w-full object-cover" loading="lazy" />
                     </div>
                   </div>
                   <div className={i % 2 === 1 ? 'lg:order-1' : ''}>

@@ -72,7 +72,7 @@ export default function CaseStudies() {
                         <div className="flex-1 bg-slate-200 rounded-md h-4 ml-3" />
                       </div>
                       <div className="bg-white rounded-lg p-8 flex items-center justify-center min-h-[280px]">
-                        <img src={s.img} alt={s.alt} className="max-h-48 max-w-full object-contain" loading="lazy" />
+                        <img src={s.img} alt={s.alt} width="400" height="192" className="max-h-48 max-w-full object-contain" loading="lazy" />
                       </div>
                     </div>
                     {/* Floating metric badge */}

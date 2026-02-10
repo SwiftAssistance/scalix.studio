@@ -7,7 +7,8 @@ export default function ParticleHero({ children, className = 'min-h-[90vh]' }) {
   const animRef = useRef(null)
 
   const initParticles = useCallback((width, height) => {
-    const count = 800
+    const isMobile = width < 768
+    const count = isMobile ? 150 : 350
     const particles = []
     for (let i = 0; i < count; i++) {
       particles.push({

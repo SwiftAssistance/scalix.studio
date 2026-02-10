@@ -13,7 +13,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className={`fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform duration-300 z-40 ${visible ? 'scale-100' : 'scale-0'}`}
+      className={`fixed bottom-6 right-6 bg-blue-600 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-transform duration-300 z-40 ${visible ? 'scale-100' : 'scale-0'}`}
       aria-label="Back to top"
     >
       <FaArrowUp />
