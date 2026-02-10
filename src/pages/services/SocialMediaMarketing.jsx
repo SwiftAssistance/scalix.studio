@@ -11,14 +11,15 @@ const faqs = [
   { q: 'How do you measure success?', a: 'Reach, engagement, follower growth, website clicks, and conversions. Clear monthly reports.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Social Media Marketing in Berkshire", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" }, "areaServed": { "@type": "Place", "name": "Berkshire, UK" }, "url": "https://www.scalixstudios.co.uk/services/social-media-marketing" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Social Media Marketing in Berkshire", "description": "Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/social-media-marketing", "serviceType": "Social Media Marketing", "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "199", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "199", "unitText": "per month starting from" } } }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "Social Media Marketing", "item": "https://www.scalixstudios.co.uk/services/social-media-marketing" }] }
 
 export default function SocialMediaMarketing() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="Social Media Marketing Berkshire | Social Media Agency Windsor | Scalix Studios" description="Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month." keywords="social media marketing berkshire, social media agency windsor, facebook marketing slough" canonical="https://www.scalixstudios.co.uk/services/social-media-marketing" structuredData={[structuredData, faqStructuredData]} />
+      <SEO title="Social Media Marketing Berkshire | Social Media Agency Windsor | Scalix Studios" description="Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month." keywords="social media marketing berkshire, social media agency windsor, facebook marketing slough" canonical="https://www.scalixstudios.co.uk/services/social-media-marketing" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="Social Media" badge="Social Media Marketing" title="Social Media That" highlight="Actually Works" highlightClass="gradient-text-warm" description="Turn followers into customers with strategic content and paid ads across every platform." cta="Get Started" image="/social-media-marketing-agency.webp" imageAlt="Social media marketing campaigns" />
 

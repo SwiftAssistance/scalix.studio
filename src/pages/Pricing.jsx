@@ -15,6 +15,45 @@ const websitePackages = [
   { name: 'Enterprise', desc: 'Custom solutions', price: "Let's Talk", prefix: '', features: ['Unlimited Pages','Advanced Features','Dedicated Support'], popular: false },
 ]
 
+const pricingStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pricing | Scalix Studios",
+  "description": "Transparent pricing for web design and SEO services in Berkshire.",
+  "url": "https://www.scalixstudios.co.uk/pricing",
+  "mainEntity": {
+    "@type": "OfferCatalog",
+    "name": "Scalix Studios Service Packages",
+    "itemListElement": [
+      ...monthlyPlans.map(p => ({
+        "@type": "Offer",
+        "name": p.name,
+        "description": `${p.desc}. Includes: ${p.features.join(', ')}`,
+        "priceCurrency": "GBP",
+        "price": p.price.replace('£', ''),
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": p.price.replace('£', ''), "unitText": "per month" }
+      })),
+      ...websitePackages.filter(p => p.price !== "Let's Talk").map(p => ({
+        "@type": "Offer",
+        "name": `${p.name} Website`,
+        "description": `${p.desc}. Includes: ${p.features.join(', ')}`,
+        "priceCurrency": "GBP",
+        "price": p.price.replace('£', ''),
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": p.price.replace('£', ''), "unitText": "one-time" }
+      }))
+    ]
+  }
+}
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://www.scalixstudios.co.uk/pricing" }
+  ]
+}
+
 export default function Pricing() {
   return (
     <>
@@ -23,6 +62,7 @@ export default function Pricing() {
         description="Transparent pricing for web design and SEO services in Berkshire. Explore our affordable packages for local businesses in Windsor, Slough, and the Thames Valley."
         keywords="web design pricing, seo packages berkshire, affordable websites windsor, scalix studios pricing, digital marketing costs"
         canonical="https://www.scalixstudios.co.uk/pricing"
+        structuredData={[pricingStructuredData, breadcrumbData]}
       />
 
       <ParticleHero className="py-20 md:py-32">

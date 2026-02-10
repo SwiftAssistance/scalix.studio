@@ -11,14 +11,15 @@ const faqs = [
   { q: 'Do you offer maintenance?', a: 'Yes. Security updates, content changes, performance monitoring, and technical support.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Web Design Services in Berkshire", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" }, "areaServed": { "@type": "Place", "name": "Berkshire, UK" }, "url": "https://www.scalixstudios.co.uk/services/web-design" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Web Design Services in Berkshire", "description": "Professional web design in Berkshire. Stunning, mobile-responsive websites from £299 for businesses in Windsor, Slough & Reading.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/web-design", "serviceType": "Web Design & Development", "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "299", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "299", "unitText": "starting from" } } }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "Web Design", "item": "https://www.scalixstudios.co.uk/services/web-design" }] }
 
 export default function WebDesign() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="Web Design Berkshire | Website Design Windsor & Slough | Scalix Studios" description="Professional web design in Berkshire. Stunning, mobile-responsive websites from £299 for businesses in Windsor, Slough & Reading." keywords="web design berkshire, website design windsor, web developer slough, affordable web design berkshire" canonical="https://www.scalixstudios.co.uk/services/web-design" structuredData={[structuredData, faqStructuredData]} />
+      <SEO title="Web Design Berkshire | Website Design Windsor & Slough | Scalix Studios" description="Professional web design in Berkshire. Stunning, mobile-responsive websites from £299 for businesses in Windsor, Slough & Reading." keywords="web design berkshire, website design windsor, web developer slough, affordable web design berkshire" canonical="https://www.scalixstudios.co.uk/services/web-design" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="Web Design" badge="Web Design & Development" title="Websites That" highlight="Convert" description="Beautiful, fast, mobile-first sites from £299. No templates — every pixel is yours." cta="Free Quote" ctaClass="bg-white hover:bg-indigo-50 text-indigo-700" image="/web-development-scalix.webp" imageAlt="Professional responsive website design" />
 

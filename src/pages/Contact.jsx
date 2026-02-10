@@ -3,6 +3,44 @@ import SEO from '../components/SEO'
 import ParticleHero from '../components/ParticleHero'
 import ContactForm from '../components/ContactForm'
 
+const contactStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Scalix Studios",
+  "description": "Get in touch with Scalix Studios, your local web design and SEO agency in Windsor, Berkshire.",
+  "url": "https://www.scalixstudios.co.uk/contact",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Scalix Studios",
+    "@id": "https://www.scalixstudios.co.uk/#localbusiness",
+    "telephone": "+441753257401",
+    "email": "info@scalixstudios.co.uk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Barry Avenue",
+      "addressLocality": "Windsor",
+      "addressRegion": "Berkshire",
+      "postalCode": "SL4 5JA",
+      "addressCountry": "GB"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 51.4816, "longitude": -0.6125 },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00", "closes": "17:30"
+    }
+  }
+}
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.scalixstudios.co.uk/contact" }
+  ]
+}
+
 export default function Contact() {
   return (
     <>
@@ -11,6 +49,7 @@ export default function Contact() {
         description="Get in touch with Scalix Studios, your local web design and SEO agency in Windsor, Berkshire. Let's discuss your project and how we can help your business grow."
         keywords="contact digital agency, berkshire web design contact, seo agency windsor, get a quote, scalix studios contact"
         canonical="https://www.scalixstudios.co.uk/contact"
+        structuredData={[contactStructuredData, breadcrumbData]}
       />
 
       <ParticleHero className="py-20 md:py-32">

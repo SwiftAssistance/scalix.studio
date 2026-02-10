@@ -31,6 +31,32 @@ function Modal({ project, onClose }) {
   )
 }
 
+const portfolioStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfolio | Scalix Studios",
+  "description": "Explore the portfolio of Scalix Studios. See our case studies in SEO, web development, and branding for businesses in Berkshire and beyond.",
+  "url": "https://www.scalixstudios.co.uk/portfolio",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": projects.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${p.title} – ${p.tag}`,
+      "description": p.desc
+    }))
+  }
+}
+
+const breadcrumbData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.scalixstudios.co.uk/portfolio" }
+  ]
+}
+
 export default function Portfolio() {
   const [activeModal, setActiveModal] = useState(null)
 
@@ -41,6 +67,7 @@ export default function Portfolio() {
         description="Explore the portfolio of Scalix Studios. See our case studies in SEO, web development, and branding for businesses in Berkshire and beyond."
         keywords="digital agency portfolio, branding case study, seo results, web design examples, scalix studios work"
         canonical="https://www.scalixstudios.co.uk/portfolio"
+        structuredData={[portfolioStructuredData, breadcrumbData]}
       />
 
       <ParticleHero className="min-h-[80vh]">

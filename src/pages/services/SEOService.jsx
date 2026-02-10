@@ -11,14 +11,15 @@ const faqs = [
   { q: 'What is included?', a: 'Comprehensive audit, keyword research, on-page optimisation, Google Business Profile, content strategy, link building, and monthly reporting.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "SEO Services in Berkshire", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" }, "areaServed": { "@type": "Place", "name": "Berkshire, UK" }, "url": "https://www.scalixstudios.co.uk/services/seo" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "SEO Services in Berkshire", "description": "Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. First-page Google rankings and more qualified leads.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/seo", "serviceType": "Search Engine Optimisation" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
+const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "SEO", "item": "https://www.scalixstudios.co.uk/services/seo" }] }
 
 export default function SEOService() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="SEO Services Berkshire | Local SEO Agency Windsor & Slough | Scalix Studios" description="Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. First-page Google rankings and more qualified leads." keywords="seo services berkshire, local seo windsor, seo agency slough, google ranking berkshire" canonical="https://www.scalixstudios.co.uk/services/seo" structuredData={[structuredData, faqStructuredData]} />
+      <SEO title="SEO Services Berkshire | Local SEO Agency Windsor & Slough | Scalix Studios" description="Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. First-page Google rankings and more qualified leads." keywords="seo services berkshire, local seo windsor, seo agency slough, google ranking berkshire" canonical="https://www.scalixstudios.co.uk/services/seo" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="SEO" badge="SEO Services" title="Get Found on" highlight="Google" description="We help Berkshire businesses climb the rankings and drive real, measurable growth through search." cta="Free SEO Audit" image="/seo-strategy-berkshire.webp" imageAlt="SEO strategy analysis dashboard" />
 

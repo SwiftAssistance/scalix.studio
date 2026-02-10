@@ -11,10 +11,10 @@ const pageLinks = [
 ]
 
 const serviceLinks = [
-  { label: 'SEO', to: '/services/seo' },
+  { label: 'SEO Services', to: '/services/seo' },
   { label: 'Web Design', to: '/services/web-design' },
-  { label: 'Social Media', to: '/services/social-media-marketing' },
-  { label: 'Branding', to: '/services/branding' },
+  { label: 'Social Media Marketing', to: '/services/social-media-marketing' },
+  { label: 'Branding & Creative', to: '/services/branding' },
   { label: 'PPC Advertising', to: '/services/ppc-advertising' },
   { label: 'Content Strategy', to: '/services/content-strategy' },
   { label: 'AI & Automation', to: '/services/ai-automation' },
@@ -28,9 +28,9 @@ export default function Footer() {
           {/* Brand — full width on mobile */}
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <Link to="/" className="inline-block mb-4">
-              <img src="/LOGO.png" alt="Scalix Studios" className="h-10 w-auto mx-auto md:mx-0 footer-logo" />
+              <img src="/LOGO.png" alt="Scalix Studios - Digital Agency in Windsor, Berkshire" className="h-10 w-auto mx-auto md:mx-0 footer-logo" />
             </Link>
-            <p className="text-gray-400 text-sm mb-5 max-w-xs mx-auto md:mx-0">Creative digital agency building brands, websites, and marketing that drives real growth.</p>
+            <p className="text-gray-400 text-sm mb-5 max-w-xs mx-auto md:mx-0">Berkshire digital agency specialising in SEO, web design, and marketing that drives real growth for local businesses.</p>
             <div className="flex justify-center md:justify-start gap-2.5">
               <a href="https://www.instagram.com/scalixstudios/" target="_blank" rel="noopener noreferrer" className="bg-slate-800 text-gray-400 hover:text-white hover:bg-indigo-600 rounded-lg p-2.5 transition-all" aria-label="Instagram"><FaInstagram className="text-lg" /></a>
               <a href="https://www.facebook.com/scalixstudios" target="_blank" rel="noopener noreferrer" className="bg-slate-800 text-gray-400 hover:text-white hover:bg-indigo-600 rounded-lg p-2.5 transition-all" aria-label="Facebook"><FaFacebookF className="text-lg" /></a>
