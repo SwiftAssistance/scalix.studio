@@ -224,7 +224,7 @@ export default function Home() {
                     style={{ transitionDelay: `${i * 100}ms` }}
                   >
                     {/* Service image */}
-                    <div className={`relative overflow-hidden ${i === 0 ? 'h-48 md:h-56' : 'h-40'}`}>
+                    <div className={`bento-card-image relative overflow-hidden ${i === 0 ? 'h-56 md:h-auto md:min-h-[14rem]' : 'h-48'}`}>
                       <img src={s.img} alt={s.imgAlt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                       <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
                       {/* Stat badge */}
@@ -239,7 +239,7 @@ export default function Home() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 pt-10 md:px-8">
+                    <div className="p-8 pt-10 md:px-8 flex-shrink-0">
                       <h3 className={`text-xl font-bold mb-2 ${i === 0 ? 'text-white' : 'group-hover:text-indigo-600 transition-colors'}`}>{s.title}</h3>
                       <p className={`text-sm leading-relaxed mb-5 ${i === 0 ? 'text-slate-300' : 'text-slate-600'}`}>{s.desc}</p>
                       <ul className="space-y-2 mb-6">
