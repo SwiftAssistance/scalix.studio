@@ -8,7 +8,7 @@ export default function ParticleHero({ children, className = 'min-h-[90vh]' }) {
 
   const initParticles = useCallback((width, height) => {
     const isMobile = width < 768
-    const count = isMobile ? 150 : 350
+    const count = isMobile ? 80 : 200
     const particles = []
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -27,6 +27,7 @@ export default function ParticleHero({ children, className = 'min-h-[90vh]' }) {
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
+    let resizeTimer = null
 
     const resize = () => {
       const rect = canvas.parentElement.getBoundingClientRect()
@@ -37,8 +38,13 @@ export default function ParticleHero({ children, className = 'min-h-[90vh]' }) {
       }
     }
 
+    const debouncedResize = () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(resize, 150)
+    }
+
     resize()
-    window.addEventListener('resize', resize)
+    window.addEventListener('resize', debouncedResize)
 
     const animate = () => {
       const { width, height } = canvas
@@ -67,12 +73,17 @@ export default function ParticleHero({ children, className = 'min-h-[90vh]' }) {
     animRef.current = requestAnimationFrame(animate)
 
     return () => {
-      window.removeEventListener('resize', resize)
+      window.removeEventListener('resize', debouncedResize)
+      clearTimeout(resizeTimer)
       cancelAnimationFrame(animRef.current)
     }
   }, [initParticles])
 
+  const lastMoveRef = useRef(0)
   const handleMouseMove = useCallback((e) => {
+    const now = performance.now()
+    if (now - lastMoveRef.current < 32) return // ~30fps throttle
+    lastMoveRef.current = now
     const rect = e.currentTarget.getBoundingClientRect()
     mouseRef.current.x = (e.clientX - rect.left) / rect.width
     mouseRef.current.y = (e.clientY - rect.top) / rect.height

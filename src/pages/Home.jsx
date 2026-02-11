@@ -1,10 +1,47 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { FaMagnifyingGlassChart, FaLaptopCode, FaBullseye, FaCheck, FaChevronLeft, FaChevronRight, FaStar, FaArrowRight, FaCompass, FaPaintbrush, FaRocket } from 'react-icons/fa6'
+import { FaMagnifyingGlassChart, FaLaptopCode, FaBullseye, FaCheck, FaChevronLeft, FaChevronRight, FaStar, FaArrowRight, FaCompass, FaPaintbrush, FaRocket, FaMapLocationDot, FaHandshake, FaChartLine, FaUsers } from 'react-icons/fa6'
 import SEO from '../components/SEO'
 import ParticleHero from '../components/ParticleHero'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
+/* ─── Animated counter ─── */
+function CountUp({ target, suffix = '', prefix = '' }) {
+  const [display, setDisplay] = useState(`${prefix}0${suffix}`)
+  const ref = useRef(null)
+  const done = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !done.current) {
+          done.current = true
+          const num = parseFloat(target)
+          const isDecimal = target.includes('.')
+          const duration = 1800
+          const start = performance.now()
+          const step = (now) => {
+            const progress = Math.min((now - start) / duration, 1)
+            const eased = 1 - Math.pow(1 - progress, 4)
+            const val = eased * num
+            setDisplay(`${prefix}${isDecimal ? val.toFixed(1) : Math.floor(val)}${suffix}`)
+            if (progress < 1) requestAnimationFrame(step)
+          }
+          requestAnimationFrame(step)
+        }
+      },
+      { threshold: 0.3 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [target, suffix, prefix])
+
+  return <span ref={ref}>{display}</span>
+}
+
+/* ─── Structured data ─── */
 const localBusinessData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -15,7 +52,9 @@ const localBusinessData = {
   "telephone": "+441753257401",
   "email": "info@scalixstudios.co.uk",
   "priceRange": "££",
+  "slogan": "Berkshire's Premier Digital Agency",
   "description": "Berkshire's leading digital agency specialising in SEO, web design, social media marketing, branding, PPC advertising, and AI automation for local businesses.",
+  "knowsAbout": ["Search Engine Optimisation", "Web Design", "PPC Advertising", "Social Media Marketing", "Branding", "Content Strategy", "AI Automation"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Barry Avenue",
@@ -56,14 +95,15 @@ const localBusinessData = {
 
 const structuredData = [localBusinessData]
 
+/* ─── Data ─── */
 const coreServices = [
   {
     icon: FaLaptopCode,
     title: 'Web Design & Development',
-    desc: 'Beautiful, responsive websites engineered to convert visitors into customers. Every pixel earns its place.',
+    desc: 'Conversion-optimised websites built on modern tech. We design for your customer\'s journey — not just pretty pixels. Average client sees 40%+ more enquiries.',
     link: '/services/web-design',
     color: 'from-violet-500 to-purple-600',
-    features: ['Conversion-focused design', 'Mobile-first builds', 'Lightning-fast performance'],
+    features: ['Bespoke design — zero templates', 'Mobile-first, sub-2s load times', 'SEO, analytics & CMS included'],
     img: '/web-development-scalix.webp',
     imgAlt: 'Web design and development by Scalix Studios',
     stat: '£299',
@@ -72,10 +112,10 @@ const coreServices = [
   {
     icon: FaMagnifyingGlassChart,
     title: 'Search Engine Optimisation',
-    desc: 'We get your business found. Data-driven SEO strategies that earn first-page rankings and consistent organic traffic.',
+    desc: 'Data-driven SEO that earns first-page rankings and consistent organic traffic. We\'ve put every client on page 1 for their target keywords.',
     link: '/services/seo',
     color: 'from-indigo-500 to-blue-600',
-    features: ['Technical & on-page SEO', 'Local search dominance', 'Content-led authority building'],
+    features: ['Technical & on-page SEO audits', 'Local search dominance (Maps + organic)', 'Content-led authority building'],
     img: '/seo-strategy-berkshire.webp',
     imgAlt: 'SEO strategy and analytics dashboard',
     stat: 'Page 1',
@@ -83,11 +123,11 @@ const coreServices = [
   },
   {
     icon: FaBullseye,
-    title: 'Paid Advertising',
-    desc: 'Targeted Google & social campaigns with real ROI. We turn ad spend into revenue with precision targeting.',
+    title: 'Paid Advertising (PPC)',
+    desc: 'Google Ads & social campaigns with precision targeting. Our clients average 3x return on ad spend — first leads within 7 days.',
     link: '/services/ppc-advertising',
     color: 'from-emerald-500 to-teal-600',
-    features: ['Google Ads management', 'Social media campaigns', 'Average 3x return on spend'],
+    features: ['Google Ads search & display', 'Facebook, Instagram & LinkedIn ads', 'Transparent reporting, zero wasted spend'],
     img: '/ppc-advertising-berkshire.webp',
     imgAlt: 'PPC advertising campaign management',
     stat: '3x',
@@ -110,9 +150,16 @@ const supportingStudies = [
 ]
 
 const processSteps = [
-  { icon: FaCompass, num: '01', title: 'Discover', desc: 'We learn your business, goals, and audience. No templates — strategy built around what makes you different.', color: 'from-indigo-500 to-violet-600' },
-  { icon: FaPaintbrush, num: '02', title: 'Create', desc: 'Design, build, and refine. You see progress at every stage — nothing launches without your sign-off.', color: 'from-violet-500 to-purple-600' },
-  { icon: FaRocket, num: '03', title: 'Launch & Grow', desc: 'Go live with confidence. We track performance, optimise campaigns, and scale what works.', color: 'from-purple-500 to-indigo-600' },
+  { icon: FaCompass, num: '01', title: 'Discover', desc: 'We learn your business inside-out — goals, audience, competitors. No templates. Strategy built around what makes you different.', color: 'from-indigo-500 to-violet-600' },
+  { icon: FaPaintbrush, num: '02', title: 'Create', desc: 'Design, build, and refine. You see progress at every stage with full transparency — nothing launches without your sign-off.', color: 'from-violet-500 to-purple-600' },
+  { icon: FaRocket, num: '03', title: 'Launch & Grow', desc: 'Go live with confidence. We track performance weekly, optimise relentlessly, and scale what delivers results.', color: 'from-purple-500 to-indigo-600' },
+]
+
+const whyChoose = [
+  { icon: FaMapLocationDot, title: 'Berkshire Specialists', desc: 'Based in Windsor, we know the local market. We\'ve helped businesses across Slough, Reading, and the Thames Valley dominate their area.' },
+  { icon: FaHandshake, title: 'Transparent Pricing', desc: 'No hidden fees, no lock-in contracts. You\'ll know exactly what you\'re paying for and what results to expect — before we start.' },
+  { icon: FaChartLine, title: 'Proven Results', desc: 'Every client on page 1. Average 3x return on ad spend. 40%+ increase in enquiries. We let the numbers do the talking.' },
+  { icon: FaUsers, title: 'Full-Service Team', desc: 'Designers, developers, SEO experts, and ad specialists under one roof. No outsourcing, no middlemen — just direct access to your team.' },
 ]
 
 const testimonials = [
@@ -121,6 +168,7 @@ const testimonials = [
   { name: 'Richard S', initials: 'RS', role: 'RVS Furniture', text: '"The branding and website Scalix created perfectly captured the quality of our craft. We\'ve attracted a more premium clientele and our average order value has increased."' },
 ]
 
+/* ─── Testimonial slider ─── */
 function TestimonialSlider() {
   const [current, setCurrent] = useState(0)
   const timerRef = useRef(null)
@@ -140,7 +188,7 @@ function TestimonialSlider() {
       <div className="rounded-2xl overflow-hidden">
         <div className="testimonial-slider-track" style={{ transform: `translateX(-${current * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
           {testimonials.map((t, i) => (
-            <div key={i} className="testimonial-slide p-4">
+            <div key={i} className="testimonial-slide p-4" id={`testimonial-${i}`}>
               <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-slate-100">
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, j) => <FaStar key={j} className="text-amber-400" />)}
@@ -162,7 +210,7 @@ function TestimonialSlider() {
       <button onClick={resetTimer(next)} aria-label="Next testimonial" className="absolute top-1/2 -right-4 md:-right-6 transform -translate-y-1/2 bg-white rounded-full shadow-lg border border-slate-200 w-12 h-12 flex items-center justify-center text-slate-600 hover:bg-slate-50 hover:text-indigo-600 transition-colors z-10"><FaChevronRight /></button>
       <div className="flex justify-center gap-3 mt-6" role="tablist" aria-label="Testimonial slides">
         {testimonials.map((_, i) => (
-          <button key={i} onClick={() => { clearInterval(timerRef.current); setCurrent(i); timerRef.current = setInterval(next, 7000) }} className={`relative h-12 w-12 flex items-center justify-center`} aria-label={`Go to testimonial ${i+1}`} role="tab" aria-selected={i === current}>
+          <button key={i} onClick={() => { clearInterval(timerRef.current); setCurrent(i); timerRef.current = setInterval(next, 7000) }} className={`relative h-12 w-12 flex items-center justify-center`} aria-label={`Go to testimonial ${i+1}`} role="tab" aria-selected={i === current} aria-controls={`testimonial-${i}`}>
             <span className={`block rounded-full transition-all ${i === current ? 'bg-indigo-600 w-8 h-3' : 'bg-slate-400 hover:bg-slate-500 w-3 h-3'}`} />
           </button>
         ))}
@@ -171,6 +219,7 @@ function TestimonialSlider() {
   )
 }
 
+/* ─── Page ─── */
 export default function Home() {
   const scrollRef = useScrollAnimation()
 
@@ -179,8 +228,8 @@ export default function Home() {
       <SEO structuredData={structuredData} />
       <ParticleHero className="min-h-[75vh] md:min-h-[90vh]">
         <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-white/10 border border-white/20 rounded-full text-xs md:text-sm font-medium text-blue-200 mb-4 md:mb-6">Berkshire&apos;s Creative Digital Agency</span>
-        <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold mb-4 md:mb-6 text-white leading-tight">Digital Experiences That <span className="gradient-text-teal">Inspire</span></h1>
-        <p className="text-base md:text-xl mb-6 md:mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto px-2">We craft innovative brands, websites, and marketing strategies to help Berkshire businesses stand out and succeed.</p>
+        <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold mb-4 md:mb-6 text-white leading-tight">Websites, SEO &amp; Ads<br />That <span className="gradient-text-teal">Drive Revenue</span></h1>
+        <p className="text-base md:text-xl mb-6 md:mb-8 text-blue-100/90 leading-relaxed max-w-2xl mx-auto px-2">We&apos;ve helped 50+ Berkshire businesses get to page 1, triple their ad returns, and turn their websites into lead-generation machines.</p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
           <Link to="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-indigo-700 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg hover:bg-indigo-50 transition-all hover:gap-3">Start Your Project <FaArrowRight /></Link>
           <Link to="/case-studies" className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white/20 transition-all">View Our Work</Link>
@@ -188,14 +237,22 @@ export default function Home() {
       </ParticleHero>
 
       <main ref={scrollRef}>
-        {/* Trust strip */}
-        <section className="bg-slate-900 border-t border-white/10 py-8">
+        {/* Trust strip with animated counters */}
+        <section className="bg-slate-900 border-t border-white/10 py-10 md:py-12">
           <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-x-12 gap-y-4 items-center text-center">
-              {[{ n: '50+', l: 'Projects delivered' }, { n: '5.0', l: 'Google rating' }, { n: '3x', l: 'Average ROAS' }, { n: '£299', l: 'Websites from' }].map((s, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+              {[
+                { n: '50', suffix: '+', label: 'Projects delivered', icon: FaRocket },
+                { n: '5.0', suffix: '', label: 'Google rating (5-star)', icon: FaStar },
+                { n: '3', suffix: 'x', label: 'Average ROAS on ads', icon: FaChartLine },
+                { n: '100', suffix: '%', label: 'Clients on page 1', icon: FaMagnifyingGlassChart },
+              ].map((s, i) => (
                 <div key={i} className="animate-on-scroll" style={{ transitionDelay: `${i * 100}ms` }}>
-                  <span className="text-2xl md:text-3xl font-extrabold text-white">{s.n}</span>
-                  <span className="block text-slate-300 text-xs mt-0.5">{s.l}</span>
+                  <s.icon className="text-indigo-400 text-lg mx-auto mb-2" />
+                  <span className="block text-2xl md:text-3xl font-extrabold text-white">
+                    <CountUp target={s.n} suffix={s.suffix} />
+                  </span>
+                  <span className="block text-slate-400 text-xs mt-1">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -229,8 +286,8 @@ export default function Home() {
                       <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
                       {/* Stat badge */}
                       <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-xl text-center ${i === 0 ? 'bg-white/15 backdrop-blur-sm border border-white/20' : 'bg-slate-900/80 backdrop-blur-sm'}`}>
-                        <span className={`block text-lg font-extrabold leading-tight ${i === 0 ? 'text-white' : 'text-white'}`}>{s.stat}</span>
-                        <span className={`block text-xs uppercase tracking-wider ${i === 0 ? 'text-slate-300' : 'text-slate-300'}`}>{s.statLabel}</span>
+                        <span className="block text-lg font-extrabold leading-tight text-white">{s.stat}</span>
+                        <span className="block text-xs uppercase tracking-wider text-slate-300">{s.statLabel}</span>
                       </div>
                       {/* Icon floating over image bottom */}
                       <div className={`absolute bottom-0 left-8 translate-y-1/2 w-14 h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10`}>
@@ -287,8 +344,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Why Choose Scalix */}
+        <section className="py-24 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <span className="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold mb-4">Why Scalix</span>
+                <h2 className="text-4xl md:text-5xl font-bold animate-on-scroll">Why businesses choose us<br />over <span className="gradient-text">other agencies</span>.</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {whyChoose.map((item, i) => (
+                  <div key={i} className="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-indigo-200 hover:shadow-lg transition-all animate-on-scroll" style={{ transitionDelay: `${i * 100}ms` }}>
+                    <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-5">
+                      <item.icon className="text-xl" />
+                    </div>
+                    <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Featured Case Study */}
-        <section id="work" className="py-24 bg-white">
+        <section id="work" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4">
@@ -335,7 +415,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials */}
-        <section id="testimonials" className="py-24 bg-slate-50">
+        <section id="testimonials" className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold mb-4">Testimonials</span>
@@ -350,10 +430,10 @@ export default function Home() {
           <div className="absolute inset-0 opacity-30" style={{ background: 'radial-gradient(circle at 30% 50%, #4c1d95 0%, transparent 50%), radial-gradient(circle at 70% 50%, #1e40af 0%, transparent 50%)' }} />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-on-scroll">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Ready to stand out<br />from the competition?</h2>
-              <p className="text-lg text-slate-300 mb-10 max-w-xl mx-auto leading-relaxed">Free consultation — no jargon, no pressure. Let&apos;s talk about what your business actually needs.</p>
+              <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">Ready to outperform<br />your competitors?</h2>
+              <p className="text-lg text-slate-300 mb-10 max-w-xl mx-auto leading-relaxed">Free strategy call — no jargon, no pressure. We&apos;ll audit your current setup and show you exactly where the growth opportunities are.</p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-50 transition-all hover:gap-3">Start Your Project <FaArrowRight /></Link>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-indigo-50 transition-all hover:gap-3">Book Free Strategy Call <FaArrowRight /></Link>
                 <Link to="/pricing" className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition-all">View Pricing</Link>
               </div>
             </div>

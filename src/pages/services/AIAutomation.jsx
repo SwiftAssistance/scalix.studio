@@ -11,7 +11,7 @@ const faqs = [
   { q: 'What kind of chatbot can you build?', a: 'Custom chatbots that answer FAQs, capture leads, book appointments, and route complex queries to your team — 24/7.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "AI & Automation Services in Berkshire", "description": "AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/ai-automation", "serviceType": "AI & Automation" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "AI & Automation Services in Berkshire", "description": "AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/ai-automation", "serviceType": "AI & Automation" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
 const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "AI & Automation", "item": "https://www.scalixstudios.co.uk/services/ai-automation" }] }
 
@@ -19,7 +19,7 @@ export default function AIAutomation() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="AI & Automation Berkshire | Chatbots & Marketing Automation | Scalix Studios" description="AI and marketing automation for Berkshire businesses. Custom chatbots, email automation, and workflow optimisation. Free consultation." keywords="ai automation berkshire, chatbot development windsor, marketing automation slough, ai solutions berkshire, business automation" canonical="https://www.scalixstudios.co.uk/services/ai-automation" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
+      <SEO title="AI & Automation Berkshire | Chatbots & Marketing Automation | Scalix Studios" description="AI and marketing automation for Berkshire businesses. Custom chatbots, email sequences, workflow optimisation, and smart analytics that save hours every week. Free consultation available." keywords="ai automation berkshire, chatbot development windsor, marketing automation slough, ai solutions berkshire, business automation, workflow automation, email automation" canonical="https://www.scalixstudios.co.uk/services/ai-automation" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="AI & Automation" badge="AI & Automation" badgeColor="bg-cyan-500/15 border-cyan-500/30 text-cyan-300" title="The Future Is" highlight="Automated" highlightClass="gradient-text-teal" description="AI chatbots, smart workflows, and automation that save you hours every week." cta="Free Consultation" ctaClass="bg-gradient-to-r from-cyan-500 to-violet-500 hover:from-cyan-400 hover:to-violet-400 text-white" image="/ai-automation-solutions.webp" imageAlt="AI automation dashboard" />
 
@@ -87,6 +87,24 @@ export default function AIAutomation() {
                   <h3 className="font-bold mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'Web Design', desc: 'Integrate chatbots and automation into your site.', link: '/services/web-design' },
+                { title: 'Content Strategy', desc: 'AI-assisted content creation at scale.', link: '/services/content-strategy' },
+                { title: 'SEO', desc: 'Automated reporting and analytics for SEO.', link: '/services/seo' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-slate-200 hover:border-violet-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
               ))}
             </div>
           </div>

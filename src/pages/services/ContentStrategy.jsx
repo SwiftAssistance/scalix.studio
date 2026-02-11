@@ -11,7 +11,7 @@ const faqs = [
   { q: 'How does content help SEO?', a: 'Every quality piece is a new chance to rank on Google. Businesses that blog consistently get 55% more visitors on average.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Content Strategy Services in Berkshire", "description": "Professional content strategy and copywriting for Berkshire businesses. SEO blog writing, content audits, and editorial planning.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/content-strategy", "serviceType": "Content Strategy & Copywriting" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Content Strategy Services in Berkshire", "description": "Professional content strategy and copywriting for Berkshire businesses. SEO blog writing, content audits, and editorial planning.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/content-strategy", "serviceType": "Content Strategy & Copywriting" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
 const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "Content Strategy", "item": "https://www.scalixstudios.co.uk/services/content-strategy" }] }
 
@@ -74,6 +74,24 @@ export default function ContentStrategy() {
                   <h3 className="font-bold mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-orange-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'SEO', desc: 'Content that ranks and drives organic traffic.', link: '/services/seo' },
+                { title: 'Social Media', desc: 'Repurpose content across all your channels.', link: '/services/social-media-marketing' },
+                { title: 'Web Design', desc: 'A fast site to showcase your content.', link: '/services/web-design' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
               ))}
             </div>
           </div>

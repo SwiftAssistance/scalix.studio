@@ -44,6 +44,8 @@ export default function SEO({
       <meta property="og:image" content={absoluteOgImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/webp" />
+      <meta property="og:image:alt" content={ogTitle || title} />
       <meta property="og:url" content={ogUrl || canonical} />
       <meta property="og:type" content={ogType} />
       <meta property="og:locale" content="en_GB" />

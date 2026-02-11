@@ -11,7 +11,7 @@ const faqs = [
   { q: 'Will I own the rights?', a: 'Yes, 100%. Full ownership and copyright of all assets upon completion and final payment.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Branding & Creative Services in Berkshire", "description": "Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/branding", "serviceType": "Branding & Creative Design" }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Branding & Creative Services in Berkshire", "description": "Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/branding", "serviceType": "Branding & Creative Design" }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
 const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "Branding", "item": "https://www.scalixstudios.co.uk/services/branding" }] }
 
@@ -65,6 +65,24 @@ export default function Branding() {
                   <h3 className="font-bold text-lg mb-2">{faq.q}</h3>
                   <p className="text-slate-600 leading-relaxed">{faq.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-amber-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'Web Design', desc: 'Bring your new brand to life online.', link: '/services/web-design' },
+                { title: 'Social Media', desc: 'Consistent branding across every platform.', link: '/services/social-media-marketing' },
+                { title: 'Content Strategy', desc: 'Brand voice and messaging that connects.', link: '/services/content-strategy' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-amber-100 hover:border-amber-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
               ))}
             </div>
           </div>
