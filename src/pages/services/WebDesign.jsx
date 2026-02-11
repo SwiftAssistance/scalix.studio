@@ -79,6 +79,24 @@ export default function WebDesign() {
           </div>
         </section>
 
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'SEO', desc: 'Get your new site ranking on page 1.', link: '/services/seo' },
+                { title: 'Branding', desc: 'A cohesive brand identity for your website.', link: '/services/branding' },
+                { title: 'Content Strategy', desc: 'Compelling copy that converts visitors.', link: '/services/content-strategy' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="bg-slate-900 text-white py-16">
           <div className="container mx-auto px-4 text-center animate-on-scroll">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s build your dream website</h2>

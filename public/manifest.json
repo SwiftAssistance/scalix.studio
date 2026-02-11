@@ -1,0 +1,16 @@
+{
+  "name": "Scalix Studios",
+  "short_name": "Scalix",
+  "description": "Berkshire's leading digital agency — SEO, web design, PPC & branding.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4c1d95",
+  "icons": [
+    {
+      "src": "/scalix_logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}

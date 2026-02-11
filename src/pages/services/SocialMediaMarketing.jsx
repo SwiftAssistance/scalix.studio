@@ -11,7 +11,7 @@ const faqs = [
   { q: 'How do you measure success?', a: 'Reach, engagement, follower growth, website clicks, and conversions. Clear monthly reports.' },
 ]
 
-const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Social Media Marketing in Berkshire", "description": "Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }], "url": "https://www.scalixstudios.co.uk/services/social-media-marketing", "serviceType": "Social Media Marketing", "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "199", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "199", "unitText": "per month starting from" } } }
+const structuredData = { "@context": "https://schema.org", "@type": "Service", "name": "Social Media Marketing in Berkshire", "description": "Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month.", "provider": { "@type": "ProfessionalService", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "@id": "https://www.scalixstudios.co.uk/#localbusiness" }, "areaServed": [{ "@type": "Place", "name": "Berkshire, UK" }, { "@type": "Place", "name": "Windsor" }, { "@type": "Place", "name": "Slough" }, { "@type": "Place", "name": "Reading" }], "url": "https://www.scalixstudios.co.uk/services/social-media-marketing", "serviceType": "Social Media Marketing", "offers": { "@type": "Offer", "priceCurrency": "GBP", "price": "199", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "price": "199", "unitText": "per month starting from" } } }
 const faqStructuredData = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }
 const breadcrumbData = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" }, { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }, { "@type": "ListItem", "position": 3, "name": "Social Media Marketing", "item": "https://www.scalixstudios.co.uk/services/social-media-marketing" }] }
 
@@ -19,7 +19,7 @@ export default function SocialMediaMarketing() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="Social Media Marketing Berkshire | Social Media Agency Windsor | Scalix Studios" description="Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn. From £199/month." keywords="social media marketing berkshire, social media agency windsor, facebook marketing slough" canonical="https://www.scalixstudios.co.uk/services/social-media-marketing" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
+      <SEO title="Social Media Marketing Berkshire | Social Media Agency Windsor | Scalix Studios" description="Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn with strategic content, paid ads, and community management. Plans from £199/month." keywords="social media marketing berkshire, social media agency windsor, facebook marketing slough, instagram marketing berkshire, linkedin marketing" canonical="https://www.scalixstudios.co.uk/services/social-media-marketing" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="Social Media" badge="Social Media Marketing" title="Social Media That" highlight="Actually Works" highlightClass="gradient-text-warm" description="Turn followers into customers with strategic content and paid ads across every platform." cta="Get Started" image="/social-media-marketing-agency.webp" imageAlt="Social media marketing campaigns" />
 
@@ -94,6 +94,24 @@ export default function SocialMediaMarketing() {
                   <h3 className="font-bold mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-purple-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'Content Strategy', desc: 'Fuel your social channels with strategic content.', link: '/services/content-strategy' },
+                { title: 'Branding', desc: 'A consistent brand identity across all platforms.', link: '/services/branding' },
+                { title: 'PPC Advertising', desc: 'Amplify your best posts with paid ads.', link: '/services/ppc-advertising' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-purple-100 hover:border-purple-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
               ))}
             </div>
           </div>

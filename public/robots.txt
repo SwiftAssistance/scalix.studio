@@ -1,13 +1,6 @@
 # Scalix Studios - https://www.scalixstudios.co.uk
 # robots.txt
 
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /staging/
-Disallow: /private/
-
 # Allow AI crawlers to index content for GEO
 User-agent: GPTBot
 Allow: /
@@ -26,6 +19,14 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+# Default crawler rules
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /staging/
+Disallow: /private/
 
 # Sitemap location
 Sitemap: https://www.scalixstudios.co.uk/sitemap.xml

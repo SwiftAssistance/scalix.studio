@@ -19,7 +19,7 @@ export default function PPCAdvertising() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="PPC Advertising Berkshire | Google Ads Agency Windsor | Scalix Studios" description="Expert PPC and Google Ads management for Berkshire businesses. Immediate leads with targeted pay-per-click. Average 3x ROAS." keywords="ppc advertising berkshire, google ads agency windsor, ppc management slough, pay per click reading, facebook ads berkshire" canonical="https://www.scalixstudios.co.uk/services/ppc-advertising" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
+      <SEO title="PPC Advertising Berkshire | Google Ads Agency Windsor | Scalix Studios" description="Expert PPC and Google Ads management for Berkshire businesses. Precision-targeted campaigns delivering immediate leads and an average 3x return on ad spend. Free PPC audit available." keywords="ppc advertising berkshire, google ads agency windsor, ppc management slough, pay per click reading, facebook ads berkshire" canonical="https://www.scalixstudios.co.uk/services/ppc-advertising" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="PPC" badge="Pay-Per-Click Advertising" badgeColor="bg-emerald-500/15 border-emerald-500/30 text-emerald-300" title="Ads That" highlight="Print Money" highlightClass="gradient-text-green" description="Targeted Google & social ads with measurable ROI. Pay for results, not promises." cta="Free PPC Audit" ctaClass="bg-emerald-500 hover:bg-emerald-400 text-white" image="/ppc-advertising-berkshire.webp" imageAlt="PPC advertising campaign dashboard" />
 
@@ -69,6 +69,24 @@ export default function PPCAdvertising() {
                   <h3 className="font-bold mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-emerald-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'SEO', desc: 'Long-term organic growth alongside instant PPC results.', link: '/services/seo' },
+                { title: 'Web Design', desc: 'Conversion-optimised landing pages for your ads.', link: '/services/web-design' },
+                { title: 'Social Media', desc: 'Retarget ad clickers across social platforms.', link: '/services/social-media-marketing' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-emerald-100 hover:border-emerald-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
               ))}
             </div>
           </div>

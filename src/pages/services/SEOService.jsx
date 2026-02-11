@@ -19,7 +19,7 @@ export default function SEOService() {
   const scrollRef = useScrollAnimation()
   return (
     <>
-      <SEO title="SEO Services Berkshire | Local SEO Agency Windsor & Slough | Scalix Studios" description="Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. First-page Google rankings and more qualified leads." keywords="seo services berkshire, local seo windsor, seo agency slough, google ranking berkshire" canonical="https://www.scalixstudios.co.uk/services/seo" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
+      <SEO title="SEO Services Berkshire | Local SEO Agency Windsor & Slough | Scalix Studios" description="Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. Data-driven strategies that deliver first-page Google rankings, more organic traffic, and qualified leads. Free SEO audit." keywords="seo services berkshire, local seo windsor, seo agency slough, google ranking berkshire, technical seo, on-page seo" canonical="https://www.scalixstudios.co.uk/services/seo" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
       <ServiceHero breadcrumb="SEO" badge="SEO Services" title="Get Found on" highlight="Google" description="We help Berkshire businesses climb the rankings and drive real, measurable growth through search." cta="Free SEO Audit" image="/seo-strategy-berkshire.webp" imageAlt="SEO strategy analysis dashboard" />
 
@@ -76,6 +76,24 @@ export default function SEOService() {
                   <h3 className="font-bold mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl font-bold mb-8 text-center animate-on-scroll">Works even better with</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: 'Web Design', desc: 'A fast, optimised site to back your rankings.', link: '/services/web-design' },
+                { title: 'Content Strategy', desc: 'Blog posts and copy that fuel your SEO.', link: '/services/content-strategy' },
+                { title: 'PPC Advertising', desc: 'Instant visibility while organic grows.', link: '/services/ppc-advertising' },
+              ].map((s, i) => (
+                <Link key={i} to={s.link} className="bg-white rounded-xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                  <h3 className="font-bold mb-1">{s.title}</h3>
+                  <p className="text-sm text-slate-600">{s.desc}</p>
+                </Link>
               ))}
             </div>
           </div>

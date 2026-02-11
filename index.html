@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="Content-Language" content="en-GB" />
+    <link rel="manifest" href="/manifest.json" />
 
     <!-- Fallback meta for crawlers that don't execute JS -->
     <meta name="description" content="Scalix Studios: Berkshire's leading digital agency. Expert SEO, stunning web design, social media marketing, branding, PPC advertising, and AI automation for businesses in Windsor, Slough & Reading." />
@@ -43,6 +45,8 @@
 
     <!-- Fonts - non-render-blocking with font-display:swap -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -168,6 +172,13 @@
   </head>
   <body class="antialiased">
     <div id="root"></div>
+    <noscript>
+      <div style="padding:2rem;text-align:center;font-family:sans-serif">
+        <h1>Scalix Studios — Digital Agency in Berkshire</h1>
+        <p>Expert SEO, web design, social media marketing, branding &amp; PPC for Berkshire businesses.</p>
+        <p>Please enable JavaScript to experience the full site, or call us on <a href="tel:+441753257401">01753 257 401</a>.</p>
+      </div>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
