@@ -83,7 +83,7 @@ export default function Portfolio() {
               <p className="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Explore the results-driven solutions we&apos;ve delivered for our flagship clients.</p>
             </div>
             <div className="space-y-24">
-              {projects.map((p, i) => (
+              {projects.map((p) => (
                 <div key={p.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
                   {p.reverse ? (
                     <>
