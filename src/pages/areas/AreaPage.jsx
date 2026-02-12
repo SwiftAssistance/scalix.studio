@@ -19,7 +19,7 @@ export default function AreaPage() {
     "description": area.metaDesc,
     "url": `https://www.scalixstudios.co.uk/areas/${area.slug}`,
     "provider": { "@type": "Organization", "name": "Scalix Studios", "@id": "https://www.scalixstudios.co.uk/#localbusiness" },
-    "areaServed": { "@type": "Place", "name": `${area.name}, ${area.county}` },
+    "areaServed": { "@type": "Place", "name": `${area.name}, ${area.county}`, "geo": { "@type": "GeoCoordinates", "latitude": area.geo.lat, "longitude": area.geo.lng } },
     "serviceType": ["SEO", "Web Design", "PPC Advertising", "Social Media Marketing", "Branding"],
   }
   const faqData = {
@@ -76,6 +76,18 @@ export default function AreaPage() {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll">Digital Marketing in {area.name}</h2>
             <p className="text-lg text-slate-600 leading-relaxed animate-on-scroll">{area.intro}</p>
+          </div>
+        </section>
+
+        {/* Why local digital marketing matters */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 animate-on-scroll">Why {area.name} businesses need digital marketing</h2>
+            <div className="space-y-4 text-slate-600 leading-relaxed animate-on-scroll">
+              <p>Over 90% of consumers search online before visiting a local business. If your {area.name} business isn't visible on Google, your competitors are getting those customers instead.</p>
+              <p>Local SEO is particularly powerful for {area.name} businesses because it targets people who are actively searching for services in your area — high-intent customers who are ready to buy. When someone searches "plumber {area.name}" or "accountant near {area.name}", you need to be the business that shows up first.</p>
+              <p>At Scalix Studios, we combine technical SEO expertise with deep local knowledge of {area.county} and the Thames Valley. From optimising your Google Business Profile to building location-specific content and earning local citations, our strategies are designed to make your {area.name} business impossible to miss online.</p>
+            </div>
           </div>
         </section>
 

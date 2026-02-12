@@ -74,6 +74,15 @@ const localBusinessData = {
     { "@type": "Place", "name": "Windsor" },
     { "@type": "Place", "name": "Slough" },
     { "@type": "Place", "name": "Reading" },
+    { "@type": "Place", "name": "Maidenhead" },
+    { "@type": "Place", "name": "Bracknell" },
+    { "@type": "Place", "name": "Wokingham" },
+    { "@type": "Place", "name": "Ascot" },
+    { "@type": "Place", "name": "Staines-upon-Thames" },
+    { "@type": "Place", "name": "Egham" },
+    { "@type": "Place", "name": "Henley-on-Thames" },
+    { "@type": "Place", "name": "Marlow" },
+    { "@type": "Place", "name": "High Wycombe" },
     { "@type": "Place", "name": "Berkshire" },
     { "@type": "Place", "name": "Thames Valley" }
   ],
@@ -93,7 +102,22 @@ const localBusinessData = {
   }
 }
 
-const structuredData = [localBusinessData]
+const homeFaqs = [
+  { q: 'How much does a website cost?', a: 'Our websites start from £299 for a professional 4-6 page site. Every site is bespoke, mobile-first, SEO-optimised, and built to convert — no templates. Contact us for a free quote.' },
+  { q: 'How long does SEO take to show results?', a: 'Most businesses see meaningful improvements in 3-6 months. Local SEO for less competitive areas can show results sooner. PPC advertising can generate leads within 7 days if you need immediate results.' },
+  { q: 'Do you work with businesses outside Windsor?', a: 'Yes. We\'re based in Windsor but work with businesses across Berkshire (Slough, Reading, Maidenhead, Bracknell, Wokingham, Ascot), the Thames Valley (Henley, Marlow, High Wycombe, Staines, Egham), and beyond.' },
+  { q: 'What makes Scalix different from other agencies?', a: 'We\'re a local Berkshire agency with transparent pricing, no lock-in contracts, and a proven track record. Every SEO client achieves page 1 rankings, and our clients average a 3x return on ad spend.' },
+  { q: 'Do you offer free consultations?', a: 'Yes. We offer a free strategy call where we audit your current digital presence and identify the biggest growth opportunities. No pressure, no jargon — just honest advice.' },
+  { q: 'Can you help with just one service?', a: 'Absolutely. Many clients start with SEO or a new website and add services as they grow. There are no lock-in contracts — you stay because we deliver results.' },
+]
+
+const homeFaqData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": homeFaqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+}
+
+const structuredData = [localBusinessData, homeFaqData]
 
 /* ─── Data ─── */
 const coreServices = [
@@ -426,6 +450,26 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold animate-on-scroll">Loved by local businesses.</h2>
             </div>
             <TestimonialSlider />
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-24 bg-slate-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-16">
+                <span className="inline-block px-4 py-1.5 bg-indigo-50 text-indigo-600 rounded-full text-sm font-semibold mb-4">FAQs</span>
+                <h2 className="text-4xl md:text-5xl font-bold animate-on-scroll">Common <span className="gradient-text">questions</span></h2>
+              </div>
+              <div className="space-y-4">
+                {homeFaqs.map((f, i) => (
+                  <details key={i} className="bg-white rounded-xl border border-slate-200 animate-on-scroll" style={{ transitionDelay: `${i * 80}ms` }}>
+                    <summary className="px-6 py-5 font-bold cursor-pointer hover:text-indigo-600 transition-colors">{f.q}</summary>
+                    <p className="px-6 pb-5 text-slate-600 leading-relaxed">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

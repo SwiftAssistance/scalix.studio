@@ -29,7 +29,7 @@ const structuredData = {
     "name": "Scalix Studios",
     "url": "https://www.scalixstudios.co.uk",
     "foundingLocation": { "@type": "Place", "name": "Windsor, Berkshire" },
-    "areaServed": ["Windsor", "Slough", "Reading", "Maidenhead", "Bracknell", "Berkshire", "Thames Valley"],
+    "areaServed": ["Windsor", "Slough", "Reading", "Maidenhead", "Bracknell", "Wokingham", "Ascot", "Staines-upon-Thames", "Egham", "Henley-on-Thames", "Marlow", "High Wycombe", "Berkshire", "Thames Valley"],
     "knowsAbout": ["SEO", "Web Design", "PPC Advertising", "Social Media Marketing", "Branding", "Content Strategy", "AI Automation"],
   }
 }
@@ -140,13 +140,20 @@ export default function About() {
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-on-scroll">Areas We Serve</h2>
             <p className="text-center text-slate-600 mb-12 animate-on-scroll">Based in Windsor, we help businesses across the whole of Berkshire and the Thames Valley.</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
                 { name: 'Windsor', slug: 'windsor' },
                 { name: 'Slough', slug: 'slough' },
                 { name: 'Reading', slug: 'reading' },
                 { name: 'Maidenhead', slug: 'maidenhead' },
                 { name: 'Bracknell', slug: 'bracknell' },
+                { name: 'Wokingham', slug: 'wokingham' },
+                { name: 'Ascot', slug: 'ascot' },
+                { name: 'Staines', slug: 'staines-upon-thames' },
+                { name: 'Egham', slug: 'egham' },
+                { name: 'Henley', slug: 'henley-on-thames' },
+                { name: 'Marlow', slug: 'marlow' },
+                { name: 'High Wycombe', slug: 'high-wycombe' },
               ].map((a, i) => (
                 <Link key={a.slug} to={`/areas/${a.slug}`} className="bg-white rounded-xl p-5 text-center border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all animate-on-scroll" style={{ transitionDelay: `${i * 60}ms` }}>
                   <FaMapLocationDot className="text-indigo-500 text-lg mx-auto mb-2" />
