@@ -2,10 +2,11 @@ import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense, Component } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import CookieBanner from './components/CookieBanner'
-import BackToTop from './components/BackToTop'
 import Preloader from './components/Preloader'
 import ScrollToTop from './components/ScrollToTop'
+
+const CookieBanner = lazy(() => import('./components/CookieBanner'))
+const BackToTop = lazy(() => import('./components/BackToTop'))
 
 const Home = lazy(() => import('./pages/Home'))
 const Services = lazy(() => import('./pages/Services'))
@@ -89,8 +90,10 @@ function App() {
         </Suspense>
       </ErrorBoundary>
       <Footer />
-      <CookieBanner />
-      <BackToTop />
+      <Suspense fallback={null}>
+        <CookieBanner />
+        <BackToTop />
+      </Suspense>
     </>
   )
 }

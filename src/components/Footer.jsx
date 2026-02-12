@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand — full width on mobile */}
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <Link to="/" className="inline-block mb-4">
-              <img src="/LOGO.png" alt="Scalix Studios - Digital Agency in Windsor, Berkshire" width="160" height="40" className="h-10 w-auto mx-auto md:mx-0 footer-logo" />
+              <img src="/logo.webp" alt="Scalix Studios - Digital Agency in Windsor, Berkshire" width="160" height="40" className="h-10 w-auto mx-auto md:mx-0 footer-logo" loading="lazy" decoding="async" />
             </Link>
             <p className="text-gray-300 text-sm mb-5 max-w-xs mx-auto md:mx-0">Berkshire digital agency specialising in SEO, web design, and marketing that drives real growth for local businesses.</p>
             <div className="flex justify-center md:justify-start gap-3">
