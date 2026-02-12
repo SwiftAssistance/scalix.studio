@@ -3,11 +3,20 @@ import { FaInstagram, FaFacebookF, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'r
 
 const pageLinks = [
   { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
   { label: 'Case Studies', to: '/case-studies' },
-  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'Contact', to: '/contact' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
+]
+
+const areaLinks = [
+  { label: 'Windsor', to: '/areas/windsor' },
+  { label: 'Slough', to: '/areas/slough' },
+  { label: 'Reading', to: '/areas/reading' },
+  { label: 'Maidenhead', to: '/areas/maidenhead' },
+  { label: 'Bracknell', to: '/areas/bracknell' },
 ]
 
 const serviceLinks = [
@@ -24,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white" role="contentinfo">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-8">
           {/* Brand — full width on mobile */}
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <Link to="/" className="inline-block mb-4">
@@ -52,6 +61,16 @@ export default function Footer() {
             <p className="font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">Services</p>
             <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
+                <li key={link.to}><Link to={link.to} className="text-gray-300 hover:text-white transition-colors text-sm">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Areas */}
+          <div>
+            <p className="font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">Areas</p>
+            <ul className="space-y-2.5">
+              {areaLinks.map((link) => (
                 <li key={link.to}><Link to={link.to} className="text-gray-300 hover:text-white transition-colors text-sm">{link.label}</Link></li>
               ))}
             </ul>

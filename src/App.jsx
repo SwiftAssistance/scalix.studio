@@ -23,6 +23,11 @@ const PPCAdvertising = lazy(() => import('./pages/services/PPCAdvertising'))
 const ContentStrategy = lazy(() => import('./pages/services/ContentStrategy'))
 const AIAutomation = lazy(() => import('./pages/services/AIAutomation'))
 
+const About = lazy(() => import('./pages/About'))
+const AreaPage = lazy(() => import('./pages/areas/AreaPage'))
+const Blog = lazy(() => import('./pages/blog/Blog'))
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'))
+
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
@@ -75,6 +80,10 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/areas/:slug" element={<AreaPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </Suspense>
