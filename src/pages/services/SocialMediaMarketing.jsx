@@ -3,6 +3,7 @@ import { FaInstagram, FaFacebook, FaLinkedin, FaArrowRight } from 'react-icons/f
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'Which platforms should I be on?', a: 'For most Berkshire businesses, Facebook and Instagram are essential. LinkedIn for B2B. We help you pick the right ones.' },
@@ -116,6 +117,8 @@ export default function SocialMediaMarketing() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="Social Media" />
 
         <section className="py-16" style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #db2777 100%)' }}>
           <div className="container mx-auto px-4 text-center text-white animate-on-scroll">

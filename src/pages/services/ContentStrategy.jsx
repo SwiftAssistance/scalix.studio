@@ -3,6 +3,7 @@ import { FaClipboardList, FaCalendarCheck, FaBlog, FaPenFancy, FaVideo, FaArrowR
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'Why does my business need a content strategy?', a: 'Content drives SEO, fuels social media, builds trust, and establishes authority. Without strategy, efforts are scattered and ineffective.' },
@@ -96,6 +97,8 @@ export default function ContentStrategy() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="Content Strategy" />
 
         {/* CTA */}
         <section className="py-16" style={{ background: 'linear-gradient(135deg, #c2410c 0%, #ea580c 100%)' }}>

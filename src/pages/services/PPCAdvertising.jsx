@@ -3,6 +3,7 @@ import { FaRectangleAd, FaBullseye, FaFileInvoiceDollar, FaChartColumn, FaArrowT
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'How much should I spend on Google Ads?', a: 'We recommend £300-500/month minimum ad spend for local Berkshire businesses. Management fee is separate.' },
@@ -91,6 +92,8 @@ export default function PPCAdvertising() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="PPC Advertising" />
 
         <section className="bg-emerald-600 text-white py-16">
           <div className="container mx-auto px-4 text-center animate-on-scroll">

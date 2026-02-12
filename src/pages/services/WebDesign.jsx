@@ -3,6 +3,7 @@ import { FaPaintbrush, FaMobileScreen, FaCartShopping, FaRocket, FaCode, FaArrow
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'How long does a website take?', a: '4-6 weeks typically. Complex e-commerce projects may take 8-12 weeks.' },
@@ -96,6 +97,8 @@ export default function WebDesign() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="Web Design" />
 
         <section className="bg-slate-900 text-white py-16">
           <div className="container mx-auto px-4 text-center animate-on-scroll">
