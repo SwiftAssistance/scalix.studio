@@ -1,14 +1,14 @@
-import { FaCircleCheck, FaArrowRight } from 'react-icons/fa6'
+import { FaCircleCheck, FaArrowRight, FaMagnifyingGlass, FaBullhorn, FaPaintbrush, FaUserDoctor } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
 import ParticleHero from '../components/ParticleHero'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const studies = [
-  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', desc: 'This accountancy practice needed a professional online presence to attract local clients. We built a clean, user-friendly website from the ground up, focusing on clear calls-to-action and expert content. Our targeted local SEO strategy ensured they ranked highly for key search terms, driving a significant increase in qualified leads.', results: ['First-page ranking for key local search terms','40% increase in new client consultations'], img: '/wisetax-logo.jpg', alt: 'Accountancy firm website on laptop', metric: 'Page 1 Google', color: 'from-indigo-500 to-blue-600' },
-  { tag: 'Google Ads Campaign', title: 'Fencing Company, Hampshire', desc: 'This fencing company wanted immediate results. We launched a highly-targeted Google Ads campaign with a modest £200 ad spend. Within the first week, the campaign generated 3 high-quality leads, one of which converted into a significant sale, delivering an immediate return on investment.', results: ['3 qualified leads in the first 7 days','Achieved positive ROI within the first month'], img: '/ejm-logo.jpg', alt: 'Google Ads campaign report', metric: '3 leads in 7 days', color: 'from-emerald-500 to-teal-600' },
-  { tag: 'Full Rebranding', title: 'Landscaping Company, Berkshire', desc: "This landscaping company needed a complete brand overhaul to reflect the quality of their work. We designed a modern logo, built a stunning new website to showcase their portfolio, and launched their social media presence. This cohesive new brand has elevated their position in the market and attracted larger, more profitable projects.", results: ['Complete brand identity design','Established a strong social media presence'], img: '/rvs-logo.jpg', alt: 'Landscaping company rebranding materials', metric: 'Full rebrand', color: 'from-amber-500 to-orange-600' },
-  { tag: 'SEO & Google Presence', title: 'Medical Clinic, Berkshire', desc: "This medical clinic required a website that was not only professional but also highly visible to local patients. We developed an SEO-optimised website and fully set up their Google Business Profile. This strategy significantly improved their local search ranking, making it easier for new patients to find and book appointments.", results: ['Top 3 ranking on Google Maps for local searches','25% increase in online appointment bookings'], img: '/scalix_logo.webp', alt: 'Medical clinic website on tablet', metric: 'Top 3 Maps', color: 'from-violet-500 to-purple-600' },
+  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', desc: 'This accountancy practice needed a professional online presence to attract local clients. We built a clean, user-friendly website from the ground up, focusing on clear calls-to-action and expert content. Our targeted local SEO strategy ensured they ranked highly for key search terms, driving a significant increase in qualified leads.', results: ['First-page ranking for key local search terms','40% increase in new client consultations'], icon: FaMagnifyingGlass, iconColor: 'from-indigo-500 to-blue-600', alt: 'Accountancy firm website on laptop', metric: 'Page 1 Google', color: 'from-indigo-500 to-blue-600' },
+  { tag: 'Google Ads Campaign', title: 'Fencing Company, Hampshire', desc: 'This fencing company wanted immediate results. We launched a highly-targeted Google Ads campaign with a modest £200 ad spend. Within the first week, the campaign generated 3 high-quality leads, one of which converted into a significant sale, delivering an immediate return on investment.', results: ['3 qualified leads in the first 7 days','Achieved positive ROI within the first month'], icon: FaBullhorn, iconColor: 'from-emerald-500 to-teal-600', alt: 'Google Ads campaign report', metric: '3 leads in 7 days', color: 'from-emerald-500 to-teal-600' },
+  { tag: 'Full Rebranding', title: 'Landscaping Company, Berkshire', desc: "This landscaping company needed a complete brand overhaul to reflect the quality of their work. We designed a modern logo, built a stunning new website to showcase their portfolio, and launched their social media presence. This cohesive new brand has elevated their position in the market and attracted larger, more profitable projects.", results: ['Complete brand identity design','Established a strong social media presence'], icon: FaPaintbrush, iconColor: 'from-amber-500 to-orange-600', alt: 'Landscaping company rebranding materials', metric: 'Full rebrand', color: 'from-amber-500 to-orange-600' },
+  { tag: 'SEO & Google Presence', title: 'Medical Clinic, Berkshire', desc: "This medical clinic required a website that was not only professional but also highly visible to local patients. We developed an SEO-optimised website and fully set up their Google Business Profile. This strategy significantly improved their local search ranking, making it easier for new patients to find and book appointments.", results: ['Top 3 ranking on Google Maps for local searches','25% increase in online appointment bookings'], icon: FaUserDoctor, iconColor: 'from-violet-500 to-purple-600', alt: 'Medical clinic website on tablet', metric: 'Top 3 Maps', color: 'from-violet-500 to-purple-600' },
 ]
 
 const caseStudyStructuredData = {
@@ -62,21 +62,24 @@ export default function CaseStudies() {
             {studies.map((s, i) => (
               <div key={i} className={`animate-on-scroll grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  {/* Image with browser frame */}
                   <div className="relative">
-                    <div className="bg-slate-100 rounded-2xl p-3 border border-slate-200 shadow-lg">
+                    <div className={`bg-gradient-to-br ${s.iconColor} rounded-2xl p-3 shadow-lg`}>
                       <div className="flex items-center gap-2 px-3 py-2 mb-2">
-                        <div className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/60" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-green-400/60" />
-                        <div className="flex-1 bg-slate-200 rounded-md h-4 ml-3" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+                        <div className="flex-1 bg-white/10 rounded-md h-4 ml-3" />
                       </div>
-                      <div className="bg-white rounded-lg p-8 flex items-center justify-center min-h-[280px]">
-                        <img src={s.img} alt={s.alt} width="400" height="192" className="max-h-48 max-w-full object-contain" loading="lazy" />
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center min-h-[280px]">
+                        <div className="text-center">
+                          <s.icon className="text-white/90 text-6xl md:text-7xl mx-auto mb-4" />
+                          <p className="text-white font-bold text-lg">{s.tag}</p>
+                          <p className="text-white/70 text-sm mt-1">{s.title}</p>
+                        </div>
                       </div>
                     </div>
                     {/* Floating metric badge */}
-                    <div className={`absolute -bottom-4 ${i % 2 === 1 ? 'left-4' : 'right-4'} bg-gradient-to-r ${s.color} text-white text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg`}>
+                    <div className={`absolute -bottom-4 ${i % 2 === 1 ? 'left-4' : 'right-4'} bg-white text-slate-900 text-sm font-bold px-5 py-2.5 rounded-xl shadow-lg border border-slate-200`}>
                       {s.metric}
                     </div>
                   </div>

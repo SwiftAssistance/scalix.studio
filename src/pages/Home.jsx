@@ -140,13 +140,13 @@ const featuredStudy = {
   title: 'Fencing Co, Portsmouth',
   metric: '3 leads in 7 days',
   desc: 'Targeted Google Search campaign with £500 ad spend — generating qualified leads and phone inquiries within the first week of launch.',
-  img: 'https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=75&w=800&auto=format&fit=crop',
+  img: 'https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=60&w=640&auto=format&fit=crop',
   alt: 'Modern wooden fence in a garden',
 }
 
 const supportingStudies = [
-  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', metric: 'Page 1 on Google', img: 'https://images.unsplash.com/photo-1554224155-1696413565d3?q=75&w=600&auto=format&fit=crop', alt: 'Accountant working on laptop' },
-  { tag: 'Branding & Web', title: 'Bespoke Furniture, Windsor', metric: 'Premium clientele', img: 'https://images.unsplash.com/photo-1595514522863-b765e921d882?q=75&w=600&auto=format&fit=crop', alt: 'Craftsman working on bespoke furniture' },
+  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', metric: 'Page 1 on Google', img: 'https://images.unsplash.com/photo-1554224155-1696413565d3?q=60&w=400&auto=format&fit=crop', alt: 'Accountant working on laptop' },
+  { tag: 'Branding & Web', title: 'Bespoke Furniture, Windsor', metric: 'Premium clientele', img: 'https://images.unsplash.com/photo-1595514522863-b765e921d882?q=60&w=400&auto=format&fit=crop', alt: 'Craftsman working on bespoke furniture' },
 ]
 
 const processSteps = [
@@ -281,16 +281,20 @@ export default function Home() {
                     style={{ transitionDelay: `${i * 100}ms` }}
                   >
                     {/* Service image */}
-                    <div className={`bento-card-image relative overflow-hidden ${i === 0 ? 'h-56 md:h-auto md:min-h-[14rem]' : 'h-48'}`}>
-                      <img src={s.img} alt={s.imgAlt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                      <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
+                    <div className={`bento-card-image relative ${i === 0 ? 'h-56 md:h-auto md:min-h-[14rem]' : 'h-48'}`}>
+                      <div className="absolute inset-0 overflow-hidden">
+                        <img src={s.img} alt={s.imgAlt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading={i === 0 ? 'eager' : 'lazy'} />
+                        <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
+                      </div>
                       {/* Stat badge */}
                       <div className={`absolute top-4 right-4 px-3 py-1.5 rounded-xl text-center ${i === 0 ? 'bg-white/15 backdrop-blur-sm border border-white/20' : 'bg-slate-900/80 backdrop-blur-sm'}`}>
                         <span className="block text-lg font-extrabold leading-tight text-white">{s.stat}</span>
                         <span className="block text-xs uppercase tracking-wider text-slate-300">{s.statLabel}</span>
                       </div>
-                      {/* Icon floating over image bottom */}
-                      <div className={`absolute bottom-0 left-8 translate-y-1/2 w-14 h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10`}>
+                    </div>
+                    {/* Icon badge between image and content */}
+                    <div className="relative h-0">
+                      <div className={`absolute left-6 md:left-8 -top-7 w-14 h-14 bg-gradient-to-br ${s.color} rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform z-10`}>
                         <s.icon className="text-xl" />
                       </div>
                     </div>
