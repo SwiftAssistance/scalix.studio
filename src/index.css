@@ -111,12 +111,12 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
 
-/* Featured case study card */
 /* Hero gradient — CSS-only, no JS canvas for best LCP */
 .hero-gradient {
   background: linear-gradient(135deg, #4c1d95 0%, #1a202c 50%, #1e3a5f 100%);
   background-size: 200% 200%;
   animation: heroShift 12s ease-in-out infinite;
+  contain: layout style;
 }
 @keyframes heroShift {
   0%, 100% { background-position: 0% 50%; }
@@ -128,6 +128,7 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
   filter: blur(80px);
   opacity: 0.3;
   will-change: transform;
+  contain: layout style paint;
 }
 .hero-orb-1 {
   width: 400px; height: 400px;
@@ -156,15 +157,23 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+/* Below-fold content: defer rendering until near viewport */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
 @media (max-width: 768px) {
-  .hero-orb-1 { width: 200px; height: 200px; filter: blur(40px); }
-  .hero-orb-2 { width: 150px; height: 150px; filter: blur(40px); }
+  .hero-orb-1 { width: 150px; height: 150px; filter: blur(30px); opacity: 0.2; }
+  .hero-orb-2 { width: 100px; height: 100px; filter: blur(30px); opacity: 0.2; }
   .hero-orb-3 { display: none; }
   .hero-gradient { animation: none; background-position: 0% 50%; }
   .hero-grid { display: none; }
   .float, .float-delay { animation: none; }
   .animate-on-scroll { opacity: 1; transform: none; transition: none; }
   .animate-on-scroll.is-visible { opacity: 1; transform: none; }
+  /* Reduce backdrop-blur on mobile */
+  .backdrop-blur-sm { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
 /* Respect reduced motion preferences */

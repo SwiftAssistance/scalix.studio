@@ -44,22 +44,20 @@
     <meta name="twitter:description" content="Expert SEO, web design, social media marketing, branding & PPC for Berkshire businesses." />
     <meta name="twitter:image" content="https://www.scalixstudios.co.uk/scalix_logo.webp" />
 
+    <!-- Preconnect to font origin early -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Preload logo for fast LCP -->
     <link rel="preload" href="/logo.webp" as="image" type="image/webp" fetchpriority="high" />
 
-    <!-- Preload critical fonts to avoid render-blocking -->
+    <!-- Preload only the single most critical font (body text) -->
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-obK4KLg.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- DNS prefetch and preconnect -->
+    <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
-      /* Critical font-face — only weights needed for initial render */
+      /* Critical font-face — only the weight needed for initial body text render */
       @font-face {
         font-family: 'Poppins';
         font-style: normal;
@@ -67,17 +65,18 @@
         font-display: swap;
         src: url(https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
       }
+      /* Heading font — optional display to avoid CLS if it loads late */
       @font-face {
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 800;
-        font-display: swap;
+        font-display: optional;
         src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-obK4KLg.woff2) format('woff2');
       }
     </style>
-    <!-- Defer non-critical font weights until after render -->
+    <!-- Defer non-critical font weights until after first paint -->
     <script>
-      requestAnimationFrame(function(){var s=document.createElement('style');s.textContent='\
+      addEventListener('load',function(){var s=document.createElement('style');s.textContent='\
 @font-face{font-family:Poppins;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2) format("woff2")}\
 @font-face{font-family:Poppins;font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format("woff2")}\
 @font-face{font-family:Montserrat;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2) format("woff2")}\

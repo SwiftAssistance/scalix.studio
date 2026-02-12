@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
 import { lazy, Suspense, Component } from 'react'
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 import Preloader from './components/Preloader'
 import ScrollToTop from './components/ScrollToTop'
+
+const Footer = lazy(() => import('./components/Footer'))
 
 const CookieBanner = lazy(() => import('./components/CookieBanner'))
 const BackToTop = lazy(() => import('./components/BackToTop'))
@@ -89,8 +90,8 @@ function App() {
           </Routes>
         </Suspense>
       </ErrorBoundary>
-      <Footer />
       <Suspense fallback={null}>
+        <Footer />
         <CookieBanner />
         <BackToTop />
       </Suspense>

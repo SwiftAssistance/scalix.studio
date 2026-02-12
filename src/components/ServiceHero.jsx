@@ -25,7 +25,7 @@ export default function ServiceHero({ breadcrumb, badge, badgeColor = 'bg-indigo
                 <div className="w-3 h-3 rounded-full bg-green-400/60" />
                 <div className="flex-1 bg-white/5 rounded-md h-5 ml-3" />
               </div>
-              <img src={image} alt={imageAlt} width="600" height="400" className="rounded-lg w-full object-cover" loading="eager" decoding="async" />
+              <img src={image} alt={imageAlt} width="600" height="400" className="rounded-lg w-full object-cover" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
