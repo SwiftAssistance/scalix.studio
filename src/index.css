@@ -111,6 +111,57 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
 
+/* Featured case study card */
+/* Hero gradient — CSS-only, no JS canvas for best LCP */
+.hero-gradient {
+  background: linear-gradient(135deg, #4c1d95 0%, #1a202c 50%, #1e3a5f 100%);
+  background-size: 200% 200%;
+  animation: heroShift 12s ease-in-out infinite;
+}
+@keyframes heroShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  will-change: transform;
+}
+.hero-orb-1 {
+  width: 400px; height: 400px;
+  background: #6d28d9;
+  top: -100px; left: -100px;
+  animation: orbFloat1 8s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 300px; height: 300px;
+  background: #3b82f6;
+  bottom: -80px; right: -60px;
+  animation: orbFloat2 10s ease-in-out infinite;
+}
+.hero-orb-3 {
+  width: 200px; height: 200px;
+  background: #06b6d4;
+  top: 40%; left: 50%;
+  animation: orbFloat3 7s ease-in-out infinite;
+}
+@keyframes orbFloat1 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(60px, 40px); } }
+@keyframes orbFloat2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-50px, -30px); } }
+@keyframes orbFloat3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -50px); } }
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+@media (max-width: 768px) {
+  .hero-orb-1 { width: 200px; height: 200px; }
+  .hero-orb-2 { width: 150px; height: 150px; }
+  .hero-orb-3 { width: 100px; height: 100px; }
+}
+
 /* Footer logo on dark background — remove opaque bg via blend mode */
 .footer-logo {
   filter: invert(1);
