@@ -111,9 +111,10 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
 
-/* Footer logo on dark background — invert the light bg */
+/* Footer logo on dark background — remove opaque bg via blend mode */
 .footer-logo {
-  filter: brightness(0) invert(1);
+  filter: invert(1);
+  mix-blend-mode: screen;
   opacity: 0.9;
 }
 .footer-logo:hover {
