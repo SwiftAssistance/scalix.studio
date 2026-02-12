@@ -163,9 +163,9 @@ const whyChoose = [
 ]
 
 const testimonials = [
-  { name: 'Emil J', initials: 'EJ', role: 'Hampshire Fencing', text: '"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"' },
-  { name: 'Ahmed A', initials: 'AA', role: 'Wisetax Accountants', text: '"Thanks to their expert SEO work, we are now ranking on the first page of Google for \'accountants in Slough\'. The increase in new client consultations has been remarkable."' },
-  { name: 'Richard S', initials: 'RS', role: 'RVS Furniture', text: '"The branding and website Scalix created perfectly captured the quality of our craft. We\'ve attracted a more premium clientele and our average order value has increased."' },
+  { name: 'Emil J', initials: 'EJ', role: 'Fencing Company, Hampshire', text: '"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"' },
+  { name: 'Ahmed A', initials: 'AA', role: 'Accountancy Firm, Slough', text: '"Thanks to their expert SEO work, we are now ranking on the first page of Google for our key search terms. The increase in new client consultations has been remarkable."' },
+  { name: 'Richard S', initials: 'RS', role: 'Bespoke Furniture, Windsor', text: '"The branding and website Scalix created perfectly captured the quality of our craft. We\'ve attracted a more premium clientele and our average order value has increased."' },
 ]
 
 /* ─── Testimonial slider ─── */
