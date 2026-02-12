@@ -15,8 +15,12 @@ export default defineConfig({
     cssMinify: 'lightningcss',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'router': ['react-router-dom'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom')) return 'react-vendor'
+          if (id.includes('node_modules/react/')) return 'react-vendor'
+          if (id.includes('node_modules/react-router')) return 'router'
+          if (id.includes('node_modules/react-helmet-async')) return 'router'
+          if (id.includes('node_modules/react-icons')) return 'icons'
         },
       },
     },

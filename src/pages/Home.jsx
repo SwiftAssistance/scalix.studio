@@ -164,13 +164,13 @@ const featuredStudy = {
   title: 'Fencing Co, Portsmouth',
   metric: '3 leads in 7 days',
   desc: 'Targeted Google Search campaign with £500 ad spend — generating qualified leads and phone inquiries within the first week of launch.',
-  img: 'https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=60&w=640&auto=format&fit=crop',
+  img: 'https://images.unsplash.com/photo-1588251545353-a1c6a2353f86?q=50&w=480&auto=format&fit=crop',
   alt: 'Modern wooden fence in a garden',
 }
 
 const supportingStudies = [
-  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', metric: 'Page 1 on Google', img: 'https://images.unsplash.com/photo-1554224155-1696413565d3?q=60&w=400&auto=format&fit=crop', alt: 'Accountant working on laptop' },
-  { tag: 'Branding & Web', title: 'Bespoke Furniture, Windsor', metric: 'Premium clientele', img: 'https://images.unsplash.com/photo-1595514522863-b765e921d882?q=60&w=400&auto=format&fit=crop', alt: 'Craftsman working on bespoke furniture' },
+  { tag: 'SEO & Web Design', title: 'Accountancy Firm, Slough', metric: 'Page 1 on Google', img: 'https://images.unsplash.com/photo-1554224155-1696413565d3?q=50&w=360&auto=format&fit=crop', alt: 'Accountant working on laptop' },
+  { tag: 'Branding & Web', title: 'Bespoke Furniture, Windsor', metric: 'Premium clientele', img: 'https://images.unsplash.com/photo-1595514522863-b765e921d882?q=50&w=360&auto=format&fit=crop', alt: 'Craftsman working on bespoke furniture' },
 ]
 
 const processSteps = [
