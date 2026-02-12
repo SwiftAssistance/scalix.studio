@@ -17,6 +17,13 @@ const areaLinks = [
   { label: 'Reading', to: '/areas/reading' },
   { label: 'Maidenhead', to: '/areas/maidenhead' },
   { label: 'Bracknell', to: '/areas/bracknell' },
+  { label: 'Wokingham', to: '/areas/wokingham' },
+  { label: 'Ascot', to: '/areas/ascot' },
+  { label: 'Staines', to: '/areas/staines-upon-thames' },
+  { label: 'Egham', to: '/areas/egham' },
+  { label: 'Henley', to: '/areas/henley-on-thames' },
+  { label: 'Marlow', to: '/areas/marlow' },
+  { label: 'High Wycombe', to: '/areas/high-wycombe' },
 ]
 
 const serviceLinks = [

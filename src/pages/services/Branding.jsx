@@ -3,6 +3,7 @@ import { FaArrowRight } from 'react-icons/fa6'
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'What is included in a branding package?', a: 'Logo design with multiple concepts, colour palette, typography, brand guidelines document, and business card design. Social templates and more available.' },
@@ -87,6 +88,8 @@ export default function Branding() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="Branding" />
 
         <section className="py-20 bg-stone-50">
           <div className="container mx-auto px-4 text-center max-w-2xl animate-on-scroll">

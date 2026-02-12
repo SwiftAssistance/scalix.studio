@@ -3,6 +3,7 @@ import { FaRobot, FaWandMagicSparkles, FaBrain, FaEnvelopeOpenText, FaChartPie, 
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'How can AI help my small business?', a: 'Save hours weekly by automating enquiries, follow-ups, and scheduling. Premium service without extra staff.' },
@@ -109,6 +110,8 @@ export default function AIAutomation() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="AI & Automation" />
 
         {/* CTA */}
         <section className="py-16 bg-gradient-to-r from-cyan-600 to-violet-600 text-white">

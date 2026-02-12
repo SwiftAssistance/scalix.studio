@@ -3,6 +3,7 @@ import { FaMagnifyingGlass, FaLocationDot, FaGears, FaChartLine, FaFileLines, Fa
 import SEO from '../../components/SEO'
 import ServiceHero from '../../components/ServiceHero'
 import useScrollAnimation from '../../hooks/useScrollAnimation'
+import AreasServed from '../../components/AreasServed'
 
 const faqs = [
   { q: 'How long does SEO take to show results?', a: 'Most businesses see meaningful improvements in 3-6 months. Local SEO for less competitive terms can show results sooner.' },
@@ -98,6 +99,8 @@ export default function SEOService() {
             </div>
           </div>
         </section>
+
+        <AreasServed service="SEO" />
 
         <section className="bg-indigo-600 text-white py-16">
           <div className="container mx-auto px-4 text-center animate-on-scroll">
