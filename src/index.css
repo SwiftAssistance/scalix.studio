@@ -157,9 +157,20 @@ body::-webkit-scrollbar-thumb { background-color: var(--color-primary); border-r
   background-size: 60px 60px;
 }
 @media (max-width: 768px) {
-  .hero-orb-1 { width: 200px; height: 200px; }
-  .hero-orb-2 { width: 150px; height: 150px; }
-  .hero-orb-3 { width: 100px; height: 100px; }
+  .hero-orb-1 { width: 200px; height: 200px; filter: blur(40px); }
+  .hero-orb-2 { width: 150px; height: 150px; filter: blur(40px); }
+  .hero-orb-3 { display: none; }
+  .hero-gradient { animation: none; background-position: 0% 50%; }
+  .hero-grid { display: none; }
+  .float, .float-delay { animation: none; }
+  .animate-on-scroll { opacity: 1; transform: none; transition: none; }
+  .animate-on-scroll.is-visible { opacity: 1; transform: none; }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb, .hero-gradient, .float, .float-delay, .soft-pulse, .loader { animation: none !important; }
+  .animate-on-scroll { opacity: 1; transform: none; transition: none; }
 }
 
 /* Footer logo on dark background — remove opaque bg via blend mode */

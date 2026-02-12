@@ -283,7 +283,7 @@ export default function Home() {
                     {/* Service image */}
                     <div className={`bento-card-image relative ${i === 0 ? 'h-56 md:h-auto md:min-h-[14rem]' : 'h-48'}`}>
                       <div className="absolute inset-0 overflow-hidden">
-                        <img src={s.img} alt={s.imgAlt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading={i === 0 ? 'eager' : 'lazy'} />
+                        <img src={s.img} alt={s.imgAlt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading={i === 0 ? 'eager' : 'lazy'} decoding={i === 0 ? 'sync' : 'async'} fetchPriority={i === 0 ? 'high' : 'auto'} />
                         <div className={`absolute inset-0 ${i === 0 ? 'bg-gradient-to-t from-slate-900 via-slate-900/60 to-slate-900/20' : 'bg-gradient-to-t from-white via-white/70 to-transparent'}`} />
                       </div>
                       {/* Stat badge */}
@@ -387,7 +387,7 @@ export default function Home() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
                 {/* Featured large card */}
                 <Link to="/case-studies" className="lg:col-span-3 group relative rounded-3xl overflow-hidden animate-on-scroll featured-study-card">
-                  <img src={featuredStudy.img} alt={featuredStudy.alt} width="800" height="600" className="w-full h-72 lg:h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                  <img src={featuredStudy.img} alt={featuredStudy.alt} width="800" height="600" className="w-full h-72 lg:h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
                     <span className="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4">{featuredStudy.tag}</span>
@@ -403,7 +403,7 @@ export default function Home() {
                 <div className="lg:col-span-2 flex flex-col gap-6">
                   {supportingStudies.map((cs, i) => (
                     <Link key={i} to="/case-studies" className="group flex-1 relative rounded-3xl overflow-hidden animate-on-scroll min-h-[200px]" style={{ transitionDelay: `${(i + 1) * 100}ms` }}>
-                      <img src={cs.img} alt={cs.alt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                      <img src={cs.img} alt={cs.alt} width="600" height="400" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6">
                         <span className="inline-block bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">{cs.tag}</span>
