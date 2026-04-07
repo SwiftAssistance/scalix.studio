@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
       <SEO
         title="Privacy & Cookie Policy | Scalix Studios"
         description="Learn about how Scalix Studios collects, uses, and protects your data, and how we use cookies to improve your website experience."
-        canonical="https://www.scalixstudios.co.uk/privacy-policy"
+        canonical="https://scalixstudios.co.uk/privacy-policy"
         noindex={true}
       />
 

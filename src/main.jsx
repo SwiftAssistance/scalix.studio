@@ -1,16 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import { HelmetProvider } from 'react-helmet-async'
-import App from './App.jsx'
-import './index.css'
+// src/main.jsx — SEO: replaced createRoot with ViteSSG for static HTML pre-rendering at build time
+import { ViteSSG } from 'vite-ssg' // SEO: vite-ssg replaces createRoot for static generation
+import { HelmetProvider } from 'react-helmet-async' // SEO: retain HelmetProvider for per-page meta tags
+import { routes } from './routes' // SEO: centralised route list
+import App from './App.jsx' // SEO: main app component
+import './index.css' // SEO: global styles
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
-  </StrictMode>,
+// SEO: ViteSSG wraps the app and pre-renders every route listed in vite.config.js ssgOptions
+export const createApp = ViteSSG(
+  App, // SEO: root component
+  { routes }, // SEO: pass routes so vite-ssg knows the routing structure
+  ({ app }) => { // SEO: callback for app-level plugins
+    // SEO: register HelmetProvider so all Helmet tags appear in pre-rendered HTML
+    app.use ? app.use(HelmetProvider) : null // SEO: conditional check for SSG compatibility
+  }
 )

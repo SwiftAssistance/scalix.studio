@@ -17,8 +17,8 @@ export default function AreaPage() {
     "@type": "ProfessionalService",
     "name": `Scalix Studios — Digital Marketing ${area.name}`,
     "description": area.metaDesc,
-    "url": `https://www.scalixstudios.co.uk/areas/${area.slug}`,
-    "provider": { "@type": "Organization", "name": "Scalix Studios", "@id": "https://www.scalixstudios.co.uk/#localbusiness" },
+    "url": `https://scalixstudios.co.uk/areas/${area.slug}`,
+    "provider": { "@type": "Organization", "name": "Scalix Studios", "@id": "https://scalixstudios.co.uk/#localbusiness" },
     "areaServed": { "@type": "Place", "name": `${area.name}, ${area.county}`, "geo": { "@type": "GeoCoordinates", "latitude": area.geo.lat, "longitude": area.geo.lng } },
     "serviceType": ["SEO", "Web Design", "PPC Advertising", "Social Media Marketing", "Branding"],
   }
@@ -31,8 +31,8 @@ export default function AreaPage() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-      { "@type": "ListItem", "position": 2, "name": `Digital Marketing ${area.name}`, "item": `https://www.scalixstudios.co.uk/areas/${area.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": `Digital Marketing ${area.name}`, "item": `https://scalixstudios.co.uk/areas/${area.slug}` },
     ]
   }
 
@@ -42,7 +42,7 @@ export default function AreaPage() {
         title={area.metaTitle}
         description={area.metaDesc}
         keywords={area.metaKeywords}
-        canonical={`https://www.scalixstudios.co.uk/areas/${area.slug}`}
+        canonical={`https://scalixstudios.co.uk/areas/${area.slug}`}
         structuredData={[structuredData, faqData, breadcrumbData]}
       />
 

@@ -27,6 +27,7 @@ const AIAutomation = lazy(() => import('./pages/services/AIAutomation'))
 
 const About = lazy(() => import('./pages/About'))
 const AreaPage = lazy(() => import('./pages/areas/AreaPage'))
+const Areas = lazy(() => import('./pages/areas/Areas')) // SEO: new areas hub page
 const Blog = lazy(() => import('./pages/blog/Blog'))
 const BlogPost = lazy(() => import('./pages/blog/BlogPost'))
 
@@ -83,6 +84,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
+            <Route path="/areas" element={<Areas />} /> {/* SEO: areas hub page linking to all 12 location pages */}
             <Route path="/areas/:slug" element={<AreaPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
