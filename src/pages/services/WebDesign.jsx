@@ -22,7 +22,7 @@ export default function WebDesign() {
     <>
       <SEO title="Web Design Berkshire | Website Design Windsor & Slough | Scalix Studios" description="Professional web design in Berkshire. Stunning, mobile-responsive websites from £299 for businesses in Windsor, Slough & Reading." keywords="web design berkshire, website design windsor, web developer slough, affordable web design berkshire" canonical="https://scalixstudios.co.uk/services/web-design" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
-      <ServiceHero breadcrumb="Web Design" badge="Web Design & Development" title="Websites That" highlight="Convert" description="Beautiful, fast, mobile-first sites from £299. No templates — every pixel is yours." cta="Free Quote" ctaClass="bg-white hover:bg-indigo-50 text-indigo-700" image="/web-development-scalix.webp" imageAlt="Professional responsive website design" />
+      <ServiceHero breadcrumb="Web Design" badge="Web Design & Development" title="Web Design in Berkshire" highlight="From £299" description="Bespoke, mobile-first websites built to convert visitors into leads and customers. No templates — every site is designed around your business. Serving Windsor, Slough, Reading and the Thames Valley." cta="Free Quote" ctaClass="bg-white hover:bg-indigo-50 text-indigo-700" image="/web-development-scalix.webp" imageAlt="Professional responsive website design" />
 
       <main ref={scrollRef}>
         <section className="py-20 bg-white">

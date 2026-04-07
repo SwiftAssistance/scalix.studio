@@ -161,7 +161,15 @@
       "publisher": {
         "@id": "https://scalixstudios.co.uk/#organization"
       },
-      "inLanguage": "en-GB"
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://scalixstudios.co.uk/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
   </head>

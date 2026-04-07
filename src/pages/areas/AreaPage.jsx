@@ -18,8 +18,16 @@ export default function AreaPage() {
     "name": `Scalix Studios — Digital Marketing ${area.name}`,
     "description": area.metaDesc,
     "url": `https://scalixstudios.co.uk/areas/${area.slug}`,
-    "provider": { "@type": "Organization", "name": "Scalix Studios", "@id": "https://scalixstudios.co.uk/#localbusiness" },
+    "telephone": "+441753257401",
+    "email": "info@scalixstudios.co.uk",
+    "provider": { "@type": "Organization", "name": "Scalix Studios", "@id": "https://scalixstudios.co.uk/#organization" },
     "areaServed": { "@type": "Place", "name": `${area.name}, ${area.county}`, "geo": { "@type": "GeoCoordinates", "latitude": area.geo.lat, "longitude": area.geo.lng } },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:30"
+    },
     "serviceType": ["SEO", "Web Design", "PPC Advertising", "Social Media Marketing", "Branding"],
   }
   const faqData = {
@@ -84,9 +92,9 @@ export default function AreaPage() {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 animate-on-scroll">Why {area.name} businesses need digital marketing</h2>
             <div className="space-y-4 text-slate-600 leading-relaxed animate-on-scroll">
-              <p>Over 90% of consumers search online before visiting a local business. If your {area.name} business isn't visible on Google, your competitors are getting those customers instead.</p>
-              <p>Local SEO is particularly powerful for {area.name} businesses because it targets people who are actively searching for services in your area — high-intent customers who are ready to buy. When someone searches "plumber {area.name}" or "accountant near {area.name}", you need to be the business that shows up first.</p>
-              <p>At Scalix Studios, we combine technical SEO expertise with deep local knowledge of {area.county} and the Thames Valley. From optimising your Google Business Profile to building location-specific content and earning local citations, our strategies are designed to make your {area.name} business impossible to miss online.</p>
+              <p>Over 90 percent of consumers search online before visiting or contacting a local business. If your {area.name} business is not visible on Google, customers who are ready to buy are finding your competitors instead.</p>
+              <p>Local SEO targets people who are actively searching for services in {area.name} right now. When someone searches for a plumber, accountant, electrician, or cleaning company in {area.name}, they use Google — and the businesses that rank on the first page capture the majority of that traffic. Scalix Studios uses Google Business Profile optimisation, location-specific content, and local citation building to secure those first-page positions.</p>
+              <p>Scalix Studios is a digital marketing agency based in Windsor, {area.county === 'Berkshire' ? 'five' : area.county === 'Surrey' ? 'fifteen' : 'twenty'} minutes from {area.name}. The agency has delivered SEO, web design, and PPC advertising for over 50 businesses across Berkshire and the Thames Valley, achieving first-page Google rankings for every SEO client.</p>
             </div>
           </div>
         </section>

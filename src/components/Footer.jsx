@@ -8,6 +8,7 @@ const pageLinks = [
   { label: 'Blog', to: '/blog' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'Contact', to: '/contact' },
+  { label: 'Areas We Serve', to: '/areas' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
 ]
 

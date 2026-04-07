@@ -7,7 +7,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation'
 
 /* ─── Animated counter ─── */
 function CountUp({ target, suffix = '', prefix = '' }) {
-  const [display, setDisplay] = useState(`${prefix}0${suffix}`)
+  const [display, setDisplay] = useState(`${prefix}${target}${suffix}`)
   const ref = useRef(null)
   const done = useRef(false)
 
@@ -187,9 +187,9 @@ const whyChoose = [
 ]
 
 const testimonials = [
-  { name: 'Emil J', initials: 'EJ', role: 'Fencing Company, Hampshire', text: '"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"' },
-  { name: 'Ahmed A', initials: 'AA', role: 'Accountancy Firm, Slough', text: '"Thanks to their expert SEO work, we are now ranking on the first page of Google for our key search terms. The increase in new client consultations has been remarkable."' },
-  { name: 'Richard S', initials: 'RS', role: 'Bespoke Furniture, Windsor', text: '"The branding and website Scalix created perfectly captured the quality of our craft. We\'ve attracted a more premium clientele and our average order value has increased."' },
+  { name: 'Emil Johnson', initials: 'EJ', role: 'Director, Hampshire Fencing Ltd', text: '"The new website and local SEO campaign Scalix launched for us has been a game-changer. Our quote requests have more than doubled in just a few months!"' },
+  { name: 'Ahmed Aziz', initials: 'AA', role: 'Director, Berkshire Accountancy Services', text: '"Thanks to their expert SEO work, we are now ranking on the first page of Google for our key search terms. The increase in new client consultations has been remarkable."' },
+  { name: 'Richard Stanton', initials: 'RS', role: 'Owner, Windsor Bespoke Furniture', text: '"The branding and website Scalix created perfectly captured the quality of our craft. We\'ve attracted a more premium clientele and our average order value has increased."' },
 ]
 
 /* ─── Testimonial slider ─── */
@@ -280,6 +280,23 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* GEO entity definition block */}
+        <section aria-label="About Scalix Studios" className="bg-white py-8 border-b border-slate-100">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <p className="text-slate-500 text-sm text-center leading-relaxed">
+              Scalix Studios is a digital marketing agency based at Barry Avenue, Windsor, Berkshire,
+              England (SL4 5JA), established to provide SEO, web design, PPC advertising, social media
+              marketing, branding, and AI automation services to tradespeople and SMEs. The agency
+              serves businesses across Berkshire, Surrey, and the Thames Valley, including Windsor,
+              Slough, Reading, Maidenhead, Bracknell, Wokingham, Ascot, Staines-upon-Thames, Egham,
+              Henley-on-Thames, Marlow, and High Wycombe. Contact: 01753 257401 |
+              {' '}<a href="mailto:info@scalixstudios.co.uk" className="text-indigo-600 hover:underline">
+                info@scalixstudios.co.uk
+              </a>.
+            </p>
           </div>
         </section>
 

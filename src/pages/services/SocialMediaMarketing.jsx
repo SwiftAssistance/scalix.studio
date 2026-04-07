@@ -22,7 +22,7 @@ export default function SocialMediaMarketing() {
     <>
       <SEO title="Social Media Marketing Berkshire | Social Media Agency Windsor | Scalix Studios" description="Social media marketing for Berkshire businesses. We manage Facebook, Instagram & LinkedIn with strategic content, paid ads, and community management. Plans from £199/month." keywords="social media marketing berkshire, social media agency windsor, facebook marketing slough, instagram marketing berkshire, linkedin marketing" canonical="https://scalixstudios.co.uk/services/social-media-marketing" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
-      <ServiceHero breadcrumb="Social Media" badge="Social Media Marketing" title="Social Media That" highlight="Actually Works" highlightClass="gradient-text-warm" description="Turn followers into customers with strategic content and paid ads across every platform." cta="Get Started" image="/social-media-marketing-agency.webp" imageAlt="Social media marketing campaigns" />
+      <ServiceHero breadcrumb="Social Media" badge="Social Media Marketing" title="Social Media Marketing in" highlight="Berkshire" highlightClass="gradient-text-warm" description="Strategic social media management and paid advertising for businesses across Windsor, Slough, Reading, and the Thames Valley. Plans from £199 per month." cta="Get Started" image="/social-media-marketing-agency.webp" imageAlt="Social media marketing campaigns" />
 
       <main ref={scrollRef}>
         <section className="bg-gradient-to-br from-pink-50 to-purple-50 py-20">

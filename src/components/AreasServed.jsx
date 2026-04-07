@@ -23,8 +23,8 @@ export default function AreasServed({ service }) {
         <p className="text-slate-500 text-sm text-center mb-8 animate-on-scroll">Expert {service} across Berkshire, the Thames Valley, and beyond.</p>
         <div className="flex flex-wrap justify-center gap-3">
           {areaList.map((area) => (
-            <Link key={area.slug} to={`/areas/${area.slug}`} className="bg-white rounded-full px-5 py-2.5 text-sm font-medium border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 transition-all">
-              {service} {area.name}
+            <Link key={area.slug} to={`/areas/${area.slug}`} aria-label={`${service} services in ${area.name}`} className="bg-white rounded-full px-5 py-2.5 text-sm font-medium border border-slate-200 hover:border-indigo-300 hover:text-indigo-600 transition-all">
+              {service} in {area.name}
             </Link>
           ))}
         </div>

@@ -49,8 +49,17 @@ export default function BlogPost() {
     "headline": post.title,
     "description": post.excerpt,
     "datePublished": post.date,
-    "dateModified": post.date,
+    "dateModified": post.lastModified || post.date,
     "url": `https://scalixstudios.co.uk/blog/${post.slug}`,
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://scalixstudios.co.uk/og-default.webp",
+      "width": 1200,
+      "height": 630
+    },
+    "keywords": post.metaKeywords,
+    "articleSection": post.category,
+    "inLanguage": "en-GB",
     "author": { "@type": "Organization", "name": "Scalix Studios", "url": "https://scalixstudios.co.uk" },
     "publisher": { "@type": "Organization", "name": "Scalix Studios", "url": "https://scalixstudios.co.uk", "logo": { "@type": "ImageObject", "url": "https://scalixstudios.co.uk/scalix_logo.webp" } },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://scalixstudios.co.uk/blog/${post.slug}` },
@@ -70,8 +79,8 @@ export default function BlogPost() {
       <SEO
         title={post.metaTitle}
         description={post.metaDesc}
-        keywords={post.metaKeywords}
         canonical={`https://scalixstudios.co.uk/blog/${post.slug}`}
+        ogType="article"
         structuredData={[structuredData, breadcrumbData]}
       />
 
