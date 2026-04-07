@@ -9,7 +9,9 @@ const blogPosts = [
     metaTitle: 'How Much Does a Website Cost UK 2026? | Honest Pricing Guide | Scalix Studios',
     metaDesc: 'How much does a website cost in the UK in 2026? From £299 starter sites to £10,000+ custom builds — we break down pricing, what\'s included, and how to avoid overpaying.',
     metaKeywords: 'how much does a website cost uk, website pricing uk 2026, web design costs, cheap website uk, small business website cost',
+    lastModified: '2026-04-07',
     content: [
+      { type: 'p', text: 'A professional website in the UK costs between £299 and £10,000 or more in 2026, with most small business websites falling in the £299 to £999 range depending on the number of pages, custom functionality, and whether e-commerce is required.' },
       { type: 'p', text: 'One of the most common questions we hear from business owners is "how much does a website actually cost?" The honest answer is: it depends. But that\'s not very helpful, so let\'s break it down properly.' },
       { type: 'h2', text: 'Website Cost Ranges in 2026' },
       { type: 'p', text: 'In the UK market, website costs generally fall into three tiers:' },
@@ -43,7 +45,9 @@ const blogPosts = [
     metaTitle: '10 SEO Tips for Small Businesses 2026 | Practical Guide | Scalix Studios',
     metaDesc: '10 actionable SEO tips for small businesses in 2026. From Google Business Profile to content strategy — practical advice that drives real results. No jargon.',
     metaKeywords: 'seo tips small business, local seo tips, seo for beginners, small business google ranking, how to improve seo, seo tips 2026',
+    lastModified: '2026-04-07',
     content: [
+      { type: 'p', text: 'The ten most impactful SEO actions for a UK small business in 2026 are: claiming and completing a Google Business Profile, targeting local keywords, ensuring mobile-first design, improving page speed, publishing regular blog content, maintaining consistent NAP data, building local citations, implementing internal linking, optimising title tags and meta descriptions, and tracking performance in Google Search Console.' },
       { type: 'p', text: 'SEO doesn\'t have to be complicated. While the technical details can get deep, the fundamentals that drive results for small businesses are straightforward. Here are 10 tips that actually work in 2026.' },
       { type: 'h2', text: '1. Claim and Optimise Your Google Business Profile' },
       { type: 'p', text: 'This is the single most impactful thing you can do for local SEO. Your Google Business Profile (formerly Google My Business) is what shows up in the map pack when someone searches "plumber near me" or "accountant in Slough." Fill out every field: business hours, services, photos, and encourage happy customers to leave reviews.' },
@@ -80,7 +84,9 @@ const blogPosts = [
     metaTitle: 'Google Ads vs SEO: Which Is Better for Your Business? | Scalix Studios',
     metaDesc: 'Google Ads vs SEO — which should your business invest in? We compare cost, speed, ROI, and long-term value to help you decide. Honest advice from a Berkshire agency.',
     metaKeywords: 'google ads vs seo, ppc vs seo, should i use google ads, seo or ppc, digital marketing strategy, google ads worth it',
+    lastModified: '2026-04-07',
     content: [
+      { type: 'p', text: 'Google Ads delivers immediate visibility and leads within days but requires ongoing spend to maintain results, while SEO takes three to six months to build but generates free organic traffic indefinitely once rankings are established. Most businesses benefit from running both simultaneously.' },
       { type: 'p', text: 'This is one of the most common questions we get from business owners: "Should I invest in Google Ads or SEO?" The honest answer is that both have their place, and the right choice depends on your goals, budget, and timeline.' },
       { type: 'h2', text: 'The Quick Comparison' },
       { type: 'p', text: 'Google Ads gives you instant visibility but stops the moment you stop paying. SEO takes longer to build but delivers free, sustainable traffic for years. Think of Google Ads as renting your position at the top of Google, and SEO as earning it.' },
@@ -109,7 +115,9 @@ const blogPosts = [
     metaTitle: 'Why Every Business Needs a Website in 2026 | Scalix Studios',
     metaDesc: 'Why your business needs a professional website in 2026. From credibility to SEO, discover why a website is essential for growth. Websites from £299.',
     metaKeywords: 'why business needs website, do i need a website, business website benefits, website vs social media, small business website 2026',
+    lastModified: '2026-04-07',
     content: [
+      { type: 'p', text: 'In 2026, 81 percent of consumers research a business online before making a purchase or booking, making a professional website essential for any business that relies on local customers, even those that currently operate entirely through word of mouth or social media.' },
       { type: 'p', text: 'We still meet business owners who say "I just use Facebook" or "all my work comes from word of mouth." And while both of those channels are valuable, not having a website in 2026 means you\'re leaving money on the table.' },
       { type: 'h2', text: '81% of Consumers Research Online Before Buying' },
       { type: 'p', text: 'Before someone calls you, hires you, or visits your shop, they Google you. If they find a professional website with clear information, testimonials, and a way to contact you — you\'re in the running. If they find nothing, or just a Facebook page with posts from 6 months ago, they move on to a competitor who does have a website.' },

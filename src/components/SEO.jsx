@@ -16,7 +16,7 @@ export default function SEO({
   canonical = `${SITE_URL}/`,
   ogTitle,
   ogDescription,
-  ogImage = '/scalix_logo.webp',
+  ogImage = '/og-default.webp',
   ogUrl,
   ogType = 'website',
   noindex = false,
@@ -28,7 +28,6 @@ export default function SEO({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
       <meta name="author" content="Scalix Studios" />
       <link rel="canonical" href={canonical} />
       <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
@@ -43,9 +42,6 @@ export default function SEO({
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
       <meta property="og:image" content={absoluteOgImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:type" content="image/webp" />
       <meta property="og:image:alt" content={ogTitle || title} />
       <meta property="og:url" content={ogUrl || canonical} />
       <meta property="og:type" content={ogType} />

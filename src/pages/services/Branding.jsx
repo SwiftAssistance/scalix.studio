@@ -22,7 +22,7 @@ export default function Branding() {
     <>
       <SEO title="Branding Agency Berkshire | Logo Design Windsor & Slough | Scalix Studios" description="Professional branding and logo design for Berkshire businesses. Memorable brand identities, logos, and guidelines. Based in Windsor." keywords="branding agency berkshire, logo design windsor, brand identity slough, graphic design berkshire, rebranding services" canonical="https://scalixstudios.co.uk/services/branding" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
-      <ServiceHero breadcrumb="Branding" badge="Branding & Creative" badgeColor="bg-amber-500/15 border-amber-500/30 text-amber-300" title="Your Brand" highlight="Is a Feeling" highlightClass="gradient-text-warm" description="We don't just design logos. We craft the emotional connection between you and your audience." cta="Start Your Brand" ctaClass="bg-amber-500 hover:bg-amber-400 text-stone-900" image="/creative-branding-services.webp" imageAlt="Creative branding and logo design" />
+      <ServiceHero breadcrumb="Branding" badge="Branding & Creative" badgeColor="bg-amber-500/15 border-amber-500/30 text-amber-300" title="Branding Agency in" highlight="Windsor & Berkshire" highlightClass="gradient-text-warm" description="Professional brand identity design for local businesses. Logo design, brand guidelines, and visual identity that makes your business impossible to ignore." cta="Start Your Brand" ctaClass="bg-amber-500 hover:bg-amber-400 text-stone-900" image="/creative-branding-services.webp" imageAlt="Creative branding and logo design" />
 
       <main ref={scrollRef}>
         <section className="py-20 bg-white">

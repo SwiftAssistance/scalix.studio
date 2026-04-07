@@ -22,7 +22,7 @@ export default function SEOService() {
     <>
       <SEO title="SEO Services Berkshire | Local SEO Agency Windsor & Slough | Scalix Studios" description="Expert SEO services for businesses in Berkshire, Windsor, Slough & Reading. Data-driven strategies that deliver first-page Google rankings, more organic traffic, and qualified leads. Free SEO audit." keywords="seo services berkshire, local seo windsor, seo agency slough, google ranking berkshire, technical seo, on-page seo" canonical="https://scalixstudios.co.uk/services/seo" structuredData={[structuredData, faqStructuredData, breadcrumbData]} />
 
-      <ServiceHero breadcrumb="SEO" badge="SEO Services" title="Get Found on" highlight="Google" description="We help Berkshire businesses climb the rankings and drive real, measurable growth through search." cta="Free SEO Audit" image="/seo-strategy-berkshire.webp" imageAlt="SEO strategy analysis dashboard" />
+      <ServiceHero breadcrumb="SEO" badge="SEO Services" title="SEO Services in" highlight="Berkshire" description="Data-driven local SEO that earns first-page Google rankings for businesses in Windsor, Slough, Reading, Maidenhead, and across the Thames Valley. Every client achieves page 1 results." cta="Free SEO Audit" image="/seo-strategy-berkshire.webp" imageAlt="SEO strategy analysis dashboard" />
 
       <main ref={scrollRef}>
         <section className="py-20 bg-white">
