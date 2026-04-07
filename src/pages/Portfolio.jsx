@@ -39,7 +39,7 @@ const portfolioStructuredData = {
   "@type": "CollectionPage",
   "name": "Portfolio | Scalix Studios",
   "description": "Explore the portfolio of Scalix Studios. See our case studies in SEO, web development, and branding for businesses in Berkshire and beyond.",
-  "url": "https://www.scalixstudios.co.uk/portfolio",
+  "url": "https://scalixstudios.co.uk/portfolio",
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": projects.map((p, i) => ({
@@ -55,8 +55,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.scalixstudios.co.uk/portfolio" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://scalixstudios.co.uk/portfolio" }
   ]
 }
 
@@ -69,7 +69,7 @@ export default function Portfolio() {
         title="Portfolio | Scalix Studios | Our Work in Berkshire"
         description="Explore the portfolio of Scalix Studios. See our case studies in SEO, web development, and branding for businesses in Berkshire and beyond."
         keywords="digital agency portfolio, branding case study, seo results, web design examples, scalix studios work"
-        canonical="https://www.scalixstudios.co.uk/portfolio"
+        canonical="https://scalixstudios.co.uk/portfolio"
         structuredData={[portfolioStructuredData, breadcrumbData]}
       />
 

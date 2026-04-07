@@ -16,7 +16,7 @@ const caseStudyStructuredData = {
   "@type": "CollectionPage",
   "name": "Case Studies | Scalix Studios",
   "description": "Explore our case studies to see how Scalix Studios delivers real results for businesses in Berkshire with web design, SEO, and Google Ads.",
-  "url": "https://www.scalixstudios.co.uk/case-studies",
+  "url": "https://scalixstudios.co.uk/case-studies",
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": studies.map((s, i) => ({
@@ -32,8 +32,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.scalixstudios.co.uk/case-studies" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://scalixstudios.co.uk/case-studies" }
   ]
 }
 
@@ -46,7 +46,7 @@ export default function CaseStudies() {
         title="Case Studies | Scalix Studios | Proven Results in Berkshire"
         description="Explore our case studies to see how Scalix Studios delivers real results for businesses in Berkshire with web design, SEO, and Google Ads."
         keywords="web design case studies, seo results berkshire, digital marketing portfolio, scalix studios, windsor web design, slough seo agency"
-        canonical="https://www.scalixstudios.co.uk/case-studies"
+        canonical="https://scalixstudios.co.uk/case-studies"
         structuredData={[caseStudyStructuredData, breadcrumbData]}
       />
 

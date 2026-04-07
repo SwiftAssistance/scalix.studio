@@ -8,11 +8,11 @@ const contactStructuredData = {
   "@type": "ContactPage",
   "name": "Contact Scalix Studios",
   "description": "Get in touch with Scalix Studios, your local web design and SEO agency in Windsor, Berkshire.",
-  "url": "https://www.scalixstudios.co.uk/contact",
+  "url": "https://scalixstudios.co.uk/contact",
   "mainEntity": {
     "@type": "LocalBusiness",
     "name": "Scalix Studios",
-    "@id": "https://www.scalixstudios.co.uk/#localbusiness",
+    "@id": "https://scalixstudios.co.uk/#localbusiness",
     "telephone": "+441753257401",
     "email": "info@scalixstudios.co.uk",
     "address": {
@@ -36,8 +36,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.scalixstudios.co.uk/contact" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://scalixstudios.co.uk/contact" }
   ]
 }
 
@@ -48,7 +48,7 @@ export default function Contact() {
         title="Contact Us | Scalix Studios | Berkshire Digital Agency"
         description="Get in touch with Scalix Studios, your local web design and SEO agency in Windsor, Berkshire. Let's discuss your project and how we can help your business grow."
         keywords="contact digital agency, berkshire web design contact, seo agency windsor, get a quote, scalix studios contact"
-        canonical="https://www.scalixstudios.co.uk/contact"
+        canonical="https://scalixstudios.co.uk/contact"
         structuredData={[contactStructuredData, breadcrumbData]}
       />
 

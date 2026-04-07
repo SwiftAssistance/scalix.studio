@@ -10,14 +10,14 @@ const structuredData = {
   "@type": "Blog",
   "name": "Scalix Studios Blog",
   "description": "Digital marketing tips, SEO guides, and web design advice for UK small businesses. Practical, no-jargon insights from Berkshire's leading digital agency.",
-  "url": "https://www.scalixstudios.co.uk/blog",
-  "publisher": { "@type": "Organization", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" },
+  "url": "https://scalixstudios.co.uk/blog",
+  "publisher": { "@type": "Organization", "name": "Scalix Studios", "url": "https://scalixstudios.co.uk" },
   "blogPost": blogPosts.map(p => ({
     "@type": "BlogPosting",
     "headline": p.title,
     "description": p.excerpt,
     "datePublished": p.date,
-    "url": `https://www.scalixstudios.co.uk/blog/${p.slug}`,
+    "url": `https://scalixstudios.co.uk/blog/${p.slug}`,
     "author": { "@type": "Organization", "name": "Scalix Studios" },
   })),
 }
@@ -26,8 +26,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.scalixstudios.co.uk/blog" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://scalixstudios.co.uk/blog" },
   ]
 }
 
@@ -40,7 +40,7 @@ export default function Blog() {
         title="Blog | Digital Marketing Tips & SEO Guides | Scalix Studios"
         description="Digital marketing tips, SEO guides, and web design advice for UK small businesses. Practical, no-jargon insights from Berkshire's leading digital agency."
         keywords="digital marketing blog, seo tips, web design advice, small business marketing, ppc guide, content marketing tips"
-        canonical="https://www.scalixstudios.co.uk/blog"
+        canonical="https://scalixstudios.co.uk/blog"
         structuredData={[structuredData, breadcrumbData]}
       />
 

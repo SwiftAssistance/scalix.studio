@@ -1,32 +1,10 @@
-# Scalix Studios - https://www.scalixstudios.co.uk
-# robots.txt
+# SEO: robots.txt — instructs crawlers which pages to index and points to sitemap
 
-# Allow AI crawlers to index content for GEO
-User-agent: GPTBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-# Default crawler rules
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /admin/
-Disallow: /staging/
-Disallow: /private/
 
-# Sitemap location
-Sitemap: https://www.scalixstudios.co.uk/sitemap.xml
+# SEO: exclude privacy policy from indexing — thin legal page, no ranking value
+Disallow: /privacy-policy
+
+# SEO: explicit sitemap URL — submit this URL to Google Search Console after deployment
+Sitemap: https://scalixstudios.co.uk/sitemap.xml

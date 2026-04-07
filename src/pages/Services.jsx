@@ -23,7 +23,7 @@ const itemListData = {
     "@type": "ListItem",
     "position": i + 1,
     "name": s.title,
-    "url": `https://www.scalixstudios.co.uk${s.link}`
+    "url": `https://scalixstudios.co.uk${s.link}`
   }))
 }
 
@@ -31,8 +31,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.scalixstudios.co.uk/services" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://scalixstudios.co.uk/services" }
   ]
 }
 
@@ -47,7 +47,7 @@ export default function Services() {
         title="Digital Marketing Services Berkshire | SEO, Web Design & More | Scalix Studios"
         description="Full-service digital marketing agency in Berkshire. Expert SEO, web design, social media, branding, PPC, content strategy, and AI automation for local businesses in Windsor, Slough & Reading."
         keywords="digital marketing services berkshire, seo services windsor, web design slough, social media marketing berkshire, branding agency reading, ppc advertising berkshire, content marketing, ai automation"
-        canonical="https://www.scalixstudios.co.uk/services"
+        canonical="https://scalixstudios.co.uk/services"
         structuredData={structuredData}
       />
 

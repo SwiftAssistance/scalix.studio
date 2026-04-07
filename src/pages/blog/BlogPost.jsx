@@ -50,18 +50,18 @@ export default function BlogPost() {
     "description": post.excerpt,
     "datePublished": post.date,
     "dateModified": post.date,
-    "url": `https://www.scalixstudios.co.uk/blog/${post.slug}`,
-    "author": { "@type": "Organization", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk" },
-    "publisher": { "@type": "Organization", "name": "Scalix Studios", "url": "https://www.scalixstudios.co.uk", "logo": { "@type": "ImageObject", "url": "https://www.scalixstudios.co.uk/scalix_logo.webp" } },
-    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.scalixstudios.co.uk/blog/${post.slug}` },
+    "url": `https://scalixstudios.co.uk/blog/${post.slug}`,
+    "author": { "@type": "Organization", "name": "Scalix Studios", "url": "https://scalixstudios.co.uk" },
+    "publisher": { "@type": "Organization", "name": "Scalix Studios", "url": "https://scalixstudios.co.uk", "logo": { "@type": "ImageObject", "url": "https://scalixstudios.co.uk/scalix_logo.webp" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://scalixstudios.co.uk/blog/${post.slug}` },
   }
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.scalixstudios.co.uk/blog" },
-      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.scalixstudios.co.uk/blog/${post.slug}` },
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://scalixstudios.co.uk/blog" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://scalixstudios.co.uk/blog/${post.slug}` },
     ]
   }
 
@@ -71,7 +71,7 @@ export default function BlogPost() {
         title={post.metaTitle}
         description={post.metaDesc}
         keywords={post.metaKeywords}
-        canonical={`https://www.scalixstudios.co.uk/blog/${post.slug}`}
+        canonical={`https://scalixstudios.co.uk/blog/${post.slug}`}
         structuredData={[structuredData, breadcrumbData]}
       />
 

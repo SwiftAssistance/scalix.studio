@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = 'https://www.scalixstudios.co.uk'
+// SEO: canonical domain — non-www, no trailing slash. Matches live site and Netlify primary domain.
+const SITE_URL = 'https://scalixstudios.co.uk'
 
 function resolveImageUrl(path) {
   if (!path) return `${SITE_URL}/scalix_logo.webp`
@@ -33,7 +34,7 @@ export default function SEO({
       <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
 
       {/* Geo meta tags for local SEO */}
-      <meta name="geo.region" content="GB-BKM" />
+      <meta name="geo.region" content="GB-BRK" /> {/* SEO: corrected ISO 3166-2 code — GB-BRK is Berkshire */}
       <meta name="geo.placename" content="Windsor, Berkshire" />
       <meta name="geo.position" content="51.4816;-0.6125" />
       <meta name="ICBM" content="51.4816, -0.6125" />

@@ -28,7 +28,7 @@ const pricingStructuredData = {
   "@type": "WebPage",
   "name": "Pricing | Scalix Studios",
   "description": "Transparent pricing for web design and SEO services in Berkshire.",
-  "url": "https://www.scalixstudios.co.uk/pricing",
+  "url": "https://scalixstudios.co.uk/pricing",
   "mainEntity": {
     "@type": "OfferCatalog",
     "name": "Scalix Studios Service Packages",
@@ -63,8 +63,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://www.scalixstudios.co.uk/pricing" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://scalixstudios.co.uk/pricing" }
   ]
 }
 
@@ -77,7 +77,7 @@ export default function Pricing() {
         title="Pricing | Scalix Studios | Affordable Web Design & SEO in Berkshire"
         description="Transparent pricing for web design, SEO, PPC and social media marketing in Berkshire. Websites from £299, SEO from £149/month. No hidden fees, no lock-in contracts."
         keywords="web design pricing, seo packages berkshire, affordable websites windsor, scalix studios pricing, digital marketing costs, seo cost uk"
-        canonical="https://www.scalixstudios.co.uk/pricing"
+        canonical="https://scalixstudios.co.uk/pricing"
         structuredData={[pricingStructuredData, faqStructuredData, breadcrumbData]}
       />
 

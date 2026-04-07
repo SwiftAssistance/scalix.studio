@@ -23,11 +23,11 @@ const structuredData = {
   "@type": "AboutPage",
   "name": "About Scalix Studios",
   "description": "Learn about Scalix Studios — Berkshire's leading digital marketing agency. Based in Windsor, we deliver SEO, web design, PPC, and branding for local businesses.",
-  "url": "https://www.scalixstudios.co.uk/about",
+  "url": "https://scalixstudios.co.uk/about",
   "mainEntity": {
     "@type": "Organization",
     "name": "Scalix Studios",
-    "url": "https://www.scalixstudios.co.uk",
+    "url": "https://scalixstudios.co.uk",
     "foundingLocation": { "@type": "Place", "name": "Windsor, Berkshire" },
     "areaServed": ["Windsor", "Slough", "Reading", "Maidenhead", "Bracknell", "Wokingham", "Ascot", "Staines-upon-Thames", "Egham", "Henley-on-Thames", "Marlow", "High Wycombe", "Berkshire", "Thames Valley"],
     "knowsAbout": ["SEO", "Web Design", "PPC Advertising", "Social Media Marketing", "Branding", "Content Strategy", "AI Automation"],
@@ -38,8 +38,8 @@ const breadcrumbData = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.scalixstudios.co.uk" },
-    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.scalixstudios.co.uk/about" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scalixstudios.co.uk" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://scalixstudios.co.uk/about" },
   ]
 }
 
@@ -52,7 +52,7 @@ export default function About() {
         title="About Scalix Studios | Berkshire Digital Marketing Agency | Windsor"
         description="Scalix Studios is Berkshire's leading digital agency, based in Windsor. We help local businesses across Slough, Reading, Maidenhead & Bracknell grow with expert SEO, web design, PPC & branding."
         keywords="about scalix studios, digital agency berkshire, marketing agency windsor, who we are, berkshire web designers, local seo agency"
-        canonical="https://www.scalixstudios.co.uk/about"
+        canonical="https://scalixstudios.co.uk/about"
         structuredData={[structuredData, breadcrumbData]}
       />
 

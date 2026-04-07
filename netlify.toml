@@ -5,11 +5,19 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# SPA routing fallback
+# SEO: enforce non-www canonical — 301 redirects all www traffic to non-www
+[[redirects]]
+  from = "https://www.scalixstudios.co.uk/*"
+  to = "https://scalixstudios.co.uk/:splat"
+  status = 301
+  force = true
+
+# SEO: after vite-ssg pre-rendering, Netlify serves real .html files first for all known routes.
+# SEO: this 404 fallback only fires for URLs that have no matching pre-rendered file.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404
 
 # Global security and SEO headers
 [[headers]]
