@@ -12,12 +12,12 @@
   status = 301
   force = true
 
-# SEO: after vite-ssg pre-rendering, Netlify serves real .html files first for all known routes.
-# SEO: this 404 fallback only fires for URLs that have no matching pre-rendered file.
+# SPA fallback — serves index.html for all routes so React Router handles client-side navigation
+# Netlify tries static files first, so /robots.txt, /sitemap.xml, /og-default.webp etc. still work
 [[redirects]]
   from = "/*"
-  to = "/404.html"
-  status = 404
+  to = "/index.html"
+  status = 200
 
 # Global security and SEO headers
 [[headers]]
